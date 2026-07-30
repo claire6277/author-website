@@ -1,0 +1,152 @@
+/* Color Palette
+Sage: #C3C88C
+Dark Purple: #30253E
+Russian Green: #638872
+Pewter Blue: #80B9B1
+Cambridge Blue: #94C7B4
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f4f6f1;
+  color: #30253E;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(48, 37, 62, 0.75), rgba(48, 37, 62, 0.75)),
+              url("colors.jpg") center/cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #C3C88C;
+}
+
+/* Navigation */
+nav {
+  background-color: #638872;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 10px;
+  border-bottom: 4px solid #30253E;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #80B9B1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #C3C88C;
+  color: #30253E;
+}
+
+/* Main Layout */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-left: 8px solid #94C7B4;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(48, 37, 62, 0.12);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #30253E;
+  font-size: 2rem;
+}
+
+.welcome-card {
+  background-color: #f9faf7;
+}
+
+.note-card {
+  background-color: #f7f4ea;
+  border-left: 8px solid #C3C88C;
+}
+
+/* Split Section */
+.split-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+}
+
+.image-box {
+  flex: 1 1 280px;
+  text-align: center;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 14px;
+  border: 5px solid #80B9B1;
+  box-shadow: 0 4px 12px rgba(48, 37, 62, 0.18);
+}
+
+.text-content {
+  flex: 2 1 400px;
+}
+
+/* Footer */
+footer {
+  background-color: #30253E;
+  color: #C3C88C;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    width: 90%;
+    text-align: center;
+  }
+
+  .split-section {
+    flex-direction: column;
+  }
+}
