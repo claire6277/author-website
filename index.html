@@ -1,0 +1,4428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Official author website for CJ Maylock, author of The English Department vs. Chaos and Nonsense."
+  >
+
+  <meta name="theme-color" content="#070712">
+
+  <title>
+    CJ Maylock | The English Department vs. Chaos and Nonsense
+  </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --background: #060611;
+      --background-light: #0d0d22;
+
+      --panel: rgba(17, 18, 43, 0.86);
+      --panel-dark: rgba(8, 9, 23, 0.94);
+      --panel-soft: rgba(27, 25, 60, 0.68);
+
+      --text: #f8f4ff;
+      --muted: #aaa6c1;
+      --muted-dark: #747087;
+
+      --purple: #9b65ff;
+      --violet: #684dff;
+      --pink: #ff5ccc;
+      --cyan: #58ddff;
+      --blue: #4d72ff;
+      --gold: #ffdc86;
+      --red: #ff536f;
+      --green: #70ffd3;
+
+      --border: rgba(255, 255, 255, 0.14);
+      --border-bright: rgba(255, 255, 255, 0.26);
+
+      --maximum-width: 1080px;
+      --header-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+
+      color: var(--text);
+
+      font-family: "DM Sans", sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 10% 4%,
+          rgba(111, 68, 255, 0.18),
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 88% 16%,
+          rgba(255, 92, 204, 0.13),
+          transparent 28%
+        ),
+        linear-gradient(
+          180deg,
+          #070712 0%,
+          #090a1d 48%,
+          #05050d 100%
+        );
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    ::selection {
+      color: #05050d;
+      background: var(--cyan);
+    }
+
+    .shell {
+      width: min(
+        calc(100% - 2rem),
+        var(--maximum-width)
+      );
+
+      margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+
+      padding: 4.25rem 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      position: absolute;
+
+      top: 0;
+      left: 50%;
+
+      z-index: 5;
+
+      padding: 0.35rem 0.8rem;
+
+      transform: translate(-50%, -50%);
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      color: rgba(255, 255, 255, 0.63);
+      background: #090a1b;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.54rem;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+    }
+
+    .panel {
+      padding: clamp(1.4rem, 3vw, 2.3rem);
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 21, 50, 0.72),
+          rgba(8, 9, 23, 0.91)
+        );
+
+      box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.26);
+    }
+
+    .section-tag,
+    .hero-kicker {
+      margin: 0 0 0.85rem;
+
+      color: var(--cyan);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .section h2,
+    .hero h1 {
+      margin: 0;
+
+      font-family: "Orbitron", sans-serif;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.7rem);
+    }
+
+    .body-copy {
+      color: var(--muted);
+
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .button {
+      min-height: 48px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0.8rem 1.15rem;
+
+      border: 1px solid transparent;
+      border-radius: 999px;
+
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #080813;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyan),
+          #ad7cff 55%,
+          var(--pink)
+        );
+
+      box-shadow:
+        0 12px 30px rgba(117, 89, 255, 0.25);
+    }
+
+    .button-secondary {
+      border-color: var(--border-bright);
+
+      background:
+        rgba(255, 255, 255, 0.04);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--cyan);
+    }
+
+    #starfield {
+      position: fixed;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      z-index: -4;
+    }
+
+    .background-glow {
+      position: fixed;
+
+      border-radius: 50%;
+
+      filter: blur(110px);
+      opacity: 0.2;
+
+      pointer-events: none;
+
+      z-index: -3;
+    }
+
+    .glow-one {
+      width: 500px;
+      height: 500px;
+
+      top: -170px;
+      left: -130px;
+
+      background: #7546ff;
+    }
+
+    .glow-two {
+      width: 600px;
+      height: 600px;
+
+      top: 20%;
+      right: -230px;
+
+      background: #d443ff;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+
+      z-index: 9999;
+
+      opacity: 0.025;
+
+      pointer-events: none;
+
+      background:
+        repeating-linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.18) 0 1px,
+          transparent 1px 4px
+        );
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+
+      z-index: 1000;
+
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .site-header.scrolled {
+      border-bottom: 1px solid var(--border);
+
+      background:
+        rgba(6, 6, 17, 0.83);
+
+      backdrop-filter: blur(17px);
+    }
+
+    .navigation {
+      min-height: var(--header-height);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      gap: 0.7rem;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      color: var(--cyan);
+
+      text-shadow:
+        0 0 18px var(--cyan);
+    }
+
+    .navigation-links {
+      display: flex;
+      align-items: center;
+
+      gap: 1.05rem;
+    }
+
+    .navigation-links a {
+      color: #d6d2e5;
+
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .navigation-links a:hover {
+      color: var(--cyan);
+    }
+
+    .navigation-contact {
+      padding: 0.55rem 0.9rem;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+
+    .menu-toggle {
+      width: 42px;
+      height: 42px;
+
+      display: none;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 18px;
+      height: 2px;
+
+      display: block;
+
+      margin: 5px auto;
+
+      background: white;
+    }
+
+    .hero {
+      position: relative;
+
+      padding: 7.4rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+
+      align-items: center;
+
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.4rem);
+    }
+
+    .hero h1 em {
+      display: block;
+
+      color: transparent;
+
+      font-style: normal;
+
+      -webkit-text-stroke:
+        1px #dfd9ff;
+
+      text-shadow:
+        5px 5px 0 rgba(139, 92, 246, 0.2);
+    }
+
+    .hero-tagline {
+      margin: 1.25rem 0 0;
+
+      color: #ded9f0;
+
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      margin: 0.85rem 0 0;
+
+      color: var(--muted);
+
+      font-size: 1.04rem;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 0.75rem;
+
+      margin-top: 1.5rem;
+    }
+
+    .publication-status {
+      display: flex;
+      align-items: center;
+
+      gap: 0.75rem;
+
+      margin-top: 1.6rem;
+    }
+
+    .status-light {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: var(--cyan);
+
+      box-shadow:
+        0 0 18px var(--cyan);
+
+      animation:
+        status-pulse 1.8s infinite;
+    }
+
+    @keyframes status-pulse {
+      50% {
+        opacity: 0.35;
+        transform: scale(0.75);
+      }
+    }
+
+    .publication-status small,
+    .publication-status strong {
+      display: block;
+    }
+
+    .publication-status small {
+      color: #74718a;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
+    }
+
+    .publication-status strong {
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.73rem;
+    }
+
+    .hero-art {
+      position: relative;
+
+      min-height: 470px;
+    }
+
+    .rift {
+      position: absolute;
+
+      width: 180px;
+      height: 255px;
+
+      top: 38px;
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        rotate(7deg);
+
+      border-radius:
+        48% 52% 44% 56% /
+        39% 55% 45% 61%;
+
+      background:
+        radial-gradient(
+          ellipse,
+          #ffffff 0 3%,
+          var(--cyan) 8%,
+          #735bff 28%,
+          rgba(255, 91, 204, 0.8) 43%,
+          rgba(14, 11, 44, 0.95) 63%,
+          transparent 70%
+        );
+
+      filter:
+        drop-shadow(
+          0 0 18px rgba(88, 221, 255, 0.8)
+        )
+        drop-shadow(
+          0 0 50px rgba(155, 101, 255, 0.55)
+        );
+
+      animation:
+        rift-breathe 5s infinite ease-in-out;
+    }
+
+    .rift::before {
+      content: "";
+
+      position: absolute;
+      inset: -14px;
+
+      border: 1px solid rgba(88, 221, 255, 0.55);
+      border-radius: inherit;
+
+      transform: rotate(14deg);
+    }
+
+    .rift::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 17% 35%;
+
+      border-radius: 50%;
+
+      background: #03020c;
+    }
+
+    @keyframes rift-breathe {
+      50% {
+        transform:
+          translateX(-50%)
+          rotate(4deg)
+          scale(1.04);
+      }
+    }
+
+    .floating-item {
+      position: absolute;
+
+      box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.4);
+
+      animation:
+        float-item 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes float-item {
+      to {
+        transform:
+          translateY(-12px)
+          rotate(-4deg);
+      }
+    }
+
+    .floating-paper {
+      width: 90px;
+      min-height: 112px;
+
+      padding: 0.6rem;
+
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 4px;
+
+      color: #201d31;
+      background: #eee9dc;
+
+      font-family: Georgia, serif;
+      font-size: 0.43rem;
+      line-height: 1.4;
+    }
+
+    .paper-one {
+      top: 55px;
+      left: 0;
+
+      transform: rotate(-12deg);
+    }
+
+    .paper-two {
+      top: 185px;
+      right: 0;
+
+      transform: rotate(10deg);
+
+      animation-delay: -2s;
+    }
+
+    .sticky-note {
+      width: 88px;
+      min-height: 78px;
+
+      display: grid;
+      place-items: center;
+
+      padding: 0.55rem;
+
+      color: #392f16;
+      background: #ffe985;
+
+      font-family: "Playfair Display", serif;
+      font-size: 0.72rem;
+      font-style: italic;
+      text-align: center;
+
+      top: 15px;
+      right: 25px;
+
+      transform: rotate(8deg);
+
+      animation-delay: -1s;
+    }
+
+    .coffee-cup {
+      width: 75px;
+      height: 70px;
+
+      left: 42px;
+      top: 245px;
+
+      border: 3px solid #ebe6ff;
+      border-radius: 5px 5px 18px 18px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #403568,
+          #1c1934
+        );
+
+      transform: rotate(-7deg);
+
+      animation-delay: -3s;
+    }
+
+    .coffee-cup::before {
+      content: "STAFF";
+      position: absolute;
+
+      inset: 0;
+
+      display: grid;
+      place-items: center;
+
+      color: white;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.12em;
+    }
+
+    .coffee-cup::after {
+      content: "";
+
+      position: absolute;
+
+      width: 25px;
+      height: 28px;
+
+      top: 14px;
+      right: -22px;
+
+      border: 3px solid #ebe6ff;
+      border-left: 0;
+      border-radius: 0 15px 15px 0;
+    }
+
+    .red-pen-floating {
+      width: 105px;
+      height: 7px;
+
+      right: 60px;
+      top: 300px;
+
+      border-radius: 999px;
+
+      background: var(--red);
+
+      box-shadow:
+        0 0 15px rgba(255, 83, 111, 0.5);
+
+      transform: rotate(-18deg);
+    }
+
+    .red-pen-floating::after {
+      content: "";
+
+      position: absolute;
+
+      right: -14px;
+      top: -3px;
+
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 16px solid var(--red);
+    }
+
+    .warning {
+      position: absolute;
+
+      top: 110px;
+      right: 0;
+
+      color: rgba(255, 255, 255, 0.43);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.48rem;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    .classroom {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 190px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          rgba(45, 35, 95, 0.78),
+          rgba(10, 13, 31, 0.96)
+        );
+
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .classroom::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.28;
+
+      background-image:
+        radial-gradient(
+          circle,
+          white 1px,
+          transparent 1.5px
+        );
+
+      background-size: 42px 42px;
+    }
+
+    .chalkboard {
+      position: absolute;
+
+      width: 48%;
+      height: 68px;
+
+      top: 18px;
+      left: 50%;
+
+      z-index: 2;
+
+      transform: translateX(-50%);
+
+      border: 5px solid #5c4630;
+
+      color: rgba(255, 255, 255, 0.72);
+      background: #172c2a;
+
+      font-family: "Playfair Display", serif;
+      font-size: 0.68rem;
+      font-style: italic;
+      text-align: center;
+
+      padding-top: 16px;
+    }
+
+    .desk {
+      position: absolute;
+
+      bottom: 50px;
+
+      width: 66px;
+      height: 24px;
+
+      background: #15182d;
+    }
+
+    .desk::before,
+    .desk::after {
+      content: "";
+
+      position: absolute;
+
+      top: 22px;
+
+      width: 5px;
+      height: 42px;
+
+      background: #101224;
+    }
+
+    .desk::before {
+      left: 9px;
+    }
+
+    .desk::after {
+      right: 9px;
+    }
+
+    .desk-one {
+      left: 12%;
+    }
+
+    .desk-two {
+      left: 41%;
+    }
+
+    .desk-three {
+      right: 12%;
+    }
+
+    .school-floor {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 55px;
+
+      background: #080915;
+    }
+
+    .classroom-caption {
+      position: absolute;
+
+      left: 14px;
+      bottom: 9px;
+
+      z-index: 2;
+
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.4);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.11em;
+    }
+
+    .marquee {
+      overflow: hidden;
+
+      border-block: 1px solid var(--border);
+
+      background:
+        rgba(92, 60, 188, 0.16);
+    }
+
+    .marquee-track {
+      width: max-content;
+
+      display: flex;
+
+      gap: 1.2rem;
+
+      padding: 0.72rem 0;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.13em;
+
+      animation:
+        marquee-scroll 28s linear infinite;
+    }
+
+    .marquee-track b {
+      color: var(--pink);
+    }
+
+    @keyframes marquee-scroll {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      align-items: center;
+
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .book-stage {
+      position: relative;
+
+      min-height: 470px;
+
+      display: grid;
+      place-items: center;
+
+      perspective: 1200px;
+    }
+
+    .book-object {
+      position: relative;
+
+      width: 260px;
+
+      aspect-ratio: 0.68;
+
+      transform:
+        rotateY(-12deg)
+        rotateZ(-2deg);
+
+      transition:
+        transform 0.35s ease;
+    }
+
+    .book-stage:hover .book-object {
+      transform:
+        rotateY(-3deg)
+        translateY(-7px);
+    }
+
+    .book-cover {
+      position: absolute;
+      inset: 0;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(255, 255, 255, 0.34);
+
+      background:
+        radial-gradient(
+          circle at 75% 18%,
+          rgba(255, 92, 204, 0.4),
+          transparent 23%
+        ),
+        radial-gradient(
+          circle at 28% 30%,
+          rgba(76, 142, 255, 0.34),
+          transparent 28%
+        ),
+        linear-gradient(
+          #211344,
+          #11183e 55%,
+          #070912
+        );
+
+      box-shadow:
+        -20px 24px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .book-cover::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.35;
+
+      background-image:
+        radial-gradient(
+          circle,
+          white 1px,
+          transparent 1.4px
+        );
+
+      background-size: 37px 37px;
+    }
+
+    .cover-rift {
+      position: absolute;
+
+      width: 95px;
+      height: 150px;
+
+      top: 22%;
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        rotate(7deg);
+
+      border-radius: 48%;
+
+      background:
+        radial-gradient(
+          ellipse,
+          white 0 4%,
+          var(--cyan) 10%,
+          #7b62ff 32%,
+          rgba(255, 92, 204, 0.67) 49%,
+          #070718 67%,
+          transparent 71%
+        );
+
+      filter:
+        drop-shadow(
+          0 0 16px var(--cyan)
+        );
+    }
+
+    .cover-school {
+      position: absolute;
+
+      left: -5%;
+      right: -5%;
+      bottom: 0;
+
+      height: 38%;
+
+      background: #070914;
+
+      clip-path:
+        polygon(
+          0 100%,
+          0 55%,
+          12% 55%,
+          12% 38%,
+          34% 38%,
+          34% 48%,
+          45% 48%,
+          45% 27%,
+          68% 27%,
+          68% 50%,
+          82% 50%,
+          82% 36%,
+          100% 36%,
+          100% 100%
+        );
+    }
+
+    .cover-copy {
+      position: absolute;
+      inset: 7% 7% 6%;
+
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    .cover-copy small {
+      font-family: "Orbitron", sans-serif;
+      letter-spacing: 0.22em;
+    }
+
+    .cover-copy h3 {
+      margin: auto 0;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+
+      text-shadow:
+        4px 4px 0 rgba(255, 77, 203, 0.34);
+    }
+
+    .cover-copy p {
+      margin: auto 0 0;
+
+      font-family: "Orbitron", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .cover-placeholder {
+      position: absolute;
+
+      left: 4%;
+      bottom: 3%;
+
+      color: var(--pink);
+
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+    }
+
+    .book-copy h2 span {
+      color: transparent;
+
+      -webkit-text-stroke:
+        1px #dcd5ff;
+    }
+
+    .genre-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 0.48rem;
+
+      margin-top: 1.1rem;
+    }
+
+    .genre-list span {
+      padding: 0.48rem 0.68rem;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background:
+        rgba(255, 255, 255, 0.03);
+
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .book-metadata {
+      margin-top: 1.2rem;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .book-metadata div {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+
+      gap: 1rem;
+
+      padding: 0.72rem 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .book-metadata span {
+      color: var(--cyan);
+
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .book-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      gap: 0.8rem;
+
+      margin-top: 1.3rem;
+    }
+
+    .excerpt-note {
+      color: var(--muted-dark);
+      font-size: 0.76rem;
+    }
+
+    .author-card {
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(34, 28, 72, 0.8),
+          rgba(10, 12, 28, 0.9)
+        );
+    }
+
+    .author-photo {
+  position: relative;
+  aspect-ratio: 1.5;
+  overflow: hidden;
+  background: #17182e;
+}
+
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+    .author-details {
+      padding: 1.2rem;
+    }
+
+    .author-details > span {
+      display: block;
+
+      margin-bottom: 0.9rem;
+
+      color: var(--cyan);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+    }
+
+    .author-details div {
+      padding: 0.65rem 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .author-details small,
+    .author-details strong {
+      display: block;
+    }
+
+    .author-details small {
+      color: var(--muted-dark);
+
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+    }
+
+    .author-details strong {
+      margin-top: 0.2rem;
+    }
+
+    .author-quote {
+      margin: 1.5rem 0 0;
+
+      padding-left: 1.1rem;
+
+      border-left: 2px solid var(--purple);
+
+      color: #e9e4ff;
+
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+
+      align-items: end;
+
+      gap: 2rem;
+
+      margin-bottom: 1.4rem;
+      padding: 1.35rem;
+
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      background:
+        rgba(11, 12, 30, 0.64);
+    }
+
+    .section-heading p {
+      margin: 0;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 0.9rem;
+    }
+
+    .story-card,
+    .future-card {
+      display: flex;
+      flex-direction: column;
+
+      min-height: 285px;
+
+      padding: 1.3rem;
+
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(22, 23, 52, 0.75),
+          rgba(8, 10, 23, 0.93)
+        );
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .future-card {
+      min-height: 210px;
+    }
+
+    .story-card:hover,
+    .future-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(88, 221, 255, 0.55);
+    }
+
+    .card-number {
+      color: #74718a;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.63rem;
+      letter-spacing: 0.1em;
+    }
+
+    .card-icon {
+      margin-top: 1.7rem;
+
+      color: var(--cyan);
+
+      font-size: 1.8rem;
+
+      text-shadow:
+        0 0 18px var(--cyan);
+    }
+
+    .story-card h3,
+    .future-card h3 {
+      margin: 0.9rem 0 0.5rem;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+    }
+
+    .story-card p,
+    .future-card p {
+      color: var(--muted);
+
+      font-size: 0.92rem;
+      line-height: 1.58;
+    }
+
+    .card-note {
+      margin-top: auto;
+
+      color: var(--pink);
+
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+    }
+
+    .updates-grid,
+    .faq-grid,
+    .contact-grid {
+      display: grid;
+      align-items: start;
+
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .updates-grid {
+      grid-template-columns:
+        0.7fr 1.3fr;
+    }
+
+    .faq-grid {
+      grid-template-columns:
+        0.65fr 1.35fr;
+    }
+
+    .contact-grid {
+      grid-template-columns:
+        1fr 1fr;
+
+      align-items: center;
+    }
+
+    .sticky-column {
+      position: sticky;
+      top: 105px;
+    }
+
+    .updates-list,
+    .faq-list {
+      display: grid;
+
+      gap: 0.7rem;
+    }
+
+    .update-card {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+
+      gap: 1rem;
+
+      padding: 1.1rem;
+
+      border: 1px solid var(--border);
+      border-radius: 15px;
+
+      background:
+        rgba(18, 20, 47, 0.68);
+    }
+
+    .update-date {
+      color: var(--cyan);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.11em;
+    }
+
+    .update-card h3 {
+      margin: 0;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .update-card p {
+      margin-bottom: 0;
+
+      color: var(--muted);
+
+      font-size: 0.92rem;
+      line-height: 1.56;
+    }
+
+    .status-chip {
+      display: inline-flex;
+
+      margin-top: 0.75rem;
+      padding: 0.32rem 0.55rem;
+
+      border: 1px solid rgba(88, 221, 255, 0.3);
+      border-radius: 999px;
+
+      color: var(--cyan);
+
+      font-size: 0.63rem;
+      font-weight: 800;
+    }
+
+    .game-panel {
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .game-layout {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+
+      align-items: stretch;
+
+      gap: 1rem;
+    }
+
+    .game-instructions {
+      padding: 1.35rem;
+
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      background:
+        rgba(10, 11, 29, 0.75);
+    }
+
+    .game-instructions h3 {
+      margin: 0 0 0.7rem;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+    }
+
+    .game-instructions p {
+      color: var(--muted);
+
+      line-height: 1.6;
+    }
+
+    .game-legend {
+      display: grid;
+
+      gap: 0.55rem;
+
+      margin-top: 1.1rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+
+      gap: 0.7rem;
+
+      padding: 0.65rem;
+
+      border: 1px solid var(--border);
+      border-radius: 11px;
+
+      background:
+        rgba(255, 255, 255, 0.03);
+
+      font-size: 0.82rem;
+    }
+
+    .legend-symbol {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+      place-items: center;
+
+      flex-shrink: 0;
+
+      border-radius: 9px;
+
+      background:
+        rgba(255, 255, 255, 0.06);
+
+      font-size: 1.05rem;
+    }
+
+    .game-area {
+      position: relative;
+
+      min-height: 410px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(42, 35, 83, 0.76),
+          rgba(8, 10, 25, 0.96)
+        );
+
+      cursor: crosshair;
+    }
+
+    .game-area::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.3;
+
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 38px 38px;
+    }
+
+    .game-blackboard {
+      position: absolute;
+
+      width: 55%;
+      height: 86px;
+
+      top: 22px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      border: 6px solid #634b34;
+
+      color: rgba(255, 255, 255, 0.72);
+      background: #17312d;
+
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      text-align: center;
+
+      padding-top: 22px;
+    }
+
+    .game-hud {
+      position: absolute;
+
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+
+      z-index: 8;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 0.55rem;
+    }
+
+    .hud-item {
+      padding: 0.65rem;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background:
+        rgba(5, 6, 18, 0.84);
+
+      text-align: center;
+    }
+
+    .hud-item small,
+    .hud-item strong {
+      display: block;
+    }
+
+    .hud-item small {
+      color: var(--muted-dark);
+
+      font-size: 0.56rem;
+      letter-spacing: 0.11em;
+    }
+
+    .hud-item strong {
+      margin-top: 0.18rem;
+
+      color: var(--cyan);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .game-object {
+      position: absolute;
+
+      z-index: 7;
+
+      width: 70px;
+      height: 70px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--border-bright);
+      border-radius: 16px;
+
+      background:
+        rgba(10, 12, 30, 0.93);
+
+      box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.38);
+
+      font-size: 2rem;
+
+      cursor: pointer;
+
+      animation:
+        object-appear 0.2s ease;
+    }
+
+    .game-object.good {
+      border-color:
+        rgba(112, 255, 211, 0.6);
+
+      box-shadow:
+        0 0 20px rgba(112, 255, 211, 0.22);
+    }
+
+    .game-object.bad {
+      border-color:
+        rgba(255, 83, 111, 0.65);
+
+      box-shadow:
+        0 0 20px rgba(255, 83, 111, 0.25);
+    }
+
+    @keyframes object-appear {
+      from {
+        opacity: 0;
+        transform: scale(0.55) rotate(-12deg);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    .game-start-screen,
+    .game-result-screen {
+      position: absolute;
+      inset: 0;
+
+      z-index: 20;
+
+      display: grid;
+      place-items: center;
+
+      padding: 1.3rem;
+
+      background:
+        rgba(5, 6, 17, 0.9);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .game-result-screen {
+      display: none;
+    }
+
+    .game-modal {
+      max-width: 430px;
+
+      padding: 1.5rem;
+
+      border: 1px solid var(--border-bright);
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(30, 29, 69, 0.96),
+          rgba(9, 10, 26, 0.98)
+        );
+
+      text-align: center;
+    }
+
+    .game-modal-icon {
+      margin-bottom: 0.5rem;
+
+      font-size: 2.5rem;
+    }
+
+    .game-modal h3 {
+      margin: 0;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+    }
+
+    .game-modal p {
+      color: var(--muted);
+
+      line-height: 1.6;
+    }
+
+    .game-result-score {
+      color: var(--cyan);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .game-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      gap: 0.65rem;
+
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      background:
+        rgba(18, 20, 47, 0.68);
+    }
+
+    .faq-question {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 1rem;
+
+      padding: 0.95rem 1.05rem;
+
+      border: 0;
+
+      color: white;
+      background: transparent;
+
+      font-weight: 800;
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .faq-question span:last-child {
+      color: var(--cyan);
+
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .faq-answer {
+      max-height: 0;
+
+      overflow: hidden;
+
+      color: var(--muted);
+
+      transition:
+        max-height 0.28s ease;
+    }
+
+    .faq-answer p {
+      margin: 0;
+
+      padding:
+        0 1.05rem 0.95rem;
+
+      line-height: 1.6;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .newsletter-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      align-items: center;
+
+      gap: 2.3rem;
+
+      padding: clamp(1.4rem, 4vw, 2.5rem);
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      background:
+        radial-gradient(
+          circle at 0 0,
+          rgba(85, 220, 255, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 100% 100%,
+          rgba(255, 92, 207, 0.16),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(31, 31, 77, 0.88),
+          rgba(11, 13, 30, 0.95)
+        );
+    }
+
+    .newsletter-form {
+      padding: 1.4rem;
+
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      background:
+        rgba(4, 5, 14, 0.44);
+    }
+
+    .newsletter-form label {
+      display: block;
+
+      margin-bottom: 0.55rem;
+
+      font-weight: 700;
+    }
+
+    .newsletter-row {
+      display: flex;
+
+      gap: 0.65rem;
+    }
+
+    .newsletter-row input {
+      min-width: 0;
+      min-height: 48px;
+
+      flex: 1;
+
+      padding: 0 0.9rem;
+
+      border: 1px solid var(--border-bright);
+      border-radius: 999px;
+
+      color: white;
+      background:
+        rgba(255, 255, 255, 0.05);
+
+      outline: none;
+    }
+
+    .newsletter-row input:focus {
+      border-color: var(--cyan);
+    }
+
+    .form-note,
+    .form-message {
+      margin: 0.65rem 0 0;
+
+      color: var(--muted-dark);
+
+      font-size: 0.72rem;
+    }
+
+    .form-message {
+      color: var(--cyan);
+    }
+
+    .contact-email {
+      display: inline-block;
+
+      margin-top: 0.8rem;
+
+      color: var(--cyan);
+
+      font-size: clamp(1.1rem, 2vw, 1.7rem);
+      font-weight: 800;
+      text-underline-offset: 0.3rem;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 0.65rem;
+
+      margin-top: 1.4rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 1rem;
+
+      padding: 0.85rem;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background:
+        rgba(255, 255, 255, 0.03);
+
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+    }
+
+    .contact-visual {
+      position: relative;
+
+      min-height: 330px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(45, 38, 90, 0.72),
+          rgba(9, 10, 27, 0.96)
+        );
+    }
+
+    .contact-visual::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.25;
+
+      background-image:
+        radial-gradient(
+          circle,
+          white 1px,
+          transparent 1.4px
+        );
+
+      background-size: 38px 38px;
+    }
+
+    .contact-desk {
+      position: absolute;
+
+      width: 68%;
+      height: 28px;
+
+      left: 50%;
+      bottom: 74px;
+
+      transform: translateX(-50%);
+
+      border-radius: 4px;
+
+      background: #17192e;
+    }
+
+    .contact-desk::before,
+    .contact-desk::after {
+      content: "";
+
+      position: absolute;
+
+      width: 8px;
+      height: 85px;
+
+      top: 26px;
+
+      background: #101224;
+    }
+
+    .contact-desk::before {
+      left: 20px;
+    }
+
+    .contact-desk::after {
+      right: 20px;
+    }
+
+    .contact-laptop {
+      position: absolute;
+
+      width: 125px;
+      height: 75px;
+
+      left: 50%;
+      bottom: 102px;
+
+      transform: translateX(-50%);
+
+      border: 4px solid #7a78a1;
+      border-radius: 7px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(88, 221, 255, 0.25),
+          #15162e 70%
+        );
+    }
+
+    .contact-laptop::after {
+      content: "NEW MESSAGE";
+      position: absolute;
+      inset: 0;
+
+      display: grid;
+      place-items: center;
+
+      color: var(--cyan);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.48rem;
+      letter-spacing: 0.11em;
+    }
+
+    .contact-papers {
+      position: absolute;
+
+      width: 78px;
+      height: 55px;
+
+      right: 13%;
+      bottom: 103px;
+
+      transform: rotate(8deg);
+
+      border: 1px solid white;
+
+      background:
+        repeating-linear-gradient(
+          180deg,
+          #eee9dc 0 8px,
+          #c3bfd3 8px 9px
+        );
+    }
+
+    .contact-coffee {
+      position: absolute;
+
+      width: 54px;
+      height: 50px;
+
+      left: 14%;
+      bottom: 101px;
+
+      border: 3px solid #ebe6ff;
+      border-radius: 4px 4px 14px 14px;
+
+      background: #332d58;
+    }
+
+    .contact-message {
+      position: absolute;
+
+      top: 20px;
+      left: 20px;
+
+      color: rgba(255, 255, 255, 0.5);
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.56rem;
+      line-height: 1.7;
+      letter-spacing: 0.1em;
+    }
+
+    footer {
+      padding: 2.8rem 0 1.2rem;
+
+      border-top: 1px solid var(--border);
+
+      background: #04040b;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns:
+        1.3fr 0.7fr 0.7fr;
+
+      gap: 2rem;
+    }
+
+    .footer-grid p {
+      color: #6d6a7f;
+    }
+
+    .footer-links {
+      display: grid;
+
+      gap: 0.55rem;
+    }
+
+    .footer-links a {
+      color: #aaa6bc;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: flex-end;
+
+      gap: 0.5rem;
+    }
+
+    .footer-socials a {
+      width: 39px;
+      height: 39px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer-socials a:hover {
+      color: #050611;
+      background: var(--cyan);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 1rem;
+
+      margin-top: 2.2rem;
+      padding-top: 1rem;
+
+      border-top: 1px solid var(--border);
+
+      color: #595668;
+
+      font-size: 0.7rem;
+    }
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(22px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navigation-links {
+        position: fixed;
+        inset: var(--header-height) 0 0;
+
+        display: grid;
+        align-content: center;
+        justify-items: center;
+
+        gap: 1.35rem;
+
+        background:
+          rgba(6, 6, 17, 0.98);
+
+        transform: translateX(100%);
+
+        transition:
+          transform 0.25s ease;
+      }
+
+      .navigation-links.open {
+        transform: translateX(0);
+      }
+
+      .navigation-links a {
+        font-size: 1.15rem;
+      }
+
+      .hero-grid,
+      .two-column,
+      .updates-grid,
+      .faq-grid,
+      .newsletter-panel,
+      .contact-grid,
+      .game-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 470px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sticky-column {
+        position: static;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-socials {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 3.6rem 0;
+      }
+
+      .hero {
+        padding: 6.5rem 0 3.2rem;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(2.7rem, 13vw, 4.1rem);
+      }
+
+      .hero-art {
+        min-height: 420px;
+      }
+
+      .rift {
+        width: 145px;
+        height: 210px;
+      }
+
+      .floating-paper {
+        width: 75px;
+        min-height: 96px;
+      }
+
+      .sticky-note {
+        width: 73px;
+        min-height: 64px;
+
+        font-size: 0.6rem;
+      }
+
+      .coffee-cup {
+        width: 60px;
+        height: 55px;
+      }
+
+      .classroom {
+        height: 175px;
+      }
+
+      .chalkboard {
+        font-size: 0.58rem;
+      }
+
+      .panel {
+        padding: 1.05rem;
+        border-radius: 17px;
+      }
+
+      .book-stage {
+        min-height: 410px;
+      }
+
+      .book-object {
+        width: 220px;
+      }
+
+      .book-metadata div {
+        grid-template-columns: 1fr;
+
+        gap: 0.25rem;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .update-card {
+        grid-template-columns: 1fr;
+      }
+
+      .game-area {
+        min-height: 440px;
+      }
+
+      .game-hud {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-row {
+        flex-direction: column;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas
+    id="starfield"
+    aria-hidden="true"
+  ></canvas>
+
+  <div
+    class="background-glow glow-one"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="background-glow glow-two"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="scanlines"
+    aria-hidden="true"
+  ></div>
+
+  <header class="site-header">
+    <nav
+      class="navigation shell"
+      aria-label="Main navigation"
+    >
+      <a
+        class="logo"
+        href="#home"
+      >
+        <span class="logo-mark">✦</span>
+        <span>CJ MAYLOCK</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="navigation-links">
+        <a href="#about">About CJ</a>
+        <a href="#book">Featured Book</a>
+        <a href="#updates">Updates</a>
+        <a href="#game">Play</a>
+        <a href="#faq">FAQ</a>
+
+        <a
+          class="navigation-contact"
+          href="#contact"
+        >
+          Contact
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section
+      class="hero"
+      id="home"
+    >
+      <div class="hero-grid shell">
+        <div class="reveal">
+          <p class="hero-kicker">
+            SCIENCE FICTION / COSMIC HORROR / TEACHER COMEDY
+          </p>
+
+          <h1>
+            CJ Maylock
+
+            <em>
+              writes through the rift.
+            </em>
+          </h1>
+
+          <p class="hero-tagline">
+            When nonsense is the only thing that makes sense.
+          </p>
+
+          <p class="hero-description">
+            Strange classrooms. Impossible universes. Haunted lesson plans.
+            Stories about ordinary people trying to hold themselves together
+            while reality spectacularly fails around them.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="#book"
+            >
+              Enter the English Department
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="#game"
+            >
+              Play the Staff Survival Game
+            </a>
+          </div>
+
+          <div class="publication-status">
+            <div class="status-light"></div>
+
+            <div>
+              <small>PUBLICATION STATUS</small>
+
+              <strong>
+                COMING SOON FROM RED FERN PRESS
+              </strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-art reveal">
+          <div class="rift"></div>
+
+          <div class="floating-item floating-paper paper-one">
+            Comparative Essay
+
+            <br><br>
+
+            The symbolism in this novel clearly represents...
+
+            <br><br>
+
+            This sentence was definitely not generated by AI.
+          </div>
+
+          <div class="floating-item floating-paper paper-two">
+            Lesson Plans
+
+            <br><br>
+
+            Monday: Close interdimensional rift.
+
+            <br><br>
+
+            Tuesday: Vocabulary quiz.
+          </div>
+
+          <div class="floating-item sticky-note">
+            Remember:
+
+            <br>
+
+            copies, coffee, cosmic emergency
+          </div>
+
+          <div class="floating-item coffee-cup"></div>
+
+          <div class="floating-item red-pen-floating"></div>
+
+          <div class="warning">
+            RIFT STABILITY: QUESTIONABLE
+
+            <br>
+
+            FACULTY MORALE: LOWER
+
+            <br>
+
+            LESSON PLANS: STILL DUE
+          </div>
+
+          <div class="classroom">
+            <div class="chalkboard">
+              Today’s Objective:
+
+              <br>
+
+              Survive until dismissal.
+            </div>
+
+            <div class="desk desk-one"></div>
+            <div class="desk desk-two"></div>
+            <div class="desk desk-three"></div>
+
+            <div class="school-floor"></div>
+
+            <p class="classroom-caption">
+              ROOM 214 // NORMAL OPERATIONS HAVE BEEN SUSPENDED
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="marquee"
+      aria-label="Book genres"
+    >
+      <div class="marquee-track">
+        <span>COSMIC HORROR</span>
+        <b>✦</b>
+
+        <span>SCIENCE FICTION</span>
+        <b>✦</b>
+
+        <span>TEACHER COMEDY</span>
+        <b>✦</b>
+
+        <span>MYSTERY</span>
+        <b>✦</b>
+
+        <span>SAPPHIC ROMANCE</span>
+        <b>✦</b>
+
+        <span>CHARACTER-DRIVEN DRAMA</span>
+        <b>✦</b>
+
+        <span>COSMIC HORROR</span>
+        <b>✦</b>
+
+        <span>SCIENCE FICTION</span>
+        <b>✦</b>
+
+        <span>TEACHER COMEDY</span>
+        <b>✦</b>
+
+        <span>MYSTERY</span>
+        <b>✦</b>
+
+        <span>SAPPHIC ROMANCE</span>
+        <b>✦</b>
+
+        <span>CHARACTER-DRIVEN DRAMA</span>
+        <b>✦</b>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="book"
+    >
+      <span class="section-label">
+        FEATURED BOOK
+      </span>
+
+      <div class="two-column panel shell">
+        <div class="book-stage reveal">
+          <div class="book-object">
+            <div class="book-cover">
+              <div class="cover-rift"></div>
+              <div class="cover-school"></div>
+
+              <div class="cover-copy">
+                <small>A NOVEL</small>
+
+                <h3>
+                  The English
+                  <br>
+                  Department
+                  <br>
+                  vs. Chaos
+                  <br>
+                  and Nonsense
+                </h3>
+
+                <p>CJ MAYLOCK</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cover-placeholder">
+            Official cover coming soon →
+          </div>
+        </div>
+
+        <div class="book-copy reveal">
+          <p class="section-tag">
+            THE FEATURED NOVEL
+          </p>
+
+          <h2>
+            The English Department
+
+            <br>
+
+            <span>
+              vs. Chaos and Nonsense
+            </span>
+          </h2>
+
+          <p class="body-copy">
+            Sage Lyken is a high school English teacher who thought the worst
+            part of her day was grading essays that were clearly written by AI.
+            That changes when interdimensional rifts begin opening around the
+            school.
+          </p>
+
+          <p class="body-copy">
+            With the help of her two coworkers, Sage must close the rifts,
+            protect her students, uncover what is happening, and somehow still
+            have her lesson plans submitted by Monday morning.
+          </p>
+
+          <div class="genre-list">
+            <span>Cosmic Horror</span>
+            <span>Science Fiction</span>
+            <span>Fantasy</span>
+            <span>Teacher Comedy</span>
+            <span>Mystery</span>
+            <span>Sapphic Romance</span>
+          </div>
+
+          <div class="book-metadata">
+            <div>
+              <span>AUTHOR</span>
+              <strong>CJ Maylock</strong>
+            </div>
+
+            <div>
+              <span>PUBLISHER</span>
+              <strong>Red Fern Press</strong>
+            </div>
+
+            <div>
+              <span>STATUS</span>
+              <strong>Coming Soon</strong>
+            </div>
+
+            <div>
+              <span>TONE</span>
+
+              <strong>
+                Beautiful, cosmic, funny, chaotic, and quietly unsettling
+              </strong>
+            </div>
+          </div>
+
+          <div class="book-actions">
+            <a
+              class="button button-primary"
+              href="#newsletter"
+            >
+              Get Publication Updates
+            </a>
+
+            <span class="excerpt-note">
+              Excerpt coming later
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="about"
+    >
+      <span class="section-label">
+        AUTHOR FILE
+      </span>
+
+      <div class="two-column panel shell">
+        <div class="reveal">
+          <p class="section-tag">
+            ABOUT CJ
+          </p>
+
+          <h2>
+            The ordinary collides with the impossible.
+          </h2>
+
+          <p class="body-copy">
+            CJ Maylock is an Ohio author and educator who writes stories where
+            the ordinary collides with the impossible.
+          </p>
+
+          <p class="body-copy">
+            Inspired by classrooms, cosmic horror, science fiction, and absurd
+            humor, her work explores friendship, identity, and what it means to
+            keep going when the universe itself seems determined to fall apart.
+          </p>
+
+          <p class="body-copy">
+            When she is not writing, CJ teaches students with autism, creates
+            YouTube videos, and laughs at videos of basset hounds.
+          </p>
+
+          <blockquote class="author-quote">
+            “When nonsense is the only thing that makes sense.”
+          </blockquote>
+        </div>
+
+        <div class="author-card reveal">
+  <div class="author-photo">
+    <img src="download.jpg" alt="Author CJ Maylock">
+  </div>
+
+          <div class="author-details">
+            <span>
+              FILE: CJ_MAYLOCK.AUTHOR
+            </span>
+
+            <div>
+              <small>LOCATION</small>
+              <strong>Ohio</strong>
+            </div>
+
+            <div>
+              <small>OCCUPATION</small>
+              <strong>Author and educator</strong>
+            </div>
+
+            <div>
+              <small>WRITES</small>
+
+              <strong>
+                Science fiction, cosmic horror, comedy, and sapphic stories
+              </strong>
+            </div>
+
+            <div>
+              <small>KNOWN DISTRACTION</small>
+              <strong>Basset hound videos</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="section-label">
+        INSIDE THE STORY
+      </span>
+
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-tag">
+              CASE FILES
+            </p>
+
+            <h2>
+              Three problems. One exhausted department.
+            </h2>
+          </div>
+
+          <p class="body-copy">
+            Cosmic-scale danger meets teaching, friendship, identity, mystery,
+            and workplace survival.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="story-card reveal">
+            <div class="card-number">01</div>
+            <div class="card-icon">✦</div>
+
+            <h3>The Rifts</h3>
+
+            <p>
+              Interdimensional openings begin appearing around the school,
+              revealing realities that do not follow recognizable rules.
+            </p>
+
+            <div class="card-note">
+              PLEASE DO NOT TOUCH THE GLOWING VOID
+            </div>
+          </article>
+
+          <article class="story-card reveal">
+            <div class="card-number">02</div>
+            <div class="card-icon">✎</div>
+
+            <h3>The Faculty</h3>
+
+            <p>
+              Sage and her coworkers must confront impossible threats while
+              managing students, paperwork, deadlines, and each other.
+            </p>
+
+            <div class="card-note">
+              STAFF MEETING STILL SCHEDULED
+            </div>
+          </article>
+
+          <article class="story-card reveal">
+            <div class="card-number">03</div>
+            <div class="card-icon">?</div>
+
+            <h3>The Mystery</h3>
+
+            <p>
+              Someone or something is behind the fractures, and the truth may
+              be much larger—and stranger—than the school itself.
+            </p>
+
+            <div class="card-note">
+              REALITY MAY CONTAIN INCONSISTENCIES
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="updates"
+    >
+      <span class="section-label">
+        TRANSMISSIONS
+      </span>
+
+      <div class="updates-grid panel shell">
+        <div class="sticky-column reveal">
+          <p class="section-tag">
+            NEWS AND UPDATES
+          </p>
+
+          <h2>
+            Incoming transmissions.
+          </h2>
+
+          <p class="body-copy">
+            Publication announcements, cover reveals, release information, and
+            event news will appear here.
+          </p>
+        </div>
+
+        <div class="updates-list">
+          <article class="update-card reveal">
+            <div class="update-date">
+              CURRENT STATUS
+            </div>
+
+            <div>
+              <h3>
+                The English Department is coming soon
+              </h3>
+
+              <p>
+                <em>The English Department vs. Chaos and Nonsense</em> is
+                currently listed as coming soon from Red Fern Press. Additional
+                publication details will be shared after they are finalized.
+              </p>
+
+              <span class="status-chip">
+                PUBLICATION UPDATE
+              </span>
+            </div>
+          </article>
+
+          <article class="update-card reveal">
+            <div class="update-date">
+              COVER FILE
+            </div>
+
+            <div>
+              <h3>
+                Official cover reveal ahead
+              </h3>
+
+              <p>
+                The current website uses a custom placeholder cover. The final
+                cover artwork and purchasing information will be added once
+                available.
+              </p>
+
+              <span class="status-chip">
+                COMING LATER
+              </span>
+            </div>
+          </article>
+
+          <article class="update-card reveal">
+            <div class="update-date">
+              TRANSMISSION
+            </div>
+
+            <div>
+              <h3>
+                Newsletter connection pending
+              </h3>
+
+              <p>
+                The signup form is ready to connect to Mailchimp, Substack,
+                MailerLite, Kit, or another newsletter provider.
+              </p>
+
+              <span class="status-chip">
+                SYSTEM NOT YET CONNECTED
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="game"
+    >
+      <span class="section-label">
+        STAFF SURVIVAL SIMULATION
+      </span>
+
+      <div class="panel game-panel shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-tag">
+              INTERACTIVE FACULTY TRAINING
+            </p>
+
+            <h2>
+              Survive until dismissal.
+            </h2>
+          </div>
+
+          <p class="body-copy">
+            Collect useful teaching supplies. Avoid cosmic nonsense. The
+            district has not approved additional planning time.
+          </p>
+        </div>
+
+        <div class="game-layout">
+          <div class="game-instructions reveal">
+            <h3>
+              How to Play
+            </h3>
+
+            <p>
+              Objects will appear around the classroom. Click the useful
+              teacher items to earn points. Do not click the rifts, cursed
+              paperwork, or suspicious AI essays.
+            </p>
+
+            <div class="game-legend">
+              <div class="legend-item">
+                <span class="legend-symbol">☕</span>
+
+                <span>
+                  Coffee restores approximately three minutes of hope.
+                </span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-symbol">🖊️</span>
+
+                <span>
+                  Red pens maintain the illusion of academic control.
+                </span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-symbol">📚</span>
+
+                <span>
+                  Books are generally safer than interdimensional portals.
+                </span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-symbol">🌀</span>
+
+                <span>
+                  Clicking a rift is discouraged by the employee handbook.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="game-area reveal"
+            id="game-area"
+          >
+            <div class="game-blackboard">
+              Today’s Objective:
+
+              <br>
+
+              Make it to dismissal without ending reality.
+            </div>
+
+            <div class="game-hud">
+              <div class="hud-item">
+                <small>SCORE</small>
+                <strong id="game-score">0</strong>
+              </div>
+
+              <div class="hud-item">
+                <small>ROUND</small>
+                <strong id="game-round">0 / 10</strong>
+              </div>
+
+              <div class="hud-item">
+                <small>FACULTY MORALE</small>
+                <strong id="game-morale">STABLE</strong>
+              </div>
+            </div>
+
+            <div
+              class="game-start-screen"
+              id="game-start-screen"
+            >
+              <div class="game-modal">
+                <div class="game-modal-icon">🏫</div>
+
+                <h3>
+                  Mandatory Faculty Training
+                </h3>
+
+                <p>
+                  The English Department is experiencing a minor cosmic
+                  emergency. Collect the supplies you need and avoid anything
+                  that threatens reality—or requires another meeting.
+                </p>
+
+                <button
+                  class="button button-primary"
+                  id="start-game-button"
+                  type="button"
+                >
+                  Begin the School Day
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="game-result-screen"
+              id="game-result-screen"
+            >
+              <div class="game-modal">
+                <div
+                  class="game-modal-icon"
+                  id="result-icon"
+                >
+                  🎉
+                </div>
+
+                <h3 id="result-title">
+                  Dismissal Achieved
+                </h3>
+
+                <p
+                  class="game-result-score"
+                  id="result-score"
+                ></p>
+
+                <p id="result-message"></p>
+
+                <div class="game-buttons">
+                  <button
+                    class="button button-secondary"
+                    id="restart-game-button"
+                    type="button"
+                  >
+                    Try Again
+                  </button>
+
+                  <!-- Replace # with the real purchase link when available. -->
+                  <a
+                    class="button button-primary"
+                    href="#book"
+                  >
+                    Go Buy the Book
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="section-label">
+        FUTURE FILES
+      </span>
+
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-tag">
+              WHAT COMES NEXT
+            </p>
+
+            <h2>
+              Reserved for future announcements.
+            </h2>
+          </div>
+
+          <p class="body-copy">
+            These areas can be updated when CJ is ready to announce projects,
+            appearances, or press materials.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="future-card reveal">
+            <div class="card-number">
+              UPCOMING PROJECTS
+            </div>
+
+            <h3>
+              Classified for now
+            </h3>
+
+            <p>
+              New books and projects can be added here whenever CJ is ready to
+              announce them.
+            </p>
+
+            <div class="card-note">
+              NO ADDITIONAL PROJECTS ANNOUNCED
+            </div>
+          </article>
+
+          <article class="future-card reveal">
+            <div class="card-number">
+              EVENTS
+            </div>
+
+            <h3>
+              Appearances coming later
+            </h3>
+
+            <p>
+              Readings, signings, panels, school visits, and virtual events can
+              be listed here.
+            </p>
+
+            <div class="card-note">
+              NO EVENTS CURRENTLY SCHEDULED
+            </div>
+          </article>
+
+          <article class="future-card reveal">
+            <div class="card-number">
+              MEDIA KIT
+            </div>
+
+            <h3>
+              Press materials pending
+            </h3>
+
+            <p>
+              A biography, professional photograph, book cover, press release,
+              and downloadable media kit can be added later.
+            </p>
+
+            <div class="card-note">
+              MEDIA FILES COMING SOON
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="faq"
+    >
+      <span class="section-label">
+        ARCHIVE QUESTIONS
+      </span>
+
+      <div class="faq-grid panel shell">
+        <div class="sticky-column reveal">
+          <p class="section-tag">
+            FREQUENTLY ASKED QUESTIONS
+          </p>
+
+          <h2>
+            Before entering the rift.
+          </h2>
+
+          <p class="body-copy">
+            Answers about the book, its genres, publication status, and future
+            updates.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>What is the book about?</span>
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                The novel follows high school English teacher Sage Lyken as
+                interdimensional rifts begin opening around her school. Sage and
+                her two coworkers must close the rifts, protect their students,
+                and uncover the mystery behind them while surviving the
+                ordinary demands of teaching.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>What genre is the book?</span>
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                It combines science fiction, fantasy, cosmic horror, teacher
+                and workplace comedy, mystery, character-driven drama, and
+                sapphic romance.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>Is it frightening?</span>
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                The horror is cosmic, eerie, and strange rather than focused on
+                gore or jump scares. The book balances unsettling ideas with
+                absurd humor and emotional relationships.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>Who is publishing the novel?</span>
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                The novel is currently listed as coming soon from Red Fern
+                Press. Final publication information will be announced when all
+                details are confirmed.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>When will the book be released?</span>
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                An official release date has not yet been announced. Readers
+                can follow CJ on social media or join the future newsletter
+                list for updates.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>Will an excerpt be available?</span>
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                An excerpt may be added later once CJ and the publisher are
+                ready to share it.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="newsletter"
+    >
+      <span class="section-label">
+        NEWSLETTER
+      </span>
+
+      <div class="newsletter-panel shell reveal">
+        <div>
+          <p class="section-tag">
+            RECEIVE TRANSMISSIONS
+          </p>
+
+          <h2>
+            Updates from the English Department.
+          </h2>
+
+          <p class="body-copy">
+            Publication news, cover reveals, release announcements, events, and
+            occasional reports from realities that probably should not exist.
+          </p>
+        </div>
+
+        <form
+          class="newsletter-form"
+          id="newsletter-form"
+        >
+          <label for="email">
+            Enter your email address
+          </label>
+
+          <div class="newsletter-row">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@earth.net"
+              required
+            >
+
+            <button
+              class="button button-primary"
+              type="submit"
+            >
+              Join the Signal
+            </button>
+          </div>
+
+          <p class="form-note">
+            This is currently a demonstration form. Connect it to a newsletter
+            provider before publishing.
+          </p>
+
+          <p
+            class="form-message"
+            id="form-message"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="contact"
+    >
+      <span class="section-label">
+        OPEN CHANNEL
+      </span>
+
+      <div class="contact-grid panel shell">
+        <div class="reveal">
+          <p class="section-tag">
+            CONTACT CJ
+          </p>
+
+          <h2>
+            Contact CJ before reality closes again.
+          </h2>
+
+          <p class="body-copy">
+            For interviews, events, publication inquiries, media requests, or
+            other professional communication.
+          </p>
+
+          <a
+            class="contact-email"
+            href="mailto:cjmaylock@gmail.com"
+          >
+            cjmaylock@gmail.com ↗
+          </a>
+
+          <div class="social-grid">
+            <a
+              class="social-link"
+              href="https://www.tiktok.com/@cj.maylock"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>TikTok</span>
+              <span>↗</span>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://www.youtube.com/@CJMaylock/videos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>YouTube</span>
+              <span>↗</span>
+            </a>
+
+            <!-- Replace # with the Instagram link later. -->
+            <a
+              class="social-link"
+              href="#"
+            >
+              <span>Instagram</span>
+              <span>Coming Soon</span>
+            </a>
+
+            <a
+              class="social-link"
+              href="mailto:cjmaylock@gmail.com"
+            >
+              <span>Email</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-visual reveal">
+          <div class="contact-message">
+            INBOX STATUS: OPEN
+
+            <br>
+
+            RIFT STATUS: MOSTLY CLOSED
+
+            <br>
+
+            EMAIL RESPONSE: PROBABLY FASTER THAN DISTRICT IT
+          </div>
+
+          <div class="contact-laptop"></div>
+          <div class="contact-papers"></div>
+          <div class="contact-coffee"></div>
+          <div class="contact-desk"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid shell">
+      <div>
+        <a
+          class="logo"
+          href="#home"
+        >
+          <span class="logo-mark">✦</span>
+          <span>CJ MAYLOCK</span>
+        </a>
+
+        <p>
+          Science fiction. Cosmic horror. Teacher comedy. Sapphic stories.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About CJ</a>
+        <a href="#book">Featured Book</a>
+        <a href="#updates">Updates</a>
+        <a href="#game">Play the Game</a>
+        <a href="#faq">FAQ</a>
+        <a href="#newsletter">Newsletter</a>
+      </div>
+
+      <div class="footer-socials">
+        <a
+          href="https://www.tiktok.com/@cj.maylock"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
+          TT
+        </a>
+
+        <a
+          href="https://www.youtube.com/@CJMaylock/videos"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
+          YT
+        </a>
+
+        <a
+          href="#"
+          aria-label="Instagram coming soon"
+        >
+          IG
+        </a>
+
+        <a
+          href="mailto:cjmaylock@gmail.com"
+          aria-label="Email CJ Maylock"
+        >
+          @
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom shell">
+      <span>
+        © <span id="current-year"></span> CJ Maylock
+      </span>
+
+      <span>
+        When nonsense is the only thing that makes sense.
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      =========================================================
+      ANIMATED STARFIELD
+      =========================================================
+    */
+
+    const canvas =
+      document.getElementById("starfield");
+
+    const context =
+      canvas.getContext("2d");
+
+    let stars = [];
+    let screenWidth = 0;
+    let screenHeight = 0;
+
+    function resizeStarfield() {
+      screenWidth =
+        window.innerWidth;
+
+      screenHeight =
+        window.innerHeight;
+
+      canvas.width =
+        screenWidth;
+
+      canvas.height =
+        screenHeight;
+
+      const starCount =
+        Math.min(
+          220,
+          Math.floor(
+            (
+              screenWidth *
+              screenHeight
+            ) / 7000
+          )
+        );
+
+      stars =
+        Array.from(
+          { length: starCount },
+          () => ({
+            x:
+              Math.random() *
+              screenWidth,
+
+            y:
+              Math.random() *
+              screenHeight,
+
+            radius:
+              Math.random() *
+              1.5 +
+              0.25,
+
+            opacity:
+              Math.random() *
+              0.7 +
+              0.2,
+
+            speed:
+              Math.random() *
+              0.16 +
+              0.03
+          })
+        );
+    }
+
+    function drawStarfield() {
+      context.clearRect(
+        0,
+        0,
+        screenWidth,
+        screenHeight
+      );
+
+      stars.forEach(
+        (star) => {
+          star.y += star.speed;
+
+          if (
+            star.y >
+            screenHeight + 4
+          ) {
+            star.y = -4;
+
+            star.x =
+              Math.random() *
+              screenWidth;
+          }
+
+          context.beginPath();
+
+          context.fillStyle =
+            `rgba(
+              255,
+              255,
+              255,
+              ${star.opacity}
+            )`;
+
+          context.arc(
+            star.x,
+            star.y,
+            star.radius,
+            0,
+            Math.PI * 2
+          );
+
+          context.fill();
+        }
+      );
+
+      requestAnimationFrame(
+        drawStarfield
+      );
+    }
+
+    window.addEventListener(
+      "resize",
+      resizeStarfield
+    );
+
+    resizeStarfield();
+    drawStarfield();
+
+    /*
+      =========================================================
+      NAVIGATION
+      =========================================================
+    */
+
+    const header =
+      document.querySelector(
+        ".site-header"
+      );
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        header.classList.toggle(
+          "scrolled",
+          window.scrollY > 20
+        );
+      }
+    );
+
+    const menuButton =
+      document.querySelector(
+        ".menu-toggle"
+      );
+
+    const navigationLinks =
+      document.querySelector(
+        ".navigation-links"
+      );
+
+    menuButton.addEventListener(
+      "click",
+      () => {
+        const menuIsOpen =
+          menuButton.getAttribute(
+            "aria-expanded"
+          ) === "true";
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          String(!menuIsOpen)
+        );
+
+        navigationLinks.classList.toggle(
+          "open"
+        );
+
+        document.body.classList.toggle(
+          "menu-open"
+        );
+      }
+    );
+
+    document
+      .querySelectorAll(
+        ".navigation-links a"
+      )
+      .forEach(
+        (link) => {
+          link.addEventListener(
+            "click",
+            () => {
+              navigationLinks.classList.remove(
+                "open"
+              );
+
+              document.body.classList.remove(
+                "menu-open"
+              );
+
+              menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+            }
+          );
+        }
+      );
+
+    /*
+      =========================================================
+      SCROLL REVEALS
+      =========================================================
+    */
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach(
+            (entry) => {
+              if (
+                entry.isIntersecting
+              ) {
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                revealObserver.unobserve(
+                  entry.target
+                );
+              }
+            }
+          );
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(
+        (element) => {
+          revealObserver.observe(
+            element
+          );
+        }
+      );
+
+    /*
+      =========================================================
+      FAQ
+      =========================================================
+    */
+
+    const faqItems =
+      document.querySelectorAll(
+        ".faq-item"
+      );
+
+    faqItems.forEach(
+      (faqItem) => {
+        const questionButton =
+          faqItem.querySelector(
+            ".faq-question"
+          );
+
+        questionButton.addEventListener(
+          "click",
+          () => {
+            const itemWasOpen =
+              faqItem.classList.contains(
+                "open"
+              );
+
+            faqItems.forEach(
+              (otherItem) => {
+                otherItem.classList.remove(
+                  "open"
+                );
+
+                otherItem.querySelector(
+                  ".faq-question span:last-child"
+                ).textContent = "+";
+              }
+            );
+
+            if (!itemWasOpen) {
+              faqItem.classList.add(
+                "open"
+              );
+
+              questionButton.querySelector(
+                "span:last-child"
+              ).textContent = "−";
+            }
+          }
+        );
+      }
+    );
+
+    /*
+      =========================================================
+      NEWSLETTER PLACEHOLDER
+      =========================================================
+    */
+
+    const newsletterForm =
+      document.getElementById(
+        "newsletter-form"
+      );
+
+    const formMessage =
+      document.getElementById(
+        "form-message"
+      );
+
+    newsletterForm.addEventListener(
+      "submit",
+      (event) => {
+        event.preventDefault();
+
+        formMessage.textContent =
+          "Signal received. Connect this form to a newsletter service before the website launches.";
+
+        newsletterForm.reset();
+      }
+    );
+
+    /*
+      =========================================================
+      STAFF SURVIVAL MINI-GAME
+      =========================================================
+    */
+
+    const gameArea =
+      document.getElementById(
+        "game-area"
+      );
+
+    const startScreen =
+      document.getElementById(
+        "game-start-screen"
+      );
+
+    const resultScreen =
+      document.getElementById(
+        "game-result-screen"
+      );
+
+    const startButton =
+      document.getElementById(
+        "start-game-button"
+      );
+
+    const restartButton =
+      document.getElementById(
+        "restart-game-button"
+      );
+
+    const scoreDisplay =
+      document.getElementById(
+        "game-score"
+      );
+
+    const roundDisplay =
+      document.getElementById(
+        "game-round"
+      );
+
+    const moraleDisplay =
+      document.getElementById(
+        "game-morale"
+      );
+
+    const resultTitle =
+      document.getElementById(
+        "result-title"
+      );
+
+    const resultScore =
+      document.getElementById(
+        "result-score"
+      );
+
+    const resultMessage =
+      document.getElementById(
+        "result-message"
+      );
+
+    const resultIcon =
+      document.getElementById(
+        "result-icon"
+      );
+
+    const gameObjects = [
+      {
+        symbol: "☕",
+        name: "Coffee",
+        type: "good",
+        points: 2
+      },
+      {
+        symbol: "🖊️",
+        name: "Red Pen",
+        type: "good",
+        points: 2
+      },
+      {
+        symbol: "📚",
+        name: "Books",
+        type: "good",
+        points: 2
+      },
+      {
+        symbol: "📋",
+        name: "Completed Lesson Plans",
+        type: "good",
+        points: 3
+      },
+      {
+        symbol: "🔔",
+        name: "Dismissal Bell",
+        type: "good",
+        points: 3
+      },
+      {
+        symbol: "🌀",
+        name: "Interdimensional Rift",
+        type: "bad",
+        points: -3
+      },
+      {
+        symbol: "🤖",
+        name: "Suspicious AI Essay",
+        type: "bad",
+        points: -2
+      },
+      {
+        symbol: "📑",
+        name: "Unnecessary Meeting Agenda",
+        type: "bad",
+        points: -2
+      },
+      {
+        symbol: "🕳️",
+        name: "Unidentified Cosmic Hole",
+        type: "bad",
+        points: -3
+      },
+      {
+        symbol: "📧",
+        name: "Reply-All Email",
+        type: "bad",
+        points: -2
+      }
+    ];
+
+    let gameScore = 0;
+    let gameRound = 0;
+    let gameActive = false;
+    let objectTimeout;
+
+    function updateGameHud() {
+      scoreDisplay.textContent =
+        gameScore;
+
+      roundDisplay.textContent =
+        `${gameRound} / 10`;
+
+      if (gameScore >= 10) {
+        moraleDisplay.textContent =
+          "SUSPICIOUSLY HIGH";
+      } else if (gameScore >= 4) {
+        moraleDisplay.textContent =
+          "STABLE";
+      } else if (gameScore >= 0) {
+        moraleDisplay.textContent =
+          "FRAGILE";
+      } else {
+        moraleDisplay.textContent =
+          "FACULTY MEETING";
+      }
+    }
+
+    function removeCurrentGameObject() {
+      const currentObject =
+        gameArea.querySelector(
+          ".game-object"
+        );
+
+      if (currentObject) {
+        currentObject.remove();
+      }
+    }
+
+    function createGameObject() {
+      if (!gameActive) {
+        return;
+      }
+
+      removeCurrentGameObject();
+
+      if (gameRound >= 10) {
+        finishGame();
+        return;
+      }
+
+      gameRound += 1;
+      updateGameHud();
+
+      const objectData =
+        gameObjects[
+          Math.floor(
+            Math.random() *
+            gameObjects.length
+          )
+        ];
+
+      const objectButton =
+        document.createElement(
+          "button"
+        );
+
+      objectButton.type =
+        "button";
+
+      objectButton.className =
+        `game-object ${objectData.type}`;
+
+      objectButton.textContent =
+        objectData.symbol;
+
+      objectButton.setAttribute(
+        "aria-label",
+        objectData.name
+      );
+
+      const objectSize = 70;
+
+      const minimumTop = 120;
+      const maximumTop =
+        Math.max(
+          minimumTop,
+          gameArea.clientHeight -
+          190
+        );
+
+      const maximumLeft =
+        Math.max(
+          10,
+          gameArea.clientWidth -
+          objectSize -
+          18
+        );
+
+      const randomLeft =
+        Math.floor(
+          Math.random() *
+          maximumLeft
+        ) + 8;
+
+      const randomTop =
+        Math.floor(
+          Math.random() *
+          (
+            maximumTop -
+            minimumTop +
+            1
+          )
+        ) +
+        minimumTop;
+
+      objectButton.style.left =
+        `${randomLeft}px`;
+
+      objectButton.style.top =
+        `${randomTop}px`;
+
+      objectButton.addEventListener(
+        "click",
+        () => {
+          if (!gameActive) {
+            return;
+          }
+
+          clearTimeout(
+            objectTimeout
+          );
+
+          gameScore +=
+            objectData.points;
+
+          updateGameHud();
+
+          objectButton.remove();
+
+          setTimeout(
+            createGameObject,
+            220
+          );
+        }
+      );
+
+      gameArea.appendChild(
+        objectButton
+      );
+
+      objectTimeout =
+        setTimeout(
+          () => {
+            objectButton.remove();
+
+            if (
+              objectData.type ===
+              "good"
+            ) {
+              gameScore -= 1;
+            }
+
+            updateGameHud();
+
+            createGameObject();
+          },
+          1350
+        );
+    }
+
+    function startGame() {
+      clearTimeout(
+        objectTimeout
+      );
+
+      removeCurrentGameObject();
+
+      gameScore = 0;
+      gameRound = 0;
+      gameActive = true;
+
+      startScreen.style.display =
+        "none";
+
+      resultScreen.style.display =
+        "none";
+
+      updateGameHud();
+
+      setTimeout(
+        createGameObject,
+        350
+      );
+    }
+
+    function finishGame() {
+      gameActive = false;
+
+      clearTimeout(
+        objectTimeout
+      );
+
+      removeCurrentGameObject();
+
+      resultScreen.style.display =
+        "grid";
+
+      resultScore.textContent =
+        `Final faculty survival score: ${gameScore}`;
+
+      if (gameScore >= 14) {
+        resultIcon.textContent =
+          "🏆";
+
+        resultTitle.textContent =
+          "Teacher of the Multiverse";
+
+        resultMessage.textContent =
+          "You collected the supplies, avoided the rifts, completed the paperwork, and somehow protected reality. Unfortunately, your reward is another duty assignment. You should probably go buy the book instead.";
+      } else if (gameScore >= 7) {
+        resultIcon.textContent =
+          "🎉";
+
+        resultTitle.textContent =
+          "Dismissal Achieved";
+
+        resultMessage.textContent =
+          "You survived the school day with most of reality intact. That is well above district expectations. Your next professional responsibility is to go buy the book.";
+      } else if (gameScore >= 0) {
+        resultIcon.textContent =
+          "☕";
+
+        resultTitle.textContent =
+          "Technically Still Employed";
+
+        resultMessage.textContent =
+          "The rifts remain open, the coffee is cold, and someone scheduled a meeting during planning. The only reasonable response is to go buy the book.";
+      } else {
+        resultIcon.textContent =
+          "🌀";
+
+        resultTitle.textContent =
+          "Reality Has Been Cancelled";
+
+        resultMessage.textContent =
+          "You clicked too many cosmic threats and reply-all emails. School is closed indefinitely. Please use your unexpected free time to go buy the book.";
+      }
+    }
+
+    startButton.addEventListener(
+      "click",
+      startGame
+    );
+
+    restartButton.addEventListener(
+      "click",
+      startGame
+    );
+
+    /*
+      =========================================================
+      CURRENT YEAR
+      =========================================================
+    */
+
+    document.getElementById(
+      "current-year"
+    ).textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
