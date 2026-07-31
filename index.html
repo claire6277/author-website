@@ -669,6 +669,156 @@
       font-size: 0.9rem;
     }
 
+
+    /* Larger decorative discoveries */
+    .secret-icon {
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    .secret-owl {
+      top: 36px;
+      right: 36px;
+      width: 54px;
+      height: 54px;
+      font-size: 1.65rem;
+      opacity: 0.7;
+    }
+
+    .secret-coffee {
+      right: 28px;
+      bottom: 30px;
+      width: 58px;
+      height: 58px;
+      font-size: 1.8rem;
+      opacity: 0.8;
+    }
+
+    .secret-rift {
+      right: 24px;
+      bottom: 24px;
+      width: 58px;
+      height: 58px;
+      color: rgba(255, 255, 255, 0.34);
+      font-size: 1.55rem;
+      opacity: 0.68;
+    }
+
+    .character-note {
+      position: absolute;
+      z-index: 14;
+      width: min(190px, 42%);
+      padding: 0.9rem;
+      border: 0;
+      color: #252a32;
+      background: #efe5d4;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.96rem;
+      line-height: 1.25;
+      text-align: left;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .character-note:hover {
+      transform: rotate(0deg) translateY(-4px) !important;
+      box-shadow: 0 24px 42px rgba(0, 0, 0, 0.32);
+    }
+
+    .courtney-note {
+      top: 128px;
+      left: 28px;
+      transform: rotate(-4deg);
+    }
+
+    .sage-note {
+      top: 265px;
+      right: 26px;
+      transform: rotate(4deg);
+      background: #dfe7e2;
+    }
+
+    .light-flicker {
+      animation: site-flicker 0.78s steps(2, end);
+    }
+
+    @keyframes site-flicker {
+      0%, 100% { filter: brightness(1); }
+      12% { filter: brightness(0.2); }
+      22% { filter: brightness(1.18); }
+      33% { filter: brightness(0.35); }
+      48% { filter: brightness(1.08); }
+      62% { filter: brightness(0.58); }
+      78% { filter: brightness(1.14); }
+    }
+
+    .chalkboard.changed {
+      color: #f2e4cc;
+      text-shadow: 0 0 12px rgba(242, 228, 204, 0.35);
+    }
+
+    body.nathan-cursor,
+    body.nathan-cursor * {
+      cursor: crosshair !important;
+    }
+
+    .cursor-message {
+      position: fixed;
+      left: 50%;
+      top: 20px;
+      z-index: 3300;
+      transform: translate(-50%, -140%);
+      opacity: 0;
+      padding: 0.72rem 0.95rem;
+      border: 1px solid var(--line-light);
+      color: var(--white);
+      background: rgba(9, 14, 21, 0.94);
+      font-family: "DM Mono", monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .cursor-message.visible {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    /* Softer flashlight on pale sections */
+    .book-section .flashlight-softener,
+    .author-section .flashlight-softener,
+    .contact-section .flashlight-softener {
+      display: none;
+    }
+
+    body.light-section .flashlight-layer {
+      opacity: 0.45;
+    }
+
+    @media (max-width: 600px) {
+      .courtney-note,
+      .sage-note {
+        width: 150px;
+        font-size: 0.8rem;
+      }
+
+      .courtney-note {
+        top: 120px;
+        left: 12px;
+      }
+
+      .sage-note {
+        top: 290px;
+        right: 12px;
+      }
+    }
+
     /* Book */
     .book-section {
       background:
@@ -1741,6 +1891,26 @@
           <div class="rift"></div>
 
           <button
+            class="character-note courtney-note"
+            type="button"
+            id="courtney-note"
+          >
+            Can we please have one emergency where somebody explains the procedure first?
+            <br><br>
+            — Courtney
+          </button>
+
+          <button
+            class="character-note sage-note"
+            type="button"
+            id="sage-note"
+          >
+            If this turns into another staff meeting, I’m walking into the rift.
+            <br><br>
+            — Sage
+          </button>
+
+          <button
             class="secret-icon secret-owl"
             type="button"
             data-secret="owl"
@@ -1750,7 +1920,7 @@
           </button>
 
           <div class="classroom">
-            <div class="chalkboard">
+            <div class="chalkboard" id="chalkboard" role="button" tabindex="0" aria-label="Classroom chalkboard">
               Today’s Objective:
               <br>
               Survive until dismissal.
@@ -1950,7 +2120,7 @@
             <button
               class="secret-icon secret-coffee"
               type="button"
-              data-secret="coffee"
+              id="nathan-coffee"
               aria-label="Coffee mug"
             >
               ☕
@@ -2118,7 +2288,7 @@
           <button
             class="secret-icon secret-rift"
             type="button"
-            data-secret="rift"
+            id="contact-rift"
             aria-label="Small rift symbol"
           >
             ◌
@@ -2172,6 +2342,11 @@
       <span>Failure to document an event does not prevent it from occurring.</span>
     </div>
   </footer>
+
+
+  <div class="cursor-message" id="cursor-message">
+    Nathan says this counts as hydration.
+  </div>
 
   <div class="secret-message" id="secret-message">
     <div class="secret-card">
@@ -2281,24 +2456,6 @@
         title: "How did you find this?",
         text:
           "This material was not approved for civilian access. The owl has three eyes for a reason."
-      },
-
-      coffee: {
-        title: "The coffee is still warm.",
-        text:
-          "Nobody remembers making it. Nobody is willing to stop drinking it."
-      },
-
-      rift: {
-        title: "The building is closed.",
-        text:
-          "The second bell does not indicate dismissal."
-      },
-
-      book: {
-        title: "This sentence was not in the manuscript.",
-        text:
-          "It appeared after the book was closed. Please do not read it twice."
       }
     };
 
@@ -2309,14 +2466,7 @@
 
     document.querySelectorAll("[data-secret]").forEach((element) => {
       element.addEventListener("click", () => {
-        const key = element.dataset.secret;
-
-        if (key === "rift") {
-          window.location.href = "after-dismissal.html";
-          return;
-        }
-
-        const secret = secretMessages[key];
+        const secret = secretMessages[element.dataset.secret];
         if (!secret) return;
 
         secretTitle.textContent = secret.title;
@@ -2332,6 +2482,110 @@
     secretMessage.addEventListener("click", (event) => {
       if (event.target === secretMessage) {
         secretMessage.classList.remove("open");
+      }
+    });
+
+    /* Courtney changes the chalkboard */
+    const chalkboard = document.getElementById("chalkboard");
+    const courtneyNote = document.getElementById("courtney-note");
+    const originalChalkboard =
+      "Today’s Objective:<br>Survive until dismissal.";
+    let chalkboardTimer;
+    let chalkboardClicks = 0;
+    let chalkboardClickTimer;
+
+    function temporarilyChangeChalkboard(message, duration = 4200) {
+      clearTimeout(chalkboardTimer);
+      chalkboard.innerHTML = message;
+      chalkboard.classList.add("changed");
+
+      chalkboardTimer = setTimeout(() => {
+        chalkboard.innerHTML = originalChalkboard;
+        chalkboard.classList.remove("changed");
+      }, duration);
+    }
+
+    courtneyNote.addEventListener("click", () => {
+      temporarilyChangeChalkboard(
+        "Today’s Procedure:<br>1. Identify the problem.<br>2. Ask why nobody documented it."
+      );
+    });
+
+    /* Sage flickers the entire site */
+    const sageNote = document.getElementById("sage-note");
+
+    sageNote.addEventListener("click", () => {
+      document.documentElement.classList.remove("light-flicker");
+      void document.documentElement.offsetWidth;
+      document.documentElement.classList.add("light-flicker");
+
+      setTimeout(() => {
+        document.documentElement.classList.remove("light-flicker");
+      }, 900);
+
+      temporarilyChangeChalkboard(
+        "Today’s Objective:<br>Do not schedule a meeting about this.",
+        3600
+      );
+    });
+
+    /* Nathan changes the cursor briefly */
+    const nathanCoffee = document.getElementById("nathan-coffee");
+    const cursorMessage = document.getElementById("cursor-message");
+    let cursorTimer;
+
+    nathanCoffee.addEventListener("click", () => {
+      clearTimeout(cursorTimer);
+      document.body.classList.add("nathan-cursor");
+      cursorMessage.classList.add("visible");
+
+      cursorTimer = setTimeout(() => {
+        document.body.classList.remove("nathan-cursor");
+        cursorMessage.classList.remove("visible");
+      }, 5000);
+    });
+
+    /* Contact seal opens the hidden page */
+    const contactRift = document.getElementById("contact-rift");
+
+    contactRift.addEventListener("click", () => {
+      window.location.href = "after-dismissal.html";
+    });
+
+    /* Click the chalkboard three times */
+    function registerChalkboardClick() {
+      chalkboardClicks += 1;
+      clearTimeout(chalkboardClickTimer);
+
+      if (chalkboardClicks >= 3) {
+        chalkboardClicks = 0;
+        document.documentElement.classList.remove("light-flicker");
+        void document.documentElement.offsetWidth;
+        document.documentElement.classList.add("light-flicker");
+
+        temporarilyChangeChalkboard(
+          "Today’s Objective:<br>Pretend this is normal.",
+          5000
+        );
+
+        setTimeout(() => {
+          document.documentElement.classList.remove("light-flicker");
+        }, 900);
+
+        return;
+      }
+
+      chalkboardClickTimer = setTimeout(() => {
+        chalkboardClicks = 0;
+      }, 1200);
+    }
+
+    chalkboard.addEventListener("click", registerChalkboardClick);
+
+    chalkboard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        registerChalkboardClick();
       }
     });
 
