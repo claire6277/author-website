@@ -9,7 +9,7 @@
     content="Official author website for CJ Maylock, author of The English Department vs. Chaos and Nonsense."
   >
 
-  <meta name="theme-color" content="#111722">
+  <meta name="theme-color" content="#0b1017">
 
   <title>CJ Maylock | Author</title>
 
@@ -17,28 +17,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
   <style>
     :root {
-      --ink: #111722;
-      --ink-soft: #1a2230;
-      --paper: #f4f0e8;
-      --paper-deep: #e7dfd1;
-      --white: #fffdf9;
-      --text: #1c2430;
-      --muted: #67717f;
-      --line: rgba(17, 23, 34, 0.16);
-      --line-light: rgba(255, 255, 255, 0.16);
-      --gold: #b89a63;
-      --gold-dark: #8d7040;
-      --plum: #55415f;
-      --blue: #304963;
-      --sage: #66766b;
-      --danger: #8a4650;
-      --shadow: 0 28px 70px rgba(13, 19, 29, 0.14);
+      --ink: #0b1017;
+      --ink-soft: #151f2b;
+      --paper: #f1eadf;
+      --paper-deep: #e5dbcc;
+      --white: #fffdf8;
+      --text: #1d2530;
+      --muted: #6b7480;
+      --line: rgba(11, 16, 23, 0.16);
+      --line-light: rgba(255, 255, 255, 0.14);
+      --gold: #c0a16b;
+      --gold-dark: #8b6c3d;
+      --plum: #65506a;
+      --green: #829688;
+      --shadow: 0 30px 85px rgba(0, 0, 0, 0.2);
       --radius: 18px;
       --max-width: 1160px;
       --header-height: 74px;
@@ -58,9 +56,10 @@
       color: var(--text);
       background: var(--paper);
       font-family: "DM Sans", sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
+    body.booting,
     body.menu-open {
       overflow: hidden;
     }
@@ -84,16 +83,26 @@
     }
 
     .shell {
-      width: min(calc(100% - 2.4rem), var(--max-width));
+      width: min(calc(100% - 2.2rem), var(--max-width));
       margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(5.2rem, 8vw, 8.5rem) 0;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--line);
     }
 
     .eyebrow {
       margin: 0 0 0.8rem;
       color: var(--gold-dark);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-family: "DM Mono", monospace;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
@@ -102,51 +111,34 @@
     h3 {
       margin: 0;
       font-family: "Cormorant Garamond", serif;
-      line-height: 0.98;
       letter-spacing: -0.025em;
     }
 
     h1 {
       font-size: clamp(4rem, 8vw, 7.4rem);
+      line-height: 0.9;
       font-weight: 600;
     }
 
     h2 {
-      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-size: clamp(2.9rem, 5vw, 5rem);
+      line-height: 0.96;
       font-weight: 600;
     }
 
     h3 {
-      font-size: 1.8rem;
+      font-size: 1.85rem;
+      line-height: 1.05;
       font-weight: 600;
-    }
-
-    p {
-      margin-top: 0;
     }
 
     .body-copy {
       color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    .section {
-      position: relative;
-      padding: clamp(5rem, 8vw, 8.5rem) 0;
-    }
-
-    .section + .section {
-      border-top: 1px solid var(--line);
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 2.5rem;
+      line-height: 1.78;
     }
 
     .button {
-      min-height: 48px;
+      min-height: 49px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -154,7 +146,7 @@
       padding: 0.82rem 1.18rem;
       border: 1px solid transparent;
       border-radius: 999px;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
@@ -179,25 +171,168 @@
     }
 
     .button-secondary {
-      border-color: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.28);
       color: var(--white);
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .button-secondary:hover {
       border-color: var(--gold);
-      color: #f2dfb8;
+      color: #ecdcb9;
     }
 
-    .button-light {
+    .button-paper {
       border-color: var(--line);
       color: var(--text);
       background: transparent;
     }
 
-    .button-light:hover {
+    .button-paper:hover {
       border-color: var(--gold-dark);
       color: var(--gold-dark);
+    }
+
+    /* Entry screen */
+    .boot-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      display: grid;
+      place-items: center;
+      padding: 1.2rem;
+      color: var(--white);
+      background:
+        radial-gradient(circle at center, rgba(70, 100, 125, 0.14), transparent 42%),
+        #070b10;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .boot-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .boot-card {
+      width: min(100%, 700px);
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      border: 1px solid var(--line-light);
+      background: rgba(255, 255, 255, 0.025);
+      box-shadow: var(--shadow);
+    }
+
+    .boot-seal {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.1rem;
+    }
+
+    .boot-card h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 0.95;
+    }
+
+    .boot-copy {
+      margin: 1.2rem 0 0;
+      color: rgba(255, 255, 255, 0.58);
+      font-family: "DM Mono", monospace;
+      font-size: 0.78rem;
+      line-height: 1.8;
+    }
+
+    .boot-progress {
+      height: 2px;
+      margin-top: 1.5rem;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .boot-progress span {
+      width: 0;
+      height: 100%;
+      display: block;
+      background: var(--gold);
+      animation: boot-load 2s ease forwards;
+    }
+
+    @keyframes boot-load {
+      to { width: 100%; }
+    }
+
+    .boot-actions {
+      display: none;
+      margin-top: 1.35rem;
+    }
+
+    .boot-actions.visible {
+      display: flex;
+    }
+
+    /* Flashlight */
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      opacity: 0.017;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.22) 0 1px,
+          transparent 1px 4px
+        );
+    }
+
+    .flashlight-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 3990;
+      pointer-events: none;
+      opacity: 0;
+      background:
+        radial-gradient(
+          circle 205px at var(--flashlight-x, 50%) var(--flashlight-y, 50%),
+          rgba(255, 247, 226, 0.14) 0%,
+          rgba(255, 235, 194, 0.06) 28%,
+          rgba(0, 0, 0, 0.18) 64%,
+          rgba(0, 0, 0, 0.42) 100%
+        );
+      transition: opacity 0.2s ease;
+      mix-blend-mode: screen;
+    }
+
+    body.flashlight-active .flashlight-layer {
+      opacity: 1;
+    }
+
+    .flashlight-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1300;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      color: #f1dfba;
+      background: rgba(10, 15, 22, 0.84);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    .flashlight-toggle[aria-pressed="true"] {
+      color: var(--ink);
+      background: #e6d1a7;
     }
 
     /* Header */
@@ -205,13 +340,11 @@
       position: fixed;
       inset: 0 0 auto;
       z-index: 1000;
-      transition:
-        background 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: background 0.2s ease, box-shadow 0.2s ease;
     }
 
     .site-header.scrolled {
-      background: rgba(244, 240, 232, 0.94);
+      background: rgba(241, 234, 223, 0.94);
       box-shadow: 0 1px 0 var(--line);
       backdrop-filter: blur(14px);
     }
@@ -244,14 +377,13 @@
     .navigation-links {
       display: flex;
       align-items: center;
-      gap: 1.4rem;
+      gap: 1.35rem;
     }
 
     .navigation-links a {
       color: #303945;
-      font-size: 0.81rem;
+      font-size: 0.79rem;
       font-weight: 700;
-      letter-spacing: 0.04em;
       text-decoration: none;
     }
 
@@ -287,164 +419,152 @@
     .hero {
       position: relative;
       overflow: hidden;
-      padding: calc(var(--header-height) + 5.6rem) 0 6.5rem;
+      padding: calc(var(--header-height) + 5.4rem) 0 6.6rem;
       color: var(--white);
       background:
-        radial-gradient(circle at 75% 18%, rgba(184, 154, 99, 0.2), transparent 27%),
-        radial-gradient(circle at 25% 100%, rgba(85, 65, 95, 0.32), transparent 34%),
-        linear-gradient(135deg, #111722 0%, #1b2431 48%, #273345 100%);
+        radial-gradient(circle at 82% 14%, rgba(192, 161, 107, 0.18), transparent 25%),
+        radial-gradient(circle at 20% 100%, rgba(101, 80, 106, 0.3), transparent 34%),
+        linear-gradient(135deg, #0b1017 0%, #14202c 50%, #253548 100%);
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.26;
+      opacity: 0.21;
       background-image:
-        radial-gradient(circle, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.25px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, black, transparent 82%);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      right: -120px;
-      bottom: -250px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 45px rgba(255, 255, 255, 0.025),
-        0 0 0 95px rgba(255, 255, 255, 0.018);
+        radial-gradient(circle, rgba(255, 255, 255, 0.8) 0 1px, transparent 1.25px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
     }
 
     .hero-grid {
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.03fr 0.97fr;
       align-items: center;
       gap: clamp(3rem, 7vw, 7rem);
     }
 
-    .hero .eyebrow {
-      color: #d9c39a;
+    .classification {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      padding: 0.44rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #ddc69f;
+      background: rgba(255, 255, 255, 0.04);
+      font-family: "DM Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .hero h1 span {
       display: block;
-      color: #d9c39a;
+      color: #d8c39e;
       font-style: italic;
       font-weight: 500;
     }
 
-    .hero-tagline {
-      margin: 1.35rem 0 0;
-      color: #ece4d7;
+    .hero-hook {
+      max-width: 670px;
+      margin: 1.45rem 0 0;
+      color: #f1e6d5;
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.5rem, 2.2vw, 2.15rem);
+      font-size: clamp(1.65rem, 2.5vw, 2.4rem);
       font-style: italic;
+      line-height: 1.15;
     }
 
-    .hero-description {
-      max-width: 650px;
+    .hero-copy {
+      max-width: 670px;
       margin: 1rem 0 0;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 1.03rem;
-      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 1.02rem;
+      line-height: 1.76;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-top: 1.8rem;
+      margin-top: 1.9rem;
     }
 
-    .publication-status {
+    .status-row {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
-      margin-top: 2rem;
-      color: rgba(255, 255, 255, 0.76);
+      gap: 0.8rem;
+      margin-top: 2.1rem;
     }
 
-    .status-line {
-      width: 42px;
-      height: 1px;
-      background: var(--gold);
+    .status-light {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 16px rgba(130, 150, 136, 0.7);
     }
 
-    .publication-status small,
-    .publication-status strong {
+    .status-row small,
+    .status-row strong {
       display: block;
     }
 
-    .publication-status small {
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
+    .status-row small {
+      color: rgba(255, 255, 255, 0.48);
+      font-family: "DM Mono", monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .publication-status strong {
-      margin-top: 0.15rem;
+    .status-row strong {
+      margin-top: 0.13rem;
       color: var(--white);
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.02rem;
-      letter-spacing: 0.03em;
+      font-size: 1.05rem;
     }
 
-    .hero-art {
+    .hero-visual {
       position: relative;
-      min-height: 510px;
-      display: grid;
-      place-items: center;
-    }
-
-    .hero-frame {
-      position: relative;
-      width: min(100%, 420px);
-      min-height: 470px;
+      min-height: 525px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 210px 210px 18px 18px;
+      border: 1px solid var(--line-light);
       background:
-        linear-gradient(rgba(16, 25, 37, 0.12), rgba(16, 25, 37, 0.8)),
-        radial-gradient(circle at 50% 26%, rgba(194, 166, 114, 0.2), transparent 28%),
-        #182331;
-      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.24);
+        linear-gradient(rgba(9, 14, 20, 0.72), rgba(9, 14, 20, 0.94)),
+        radial-gradient(circle at 50% 24%, rgba(192, 161, 107, 0.17), transparent 34%);
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.28);
     }
 
-    .hero-frame::before {
+    .hero-visual::before {
       content: "";
       position: absolute;
-      inset: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 185px 185px 10px 10px;
+      inset: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .rift {
       position: absolute;
-      width: 135px;
-      height: 235px;
-      top: 58px;
+      width: 150px;
+      height: 255px;
+      top: 62px;
       left: 50%;
       transform: translateX(-50%) rotate(7deg);
-      border-radius: 52% 48% 50% 50%;
+      border-radius: 50%;
       background:
         radial-gradient(
           ellipse,
           #f4efe4 0 4%,
-          #b89a63 10%,
-          #77627e 30%,
-          #334e67 48%,
-          #0b1018 68%,
+          #c0a16b 10%,
+          #725f78 30%,
+          #36536d 48%,
+          #090e15 68%,
           transparent 70%
         );
-      filter: drop-shadow(0 0 24px rgba(184, 154, 99, 0.4));
-      animation: rift-breathe 5.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 25px rgba(192, 161, 107, 0.42));
+      animation: rift-pulse 5s ease-in-out infinite;
     }
 
     .rift::after {
@@ -452,61 +572,34 @@
       position: absolute;
       inset: 16% 33%;
       border-radius: 50%;
-      background: #080d14;
+      background: #070b10;
     }
 
-    @keyframes rift-breathe {
+    @keyframes rift-pulse {
       50% {
         transform: translateX(-50%) rotate(3deg) scale(1.025);
       }
     }
 
-    .hero-note {
-      position: absolute;
-      max-width: 150px;
-      padding: 0.85rem;
-      color: #222733;
-      background: #efe6d5;
-      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.24);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 0.92rem;
-      line-height: 1.25;
-    }
-
-    .note-one {
-      top: 102px;
-      left: 22px;
-      transform: rotate(-6deg);
-    }
-
-    .note-two {
-      top: 215px;
-      right: 20px;
-      transform: rotate(5deg);
-    }
-
     .classroom {
       position: absolute;
-      left: 28px;
-      right: 28px;
-      bottom: 28px;
-      height: 150px;
-      overflow: hidden;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      height: 165px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
       background:
-        linear-gradient(rgba(47, 66, 84, 0.6), rgba(10, 16, 24, 0.95));
+        linear-gradient(rgba(47, 66, 84, 0.58), rgba(8, 13, 20, 0.96));
     }
 
     .chalkboard {
-      width: 55%;
+      width: 58%;
       margin: 18px auto 0;
-      padding: 0.7rem;
-      border: 5px solid #6d573d;
-      color: rgba(255, 255, 255, 0.72);
-      background: #263f3b;
+      padding: 0.72rem;
+      border: 5px solid #6a543c;
+      color: rgba(255, 255, 255, 0.74);
+      background: #243c38;
       font-family: "Cormorant Garamond", serif;
-      font-size: 0.82rem;
       font-style: italic;
       text-align: center;
     }
@@ -515,7 +608,7 @@
       position: absolute;
       left: 13%;
       right: 13%;
-      bottom: 26px;
+      bottom: 29px;
       display: flex;
       justify-content: space-between;
     }
@@ -523,28 +616,75 @@
     .desk {
       width: 52px;
       height: 18px;
-      background: #101722;
-      box-shadow: 0 21px 0 -7px #101722;
+      background: #0f1721;
+      box-shadow: 0 21px 0 -7px #0f1721;
+    }
+
+    /* Hidden icons */
+    .secret-icon {
+      position: absolute;
+      z-index: 12;
+      display: grid;
+      place-items: center;
+      border: 0;
+      color: inherit;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0.58;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        filter 0.2s ease;
+    }
+
+    .secret-icon:hover {
+      opacity: 1;
+      transform: translateY(-2px) scale(1.05);
+      filter: drop-shadow(0 0 12px rgba(192, 161, 107, 0.4));
+    }
+
+    .secret-owl {
+      top: 28px;
+      right: 28px;
+      width: 30px;
+      height: 30px;
+      color: #d8c39e;
+      font-size: 1.1rem;
+    }
+
+    .secret-coffee {
+      right: 42px;
+      bottom: 58px;
+      width: 42px;
+      height: 42px;
+      font-size: 1.35rem;
+    }
+
+    .secret-rift {
+      right: 16px;
+      bottom: 16px;
+      width: 28px;
+      height: 28px;
+      color: rgba(255, 255, 255, 0.15);
+      font-size: 0.9rem;
     }
 
     /* Book */
     .book-section {
       background:
-        linear-gradient(180deg, var(--paper) 0%, #eee8dc 100%);
+        linear-gradient(180deg, var(--paper) 0%, #e9e0d3 100%);
     }
 
-    .book-layout,
-    .about-layout,
-    .contact-layout {
+    .book-layout {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.88fr 1.12fr;
       align-items: center;
       gap: clamp(3rem, 7vw, 7rem);
     }
 
     .book-stage {
       position: relative;
-      min-height: 520px;
+      min-height: 530px;
       display: grid;
       place-items: center;
       perspective: 1200px;
@@ -552,7 +692,7 @@
 
     .book-object {
       position: relative;
-      width: min(78%, 300px);
+      width: min(78%, 305px);
       aspect-ratio: 0.67;
       transform: rotateY(-9deg) rotateZ(-1.2deg);
       transition: transform 0.35s ease;
@@ -568,7 +708,7 @@
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.2);
       background:
-        radial-gradient(circle at 75% 18%, rgba(184, 154, 99, 0.22), transparent 25%),
+        radial-gradient(circle at 75% 18%, rgba(192, 161, 107, 0.22), transparent 25%),
         linear-gradient(145deg, #1c2736, #111722 58%, #2f2633);
       box-shadow: -24px 34px 55px rgba(17, 23, 34, 0.3);
     }
@@ -585,8 +725,8 @@
 
     .cover-rift {
       position: absolute;
-      width: 90px;
-      height: 150px;
+      width: 92px;
+      height: 154px;
       top: 23%;
       left: 50%;
       transform: translateX(-50%) rotate(6deg);
@@ -595,13 +735,13 @@
         radial-gradient(
           ellipse,
           #eee8d8 0 4%,
-          #b89a63 11%,
+          #c0a16b 11%,
           #66536d 34%,
           #2f4960 49%,
           #090e15 67%,
           transparent 71%
         );
-      filter: drop-shadow(0 0 18px rgba(184, 154, 99, 0.35));
+      filter: drop-shadow(0 0 18px rgba(192, 161, 107, 0.35));
     }
 
     .cover-school {
@@ -613,9 +753,9 @@
       background: #090e15;
       clip-path:
         polygon(
-          0 100%, 0 55%, 12% 55%, 12% 38%, 34% 38%,
-          34% 48%, 45% 48%, 45% 27%, 68% 27%, 68% 50%,
-          82% 50%, 82% 36%, 100% 36%, 100% 100%
+          0 100%,0 55%,12% 55%,12% 38%,34% 38%,
+          34% 48%,45% 48%,45% 27%,68% 27%,68% 50%,
+          82% 50%,82% 36%,100% 36%,100% 100%
         );
     }
 
@@ -637,7 +777,7 @@
 
     .cover-copy h3 {
       margin: auto 0;
-      font-size: clamp(1.7rem, 3vw, 2.55rem);
+      font-size: clamp(1.72rem, 3vw, 2.6rem);
       line-height: 0.9;
       text-transform: uppercase;
     }
@@ -649,13 +789,12 @@
       letter-spacing: 0.16em;
     }
 
-    .cover-placeholder {
+    .cover-note {
       position: absolute;
       left: 6%;
       bottom: 3%;
       color: var(--gold-dark);
       font-family: "Cormorant Garamond", serif;
-      font-size: 1rem;
       font-style: italic;
     }
 
@@ -663,6 +802,15 @@
       color: var(--plum);
       font-style: italic;
       font-weight: 500;
+    }
+
+    .book-hook {
+      margin: 1.25rem 0 1rem;
+      color: #343e49;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.48rem;
+      font-style: italic;
+      line-height: 1.25;
     }
 
     .genre-list {
@@ -676,199 +824,264 @@
       padding: 0.5rem 0.7rem;
       border: 1px solid var(--line);
       border-radius: 999px;
-      color: #3c4652;
-      background: rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.42);
       font-size: 0.72rem;
       font-weight: 700;
     }
 
-    .book-metadata {
+    .book-meta {
       margin-top: 1.5rem;
       border-top: 1px solid var(--line);
     }
 
-    .book-metadata div {
+    .book-meta div {
       display: grid;
-      grid-template-columns: 112px 1fr;
+      grid-template-columns: 125px 1fr;
       gap: 1rem;
-      padding: 0.78rem 0;
+      padding: 0.8rem 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .book-metadata span {
+    .book-meta span {
       color: var(--gold-dark);
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-family: "DM Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.11em;
     }
 
     .book-actions {
-      margin-top: 1.5rem;
+      margin-top: 1.55rem;
     }
 
-    /* About */
-    .about-section {
-      background: var(--white);
+
+    /* Book and author exhibit */
+    .story-section {
+      background:
+        linear-gradient(180deg, var(--paper) 0%, #e9e0d3 100%);
     }
 
-    .about-layout {
-      grid-template-columns: 1.1fr 0.9fr;
+    .story-heading {
+      max-width: 820px;
+      margin: 0 auto 3rem;
+      text-align: center;
     }
 
-    .author-quote {
-      margin: 1.8rem 0 0;
-      padding-left: 1.2rem;
-      border-left: 2px solid var(--gold);
+    .story-heading h2 em {
       color: var(--plum);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .story-heading-copy {
+      max-width: 650px;
+      margin: 1.2rem auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .story-feature {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      align-items: center;
+      gap: clamp(2.5rem, 6vw, 6rem);
+      padding: clamp(2rem, 5vw, 4rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.55);
+      box-shadow: 0 30px 75px rgba(13, 18, 27, 0.12);
+    }
+
+    .story-feature .book-stage {
+      min-height: 470px;
+    }
+
+    .story-feature-copy h3 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 0.98;
+    }
+
+    .story-feature-copy h3 em {
+      color: var(--plum);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .story-hook {
+      margin: 1.25rem 0 1rem;
+      color: #343e49;
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       font-style: italic;
       line-height: 1.25;
     }
 
-    .author-card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f0ebe2;
-      box-shadow: var(--shadow);
+    .story-actions {
+      margin-top: 1.5rem;
     }
 
-    .author-photo {
+    .story-cards {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .story-card {
       position: relative;
-      aspect-ratio: 1.35;
+      padding: clamp(1.5rem, 4vw, 2.4rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.68);
+    }
+
+    .story-card h3 {
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    .author-story-card {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      align-items: center;
+      gap: 1.5rem;
       overflow: hidden;
+    }
+
+    .author-story-photo {
+      min-height: 320px;
+      overflow: hidden;
+      border-radius: 12px;
       background: #cfc8bc;
     }
 
-    .author-photo img {
+    .author-story-photo img {
       width: 100%;
       height: 100%;
+      min-height: 320px;
       display: block;
       object-fit: cover;
       object-position: center 25%;
+      transition: transform 0.6s ease;
     }
 
-    .author-details {
-      padding: 1.35rem 1.45rem 1.5rem;
+    .author-story-card:hover .author-story-photo img {
+      transform: scale(1.025);
     }
 
-    .author-details > span {
-      display: block;
-      margin-bottom: 0.8rem;
-      color: var(--gold-dark);
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-    }
-
-    .author-details div {
-      display: grid;
-      grid-template-columns: 105px 1fr;
-      gap: 0.9rem;
-      padding: 0.72rem 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .author-details small {
-      color: var(--muted);
-      font-size: 0.61rem;
-      letter-spacing: 0.11em;
-    }
-
-    .author-details strong {
+    .secret-book {
+      top: 16px;
+      right: 16px;
+      width: 28px;
+      height: 28px;
+      color: rgba(139, 108, 61, 0.28);
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .story-feature,
+      .story-cards,
+      .author-story-card {
+        grid-template-columns: 1fr;
+      }
+
+      .story-feature .book-stage {
+        min-height: 480px;
+      }
+
+      .author-story-photo,
+      .author-story-photo img {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .story-feature {
+        padding: 1.2rem;
+      }
+
+      .author-story-photo,
+      .author-story-photo img {
+        min-height: 300px;
+      }
     }
 
     /* Game */
     .game-section {
       color: var(--white);
       background:
-        radial-gradient(circle at 90% 0%, rgba(184, 154, 99, 0.16), transparent 30%),
-        linear-gradient(145deg, #121a26 0%, #1b2635 55%, #17202c 100%);
+        radial-gradient(circle at 88% 0%, rgba(192, 161, 107, 0.15), transparent 30%),
+        linear-gradient(145deg, #0e141c 0%, #192532 58%, #101720 100%);
     }
 
     .game-section .eyebrow {
-      color: #d9c39a;
-    }
-
-    .game-section .body-copy {
-      color: rgba(255, 255, 255, 0.67);
+      color: #d8c39f;
     }
 
     .game-intro {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.08fr 0.92fr;
       align-items: end;
       gap: 2rem;
       margin-bottom: 2rem;
     }
 
-    .game-shell {
-      padding: 1rem;
-      border: 1px solid var(--line-light);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.035);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22);
+    .game-intro p {
+      color: rgba(255, 255, 255, 0.62);
     }
 
     .game-layout {
       display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
+      grid-template-columns: 0.72fr 1.28fr;
       gap: 1rem;
     }
 
-    .game-instructions {
-      padding: 1.4rem;
+    .game-panel {
+      position: relative;
+      padding: 1.35rem;
       border: 1px solid var(--line-light);
-      border-radius: 14px;
-      background: rgba(8, 13, 20, 0.34);
+      background: rgba(255, 255, 255, 0.025);
     }
 
-    .game-instructions h3 {
-      margin-bottom: 0.8rem;
-      color: #f0e3ca;
+    .game-panel h3 {
+      color: #f0e4ce;
     }
 
-    .game-instructions p {
-      color: rgba(255, 255, 255, 0.68);
+    .game-panel p {
+      color: rgba(255, 255, 255, 0.6);
     }
 
-    .game-legend {
+    .game-rules {
       display: grid;
       gap: 0.55rem;
       margin-top: 1rem;
     }
 
-    .legend-item {
+    .game-rule {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      padding: 0.68rem;
+      gap: 0.7rem;
+      padding: 0.72rem 0;
       border-top: 1px solid var(--line-light);
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255, 255, 255, 0.72);
       font-size: 0.82rem;
     }
 
-    .legend-symbol {
+    .game-rule span:first-child {
       width: 34px;
       height: 34px;
       display: grid;
       place-items: center;
-      flex-shrink: 0;
       border: 1px solid var(--line-light);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
+      flex-shrink: 0;
     }
 
     .game-area {
       position: relative;
-      min-height: 430px;
+      min-height: 500px;
       overflow: hidden;
       border: 1px solid var(--line-light);
-      border-radius: 14px;
       background:
-        linear-gradient(rgba(36, 52, 68, 0.68), rgba(8, 13, 20, 0.95));
+        linear-gradient(rgba(31, 45, 58, 0.72), rgba(7, 11, 17, 0.96));
       cursor: crosshair;
     }
 
@@ -876,22 +1089,22 @@
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.18;
+      opacity: 0.16;
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
+      background-size: 42px 42px;
     }
 
-    .game-blackboard {
+    .game-board {
       position: absolute;
-      width: 57%;
-      min-height: 84px;
+      width: 58%;
+      min-height: 86px;
       top: 22px;
       left: 50%;
       transform: translateX(-50%);
-      border: 6px solid #6b563d;
-      color: rgba(255, 255, 255, 0.74);
+      border: 6px solid #67523a;
+      color: rgba(255, 255, 255, 0.75);
       background: #263f3b;
       font-family: "Cormorant Garamond", serif;
       font-size: 1rem;
@@ -914,8 +1127,7 @@
     .hud-item {
       padding: 0.65rem;
       border: 1px solid var(--line-light);
-      border-radius: 9px;
-      background: rgba(7, 11, 18, 0.82);
+      background: rgba(7, 11, 18, 0.84);
       text-align: center;
     }
 
@@ -925,94 +1137,102 @@
     }
 
     .hud-item small {
-      color: rgba(255, 255, 255, 0.45);
-      font-size: 0.56rem;
-      letter-spacing: 0.11em;
+      color: rgba(255, 255, 255, 0.44);
+      font-family: "DM Mono", monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.1em;
     }
 
     .hud-item strong {
       margin-top: 0.18rem;
-      color: #e8d6b2;
-      font-size: 0.9rem;
+      color: #e5d2ad;
+      font-size: 0.88rem;
     }
 
-    .game-object {
+    .rift-target {
       position: absolute;
       z-index: 7;
-      width: 68px;
-      height: 68px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line-light);
+      width: 74px;
+      height: 110px;
+      border: 0;
       border-radius: 50%;
-      background: rgba(10, 16, 25, 0.94);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
-      font-size: 1.8rem;
+      background:
+        radial-gradient(
+          ellipse,
+          #f4efe4 0 4%,
+          #c0a16b 10%,
+          #725f78 30%,
+          #36536d 48%,
+          #090e15 68%,
+          transparent 70%
+        );
+      filter: drop-shadow(0 0 20px rgba(192, 161, 107, 0.4));
       cursor: pointer;
-      animation: object-appear 0.2s ease;
+      animation: target-in 0.2s ease;
     }
 
-    .game-object.good {
-      border-color: rgba(153, 183, 158, 0.72);
+    .rift-target.danger {
+      filter: drop-shadow(0 0 20px rgba(145, 81, 91, 0.55));
     }
 
-    .game-object.bad {
-      border-color: rgba(184, 102, 112, 0.8);
+    @keyframes target-in {
+      from { opacity: 0; transform: scale(0.7); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    @keyframes object-appear {
-      from {
-        opacity: 0;
-        transform: scale(0.75);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .game-start-screen,
-    .game-result-screen {
+    .game-screen {
       position: absolute;
       inset: 0;
       z-index: 20;
       display: grid;
       place-items: center;
       padding: 1.3rem;
-      background: rgba(7, 11, 18, 0.9);
+      background: rgba(7, 11, 18, 0.92);
       backdrop-filter: blur(7px);
     }
 
-    .game-result-screen {
+    .game-screen.hidden {
       display: none;
     }
 
     .game-modal {
-      max-width: 430px;
-      padding: 1.7rem;
+      width: min(100%, 460px);
+      padding: 1.65rem;
       border: 1px solid var(--line-light);
-      border-radius: 16px;
-      background: linear-gradient(145deg, #222e3d, #111722);
+      background: linear-gradient(145deg, #202c3a, #10161f);
       text-align: center;
-      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .game-modal-icon {
-      margin-bottom: 0.5rem;
-      font-size: 2.2rem;
+      box-shadow: 0 28px 68px rgba(0, 0, 0, 0.3);
     }
 
     .game-modal h3 {
-      color: #f2e5cc;
+      color: #f2e4cc;
     }
 
     .game-modal p {
-      color: rgba(255, 255, 255, 0.67);
+      color: rgba(255, 255, 255, 0.64);
     }
 
-    .game-result-score {
-      color: #dec89d;
-      font-weight: 700;
+    .evaluation {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line-light);
+      background: rgba(255, 255, 255, 0.035);
+      text-align: left;
+    }
+
+    .evaluation div {
+      display: grid;
+      grid-template-columns: 115px 1fr;
+      gap: 0.75rem;
+      padding: 0.35rem 0;
+      font-size: 0.78rem;
+    }
+
+    .evaluation span {
+      color: #d8c39f;
+      font-family: "DM Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
     }
 
     .game-buttons {
@@ -1023,13 +1243,108 @@
       margin-top: 1rem;
     }
 
+    /* Author */
+    .author-section {
+      background: var(--white);
+    }
+
+    .author-layout {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: clamp(3rem, 7vw, 7rem);
+    }
+
+    .author-intro {
+      margin: 1.3rem 0 1rem;
+      color: var(--plum);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.48rem;
+      font-style: italic;
+      line-height: 1.25;
+    }
+
+    .author-quote {
+      margin: 1.85rem 0 0;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--gold);
+      color: var(--plum);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      line-height: 1.25;
+    }
+
+    .author-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f0ebe2;
+      box-shadow: 0 28px 70px rgba(13, 18, 27, 0.13);
+    }
+
+    .author-photo {
+      position: relative;
+      aspect-ratio: 1.35;
+      overflow: hidden;
+      background: #cfc8bc;
+    }
+
+    .author-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 25%;
+      transition: transform 0.6s ease;
+    }
+
+    .author-card:hover .author-photo img {
+      transform: scale(1.02);
+    }
+
+    .author-details {
+      padding: 1.35rem 1.45rem 1.5rem;
+    }
+
+    .author-details > span {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: var(--gold-dark);
+      font-family: "DM Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
+    }
+
+    .author-details div {
+      display: grid;
+      grid-template-columns: 115px 1fr;
+      gap: 0.9rem;
+      padding: 0.72rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .author-details small {
+      color: var(--muted);
+      font-family: "DM Mono", monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+    }
+
+    .author-details strong {
+      font-size: 0.9rem;
+    }
+
     /* Contact */
     .contact-section {
-      background: #ebe4d8;
+      background: #e8dfd1;
     }
 
     .contact-layout {
+      display: grid;
       grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(3rem, 7vw, 7rem);
     }
 
     .contact-email {
@@ -1053,11 +1368,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
       padding: 0.9rem 1rem;
       border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.45);
       font-size: 0.86rem;
       font-weight: 700;
       text-decoration: none;
@@ -1069,42 +1382,38 @@
     }
 
     .contact-card {
-      min-height: 360px;
+      position: relative;
+      min-height: 370px;
       display: grid;
       place-items: center;
       padding: 2rem;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        radial-gradient(circle at 70% 16%, rgba(184, 154, 99, 0.2), transparent 25%),
-        linear-gradient(145deg, #1b2635, #111722);
-      box-shadow: var(--shadow);
       color: var(--white);
+      background:
+        radial-gradient(circle at 70% 16%, rgba(192, 161, 107, 0.18), transparent 25%),
+        linear-gradient(145deg, #1b2635, #0f151d);
+      box-shadow: 0 28px 70px rgba(13, 18, 27, 0.15);
       text-align: center;
-    }
-
-    .contact-card-inner {
-      max-width: 330px;
     }
 
     .contact-card-symbol {
       display: block;
-      margin-bottom: 1rem;
-      color: #d8c39c;
+      color: #d8c39f;
       font-family: "Cormorant Garamond", serif;
       font-size: 4rem;
       line-height: 1;
     }
 
     .contact-card p {
-      color: rgba(255, 255, 255, 0.66);
+      color: rgba(255, 255, 255, 0.64);
     }
 
     /* Footer */
     footer {
+      position: relative;
       padding: 2.7rem 0 1.2rem;
       color: rgba(255, 255, 255, 0.72);
-      background: #0d131c;
+      background: #090d13;
     }
 
     footer .logo {
@@ -1118,8 +1427,7 @@
     }
 
     .footer-grid p {
-      max-width: 440px;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.48);
     }
 
     .footer-links {
@@ -1128,13 +1436,9 @@
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.64);
-      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.82rem;
       text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: #dec89d;
     }
 
     .footer-socials {
@@ -1155,11 +1459,6 @@
       text-decoration: none;
     }
 
-    .footer-socials a:hover {
-      color: #0d131c;
-      background: #dec89d;
-    }
-
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -1167,17 +1466,55 @@
       margin-top: 2.2rem;
       padding-top: 1rem;
       border-top: 1px solid var(--line-light);
-      color: rgba(255, 255, 255, 0.36);
+      color: rgba(255, 255, 255, 0.34);
       font-size: 0.7rem;
+    }
+
+    /* Secret message */
+    .secret-message {
+      position: fixed;
+      inset: 0;
+      z-index: 3200;
+      display: none;
+      place-items: center;
+      padding: 1rem;
+      background: rgba(5, 8, 12, 0.88);
+      backdrop-filter: blur(10px);
+    }
+
+    .secret-message.open {
+      display: grid;
+    }
+
+    .secret-card {
+      width: min(100%, 560px);
+      padding: clamp(1.5rem, 4vw, 2.3rem);
+      border: 1px solid var(--line-light);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 90% 0%, rgba(192, 161, 107, 0.14), transparent 28%),
+        linear-gradient(145deg, #1a2532, #0d131b);
+      box-shadow: 0 35px 95px rgba(0, 0, 0, 0.5);
+    }
+
+    .secret-card h3 {
+      color: #f1e2c8;
+      font-size: 2.55rem;
+    }
+
+    .secret-card p {
+      color: rgba(255, 255, 255, 0.64);
+    }
+
+    .secret-card .button {
+      margin-top: 0.8rem;
     }
 
     /* Reveal */
     .reveal {
       opacity: 0;
       transform: translateY(18px);
-      transition:
-        opacity 0.65s ease,
-        transform 0.65s ease;
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
 
     .reveal.visible {
@@ -1196,8 +1533,8 @@
         display: grid;
         align-content: center;
         justify-items: center;
-        gap: 1.45rem;
-        background: rgba(244, 240, 232, 0.98);
+        gap: 1.4rem;
+        background: rgba(241, 234, 223, 0.98);
         transform: translateX(100%);
         transition: transform 0.25s ease;
       }
@@ -1206,25 +1543,13 @@
         transform: translateX(0);
       }
 
-      .navigation-links a {
-        font-size: 1.08rem;
-      }
-
       .hero-grid,
       .book-layout,
-      .about-layout,
       .game-intro,
       .game-layout,
+      .author-layout,
       .contact-layout {
         grid-template-columns: 1fr;
-      }
-
-      .hero-art {
-        min-height: 510px;
-      }
-
-      .book-stage {
-        min-height: 470px;
       }
 
       .footer-grid {
@@ -1236,48 +1561,38 @@
       }
     }
 
+    @media (max-width: 650px) {
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 600px) {
       .shell {
         width: min(calc(100% - 1.4rem), var(--max-width));
       }
 
-      .hero {
-        padding-top: calc(var(--header-height) + 3.7rem);
-      }
-
       h1 {
-        font-size: clamp(3.4rem, 16vw, 5rem);
+        font-size: clamp(3.5rem, 16vw, 5.1rem);
       }
 
-      .hero-art {
-        min-height: 460px;
-      }
-
-      .hero-frame {
-        min-height: 430px;
-      }
-
-      .hero-note {
-        max-width: 120px;
-        font-size: 0.78rem;
-      }
-
-      .book-metadata div,
-      .author-details div {
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
+      .hero-visual {
+        min-height: 500px;
       }
 
       .game-area {
-        min-height: 470px;
+        min-height: 520px;
       }
 
       .game-hud {
         grid-template-columns: 1fr;
       }
 
-      .social-grid {
+      .book-meta div,
+      .author-details div,
+      .evaluation div {
         grid-template-columns: 1fr;
+        gap: 0.3rem;
       }
 
       .footer-bottom {
@@ -1306,7 +1621,52 @@
   </style>
 </head>
 
-<body>
+<body class="booting">
+  <div class="boot-screen" id="boot-screen">
+    <div class="boot-card">
+      <div class="boot-seal">F</div>
+
+      <p class="eyebrow">
+        Federal Investigation of Interdimensional Anomalies
+      </p>
+
+      <h1>
+        Civilian Access
+        <br>
+        Approved
+      </h1>
+
+      <p class="boot-copy" id="boot-copy">
+        Establishing connection...
+        <br>
+        Locating author file...
+        <br>
+        Preparing public-facing materials...
+      </p>
+
+      <div class="boot-progress"><span></span></div>
+
+      <div class="boot-actions" id="boot-actions">
+        <button class="button button-secondary" id="enter-site" type="button">
+          Enter the Website
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="flashlight-layer" aria-hidden="true"></div>
+
+  <button
+    class="flashlight-toggle"
+    id="flashlight-toggle"
+    type="button"
+    aria-label="Toggle flashlight"
+    aria-pressed="true"
+  >
+    🔦
+  </button>
+
   <header class="site-header">
     <nav class="navigation shell" aria-label="Main navigation">
       <a class="logo" href="#home">
@@ -1325,9 +1685,7 @@
       </button>
 
       <div class="navigation-links">
-        <a href="#home">Home</a>
-        <a href="#book">Book</a>
-        <a href="#about">About</a>
+        <a href="#story">Book &amp; Author</a>
         <a href="#game">Play</a>
         <a class="navigation-contact" href="#contact">Contact</a>
       </div>
@@ -1338,35 +1696,39 @@
     <section class="hero" id="home">
       <div class="hero-grid shell">
         <div class="reveal">
-          <p class="eyebrow">Cosmic horror · Science fiction · Dark comedy</p>
+          <div class="classification">
+            Official author website · Civilian access approved
+          </div>
+
+          <p class="eyebrow">CJ Maylock presents</p>
 
           <h1>
-            CJ Maylock
-            <span>writes through the rift.</span>
+            The English Department
+            <span>vs. Chaos and Nonsense</span>
           </h1>
 
-          <p class="hero-tagline">
-            When nonsense is the only thing that makes sense.
+          <p class="hero-hook">
+            Three English teachers. Interdimensional rifts. Lesson plans still due Monday.
           </p>
 
-          <p class="hero-description">
-            Strange classrooms. Impossible universes. Haunted lesson plans.
-            Stories about ordinary people trying to hold themselves together
-            while reality spectacularly fails around them.
+          <p class="hero-copy">
+            A darkly funny cosmic story about Sage Lyken, Courtney Johnson,
+            Nathan Brooks, and the impossible events interrupting ordinary life
+            at Northdown High School.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#book">
-              Enter the English Department
+            <a class="button button-primary" href="#story">
+              Explore the Book
             </a>
 
             <a class="button button-secondary" href="#game">
-              Play the Staff Survival Game
+              Play the Training Drill
             </a>
           </div>
 
-          <div class="publication-status">
-            <span class="status-line"></span>
+          <div class="status-row">
+            <span class="status-light"></span>
 
             <div>
               <small>Publication status</small>
@@ -1375,315 +1737,325 @@
           </div>
         </div>
 
-        <div class="hero-art reveal">
-          <div class="hero-frame">
-            <div class="rift"></div>
+        <div class="hero-visual reveal">
+          <div class="rift"></div>
 
-            <div class="hero-note note-one">
-              Monday: close interdimensional rift.
-              <br><br>
-              Tuesday: vocabulary quiz.
+          <button
+            class="secret-icon secret-owl"
+            type="button"
+            data-secret="owl"
+            aria-label="Decorative owl symbol"
+          >
+            ◉
+          </button>
+
+          <div class="classroom">
+            <div class="chalkboard">
+              Today’s Objective:
+              <br>
+              Survive until dismissal.
             </div>
 
-            <div class="hero-note note-two">
-              Today’s objective:
-              <br><br>
-              survive until dismissal.
-            </div>
-
-            <div class="classroom">
-              <div class="chalkboard">
-                The English Department
-                <br>
-                remains in session.
-              </div>
-
-              <div class="desk-row">
-                <div class="desk"></div>
-                <div class="desk"></div>
-                <div class="desk"></div>
-              </div>
+            <div class="desk-row">
+              <div class="desk"></div>
+              <div class="desk"></div>
+              <div class="desk"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section book-section" id="book">
-      <div class="book-layout shell">
-        <div class="book-stage reveal">
-          <div class="book-object">
-            <div class="book-cover">
-              <div class="cover-rift"></div>
-              <div class="cover-school"></div>
-
-              <div class="cover-copy">
-                <small>A NOVEL</small>
-
-                <h3>
-                  The English
-                  <br>
-                  Department
-                  <br>
-                  vs. Chaos
-                  <br>
-                  and Nonsense
-                </h3>
-
-                <p>CJ MAYLOCK</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cover-placeholder">
-            Official cover coming soon
-          </div>
-        </div>
-
-        <div class="book-copy reveal">
-          <p class="eyebrow">Featured novel</p>
+    <section class="section story-section" id="story">
+      <div class="shell">
+        <div class="story-heading reveal">
+          <p class="eyebrow">The story behind the story</p>
 
           <h2>
-            The English Department
+            One impossible novel.
             <br>
-            <em>vs. Chaos and Nonsense</em>
+            <em>One author behind the rift.</em>
           </h2>
 
-          <p class="body-copy">
-            Sage Lyken is a high school English teacher who thought the worst
-            part of her day was grading essays that were clearly written by AI.
-            That changes when interdimensional rifts begin opening around the
-            school.
+          <p class="story-heading-copy">
+            Discover <em>The English Department vs. Chaos and Nonsense</em>
+            and meet CJ Maylock, the Ohio author and educator who created it.
           </p>
+        </div>
 
-          <p class="body-copy">
-            With the help of her two coworkers, Sage must close the rifts,
-            protect her students, uncover what is happening, and somehow still
-            have her lesson plans submitted by Monday morning.
-          </p>
+        <div class="story-feature reveal">
+          <div class="book-stage">
+            <div class="book-object">
+              <div class="book-cover">
+                <div class="cover-rift"></div>
+                <div class="cover-school"></div>
 
-          <div class="genre-list">
-            <span>Cosmic Horror</span>
-            <span>Science Fiction</span>
-            <span>Fantasy</span>
-            <span>Teacher Comedy</span>
-            <span>Mystery</span>
-            <span>Sapphic Romance</span>
-          </div>
+                <div class="cover-copy">
+                  <small>A NOVEL</small>
 
-          <div class="book-metadata">
-            <div>
-              <span>AUTHOR</span>
-              <strong>CJ Maylock</strong>
+                  <h3>
+                    The English
+                    <br>
+                    Department
+                    <br>
+                    vs. Chaos
+                    <br>
+                    and Nonsense
+                  </h3>
+
+                  <p>CJ MAYLOCK</p>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <span>PUBLISHER</span>
-              <strong>Red Fern Press</strong>
-            </div>
-
-            <div>
-              <span>STATUS</span>
-              <strong>Coming Soon</strong>
-            </div>
-
-            <div>
-              <span>TONE</span>
-              <strong>
-                Beautiful, cosmic, funny, chaotic, and quietly unsettling
-              </strong>
+            <div class="cover-note">
+              Official cover coming soon
             </div>
           </div>
 
-          <div class="book-actions">
-            <a class="button button-light" href="#contact">
-              Follow CJ for Updates
-            </a>
+          <div class="story-feature-copy">
+            <p class="eyebrow">Coming soon from Red Fern Press</p>
+
+            <h3>
+              School is hard enough
+              <br>
+              <em>without holes in reality.</em>
+            </h3>
+
+            <p class="story-hook">
+              Three English teachers. Interdimensional rifts. Lesson plans still
+              due Monday.
+            </p>
+
+            <p class="body-copy">
+              Sage Lyken is a high school English teacher at Northdown High
+              School. Alongside fellow teachers Courtney Johnson and Nathan
+              Brooks, she is pulled into the orbit of the Federal Investigation
+              of Interdimensional Anomalies after a dangerous encounter at
+              school.
+            </p>
+
+            <p class="body-copy">
+              The novel blends workplace comedy, cosmic horror, friendship,
+              mystery, and the exhausting reality of protecting students while
+              reality itself refuses to cooperate.
+            </p>
+
+            <div class="genre-list">
+              <span>Cosmic Horror</span>
+              <span>Science Fiction</span>
+              <span>Teacher Comedy</span>
+              <span>Mystery</span>
+              <span>Sapphic Romance</span>
+            </div>
+
+            <div class="story-actions">
+              <a class="button button-paper" href="#contact">
+                Follow the Road to Publication
+              </a>
+            </div>
           </div>
+        </div>
+
+        <div class="story-cards">
+          <article class="story-card reveal">
+            <p class="eyebrow">What to expect</p>
+
+            <h3>
+              Cosmic horror
+              <br>
+              with a human heart.
+            </h3>
+
+            <p class="body-copy">
+              The novel begins in a familiar school world of classrooms,
+              meetings, grading, and exhausted teachers—then opens into
+              something stranger, larger, funnier, and far more dangerous.
+            </p>
+
+            <div class="book-meta">
+              <div>
+                <span>SETTING</span>
+                <strong>Northdown High School and places beyond it</strong>
+              </div>
+
+              <div>
+                <span>EXPERIENCE</span>
+                <strong>Workplace comedy colliding with impossible worlds</strong>
+              </div>
+
+              <div>
+                <span>TONE</span>
+                <strong>Funny, cosmic, frightening, and deeply human</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="story-card author-story-card reveal">
+            <button
+              class="secret-icon secret-book"
+              type="button"
+              data-secret="book"
+              aria-label="Small decorative book"
+            >
+              ✦
+            </button>
+
+            <div class="author-story-photo">
+              <img src="download.jpeg" alt="Author CJ Maylock">
+            </div>
+
+            <div class="author-story-copy">
+              <p class="eyebrow">Behind the story</p>
+
+              <h3>Meet CJ Maylock</h3>
+
+              <p class="body-copy">
+                CJ Maylock is an Ohio author and educator who writes science
+                fiction, cosmic horror, comedy, and sapphic stories shaped by
+                classrooms, friendship, identity, absurd humor, and people
+                trying to keep going when the universe refuses to behave.
+              </p>
+
+              <p class="body-copy">
+                When she is not writing, CJ teaches students with autism,
+                creates YouTube videos, and laughs at videos of basset hounds.
+              </p>
+
+              <blockquote class="author-quote">
+                “When nonsense is the only thing that makes sense.”
+              </blockquote>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="about-layout shell">
-        <div class="reveal">
-          <p class="eyebrow">About CJ</p>
-
-          <h2>
-            The ordinary collides with the impossible.
-          </h2>
-
-          <p class="body-copy">
-            CJ Maylock is an Ohio author and educator who writes stories where
-            the ordinary collides with the impossible.
-          </p>
-
-          <p class="body-copy">
-            Inspired by classrooms, cosmic horror, science fiction, and absurd
-            humor, her work explores friendship, identity, and what it means to
-            keep going when the universe itself seems determined to fall apart.
-          </p>
-
-          <p class="body-copy">
-            When she is not writing, CJ teaches students with autism, creates
-            YouTube videos, and laughs at videos of basset hounds.
-          </p>
-
-          <blockquote class="author-quote">
-            “When nonsense is the only thing that makes sense.”
-          </blockquote>
-        </div>
-
-        <div class="author-card reveal">
-          <div class="author-photo">
-            <img src="download.jpeg" alt="Author CJ Maylock">
-          </div>
-
-          <div class="author-details">
-            <span>CJ MAYLOCK · AUTHOR PROFILE</span>
-
-            <div>
-              <small>LOCATION</small>
-              <strong>Ohio</strong>
-            </div>
-
-            <div>
-              <small>OCCUPATION</small>
-              <strong>Author and educator</strong>
-            </div>
-
-            <div>
-              <small>WRITES</small>
-              <strong>
-                Science fiction, cosmic horror, comedy, and sapphic stories
-              </strong>
-            </div>
-
-            <div>
-              <small>KNOWN DISTRACTION</small>
-              <strong>Basset hound videos</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section game-section" id="game">
+<section class="section game-section" id="game">
       <div class="shell">
         <div class="game-intro reveal">
           <div>
-            <p class="eyebrow">Interactive faculty training</p>
-            <h2>Survive until dismissal.</h2>
+            <p class="eyebrow">F.I.I.A. training drill</p>
+            <h2>Close the rifts before dismissal.</h2>
           </div>
 
-          <p class="body-copy">
-            Collect useful teaching supplies. Avoid cosmic nonsense. The
-            district has not approved additional planning time.
+          <p>
+            Click stable rifts quickly. Avoid dangerous anomalies. Ten rounds
+            will determine whether your clearance is approved.
           </p>
         </div>
 
-        <div class="game-shell reveal">
-          <div class="game-layout">
-            <div class="game-instructions">
-              <h3>How to Play</h3>
+        <div class="game-layout reveal">
+          <aside class="game-panel">
+            <button
+              class="secret-icon secret-coffee"
+              type="button"
+              data-secret="coffee"
+              aria-label="Coffee mug"
+            >
+              ☕
+            </button>
 
-              <p>
-                Objects will appear around the classroom. Click the useful
-                teacher items to earn points. Do not click the rifts, cursed
-                paperwork, or suspicious AI essays.
-              </p>
+            <h3>Training Instructions</h3>
 
-              <div class="game-legend">
-                <div class="legend-item">
-                  <span class="legend-symbol">☕</span>
-                  <span>Coffee restores approximately three minutes of hope.</span>
-                </div>
+            <p>
+              Gold-blue rifts can be stabilized. Red anomalies should not be
+              touched. Missed rifts remain open and reduce your score.
+            </p>
 
-                <div class="legend-item">
-                  <span class="legend-symbol">🖊️</span>
-                  <span>Red pens maintain the illusion of academic control.</span>
-                </div>
+            <div class="game-rules">
+              <div class="game-rule">
+                <span>✦</span>
+                <span>Close stable rifts.</span>
+              </div>
 
-                <div class="legend-item">
-                  <span class="legend-symbol">📚</span>
-                  <span>Books are generally safer than interdimensional portals.</span>
-                </div>
+              <div class="game-rule">
+                <span>!</span>
+                <span>Avoid red anomalies.</span>
+              </div>
 
-                <div class="legend-item">
-                  <span class="legend-symbol">🌀</span>
-                  <span>Clicking a rift is discouraged by the employee handbook.</span>
-                </div>
+              <div class="game-rule">
+                <span>⏱</span>
+                <span>React before they disappear.</span>
+              </div>
+            </div>
+          </aside>
+
+          <div class="game-area" id="game-area">
+            <div class="game-board">
+              Today’s Objective:
+              <br>
+              Close the rifts before dismissal.
+            </div>
+
+            <div class="game-hud">
+              <div class="hud-item">
+                <small>SCORE</small>
+                <strong id="game-score">0</strong>
+              </div>
+
+              <div class="hud-item">
+                <small>ROUND</small>
+                <strong id="game-round">0 / 10</strong>
+              </div>
+
+              <div class="hud-item">
+                <small>CLEARANCE</small>
+                <strong id="game-clearance">TRAINEE</strong>
               </div>
             </div>
 
-            <div class="game-area" id="game-area">
-              <div class="game-blackboard">
-                Today’s Objective:
-                <br>
-                Make it to dismissal without ending reality.
+            <div class="game-screen" id="game-start">
+              <div class="game-modal">
+                <h3>F.I.I.A. Training Required</h3>
+
+                <p>
+                  The universe is developing structural problems. Please respond
+                  before the paperwork becomes unreasonable.
+                </p>
+
+                <button class="button button-primary" id="start-game" type="button">
+                  Begin Drill
+                </button>
               </div>
+            </div>
 
-              <div class="game-hud">
-                <div class="hud-item">
-                  <small>SCORE</small>
-                  <strong id="game-score">0</strong>
-                </div>
+            <div class="game-screen hidden" id="game-result">
+              <div class="game-modal">
+                <h3>Training Evaluation</h3>
 
-                <div class="hud-item">
-                  <small>ROUND</small>
-                  <strong id="game-round">0 / 10</strong>
-                </div>
-
-                <div class="hud-item">
-                  <small>FACULTY MORALE</small>
-                  <strong id="game-morale">STABLE</strong>
-                </div>
-              </div>
-
-              <div class="game-start-screen" id="game-start-screen">
-                <div class="game-modal">
-                  <div class="game-modal-icon">🏫</div>
-
-                  <h3>Mandatory Faculty Training</h3>
-
-                  <p>
-                    The English Department is experiencing a minor cosmic
-                    emergency. Collect the supplies you need and avoid anything
-                    that threatens reality—or requires another meeting.
-                  </p>
-
-                  <button
-                    class="button button-primary"
-                    id="start-game-button"
-                    type="button"
-                  >
-                    Begin the School Day
-                  </button>
-                </div>
-              </div>
-
-              <div class="game-result-screen" id="game-result-screen">
-                <div class="game-modal">
-                  <div class="game-modal-icon" id="result-icon">🎉</div>
-
-                  <h3 id="result-title">Dismissal Achieved</h3>
-
-                  <p class="game-result-score" id="result-score"></p>
-                  <p id="result-message"></p>
-
-                  <div class="game-buttons">
-                    <button
-                      class="button button-secondary"
-                      id="restart-game-button"
-                      type="button"
-                    >
-                      Try Again
-                    </button>
-
-                    <a class="button button-primary" href="#book">
-                      Go to the Book
-                    </a>
+                <div class="evaluation">
+                  <div>
+                    <span>EMPLOYEE</span>
+                    <strong>██████████</strong>
                   </div>
+
+                  <div>
+                    <span>SCORE</span>
+                    <strong id="result-score">0</strong>
+                  </div>
+
+                  <div>
+                    <span>STATUS</span>
+                    <strong id="result-status">Pending</strong>
+                  </div>
+
+                  <div>
+                    <span>RECOMMENDATION</span>
+                    <strong id="result-recommendation">Review required</strong>
+                  </div>
+                </div>
+
+                <p id="result-message"></p>
+
+                <div class="game-buttons">
+                  <button class="button button-secondary" id="restart-game" type="button">
+                    Repeat Drill
+                  </button>
+
+                  <a class="button button-primary" href="#story">
+                    Return to the Book
+                  </a>
                 </div>
               </div>
             </div>
@@ -1691,14 +2063,13 @@
         </div>
       </div>
     </section>
-
-    <section class="section contact-section" id="contact">
+<section class="section contact-section" id="contact">
       <div class="contact-layout shell">
         <div class="reveal">
           <p class="eyebrow">Contact CJ</p>
 
           <h2>
-            Contact CJ before reality closes again.
+            Open a communication channel.
           </h2>
 
           <p class="body-copy">
@@ -1744,17 +2115,24 @@
         </div>
 
         <div class="contact-card reveal">
-          <div class="contact-card-inner">
+          <button
+            class="secret-icon secret-rift"
+            type="button"
+            data-secret="rift"
+            aria-label="Small rift symbol"
+          >
+            ◌
+          </button>
+
+          <div>
             <span class="contact-card-symbol">✦</span>
-
-            <h3>Open Channel</h3>
-
+            <h3>Channel Status: Open</h3>
             <p>
-              Inbox status: open.
+              Author file available.
               <br>
-              Rift status: mostly closed.
+              Rift status uncertain.
               <br>
-              Email response: probably faster than district IT.
+              Email response probably faster than district IT.
             </p>
           </div>
         </div>
@@ -1771,52 +2149,90 @@
         </a>
 
         <p>
-          Science fiction. Cosmic horror. Teacher comedy. Sapphic stories.
+          Author of <em>The English Department vs. Chaos and Nonsense</em>.
         </p>
       </div>
 
       <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#book">Featured Book</a>
-        <a href="#about">About CJ</a>
-        <a href="#game">Play the Game</a>
+        <a href="#story">Book &amp; Author</a>
+        <a href="#game">Play</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div class="footer-socials">
-        <a
-          href="https://www.tiktok.com/@cj.maylock"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok"
-        >
-          TT
-        </a>
-
-        <a
-          href="https://www.youtube.com/@CJMaylock/videos"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="YouTube"
-        >
-          YT
-        </a>
-
-        <a href="#" aria-label="Instagram coming soon">IG</a>
-
-        <a href="mailto:cjmaylock@gmail.com" aria-label="Email CJ Maylock">
-          @
-        </a>
+        <a href="https://www.tiktok.com/@cj.maylock" target="_blank" rel="noopener noreferrer">TT</a>
+        <a href="https://www.youtube.com/@CJMaylock/videos" target="_blank" rel="noopener noreferrer">YT</a>
+        <a href="#">IG</a>
+        <a href="mailto:cjmaylock@gmail.com">@</a>
       </div>
     </div>
 
     <div class="footer-bottom shell">
       <span>© <span id="current-year"></span> CJ Maylock</span>
-      <span>When nonsense is the only thing that makes sense.</span>
+      <span>Failure to document an event does not prevent it from occurring.</span>
     </div>
   </footer>
 
+  <div class="secret-message" id="secret-message">
+    <div class="secret-card">
+      <p class="eyebrow">Unauthorized access</p>
+      <h3 id="secret-title">How did you find this?</h3>
+      <p id="secret-text"></p>
+
+      <button
+        class="button button-secondary"
+        id="secret-close"
+        type="button"
+      >
+        Return Before Anyone Notices
+      </button>
+    </div>
+  </div>
+
   <script>
+    /* Entry screen */
+    const bootScreen = document.getElementById("boot-screen");
+    const bootCopy = document.getElementById("boot-copy");
+    const bootActions = document.getElementById("boot-actions");
+    const enterSite = document.getElementById("enter-site");
+
+    setTimeout(() => {
+      bootCopy.innerHTML =
+        "Connection established.<br>Author file located.<br>Public-facing author materials successfully loaded.";
+      bootActions.classList.add("visible");
+    }, 2100);
+
+    enterSite.addEventListener("click", () => {
+      bootScreen.classList.add("hidden");
+      document.body.classList.remove("booting");
+    });
+
+    /* Flashlight */
+    const flashlightToggle = document.getElementById("flashlight-toggle");
+    let flashlightEnabled = true;
+
+    document.body.classList.add("flashlight-active");
+
+    window.addEventListener("pointermove", (event) => {
+      if (!flashlightEnabled) return;
+
+      document.documentElement.style.setProperty(
+        "--flashlight-x",
+        `${event.clientX}px`
+      );
+
+      document.documentElement.style.setProperty(
+        "--flashlight-y",
+        `${event.clientY}px`
+      );
+    });
+
+    flashlightToggle.addEventListener("click", () => {
+      flashlightEnabled = !flashlightEnabled;
+      flashlightToggle.setAttribute("aria-pressed", String(flashlightEnabled));
+      document.body.classList.toggle("flashlight-active", flashlightEnabled);
+    });
+
     /* Header */
     const header = document.querySelector(".site-header");
 
@@ -1824,15 +2240,12 @@
       header.classList.toggle("scrolled", window.scrollY > 20);
     });
 
-    /* Mobile navigation */
     const menuButton = document.querySelector(".menu-toggle");
     const navigationLinks = document.querySelector(".navigation-links");
 
     menuButton.addEventListener("click", () => {
-      const menuIsOpen =
-        menuButton.getAttribute("aria-expanded") === "true";
-
-      menuButton.setAttribute("aria-expanded", String(!menuIsOpen));
+      const open = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!open));
       navigationLinks.classList.toggle("open");
       document.body.classList.toggle("menu-open");
     });
@@ -1845,7 +2258,7 @@
       });
     });
 
-    /* Scroll reveal */
+    /* Reveal */
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -1862,177 +2275,226 @@
       revealObserver.observe(element);
     });
 
+    /* Hidden discoveries */
+    const secretMessages = {
+      owl: {
+        title: "How did you find this?",
+        text:
+          "This material was not approved for civilian access. The owl has three eyes for a reason."
+      },
+
+      coffee: {
+        title: "The coffee is still warm.",
+        text:
+          "Nobody remembers making it. Nobody is willing to stop drinking it."
+      },
+
+      rift: {
+        title: "The building is closed.",
+        text:
+          "The second bell does not indicate dismissal."
+      },
+
+      book: {
+        title: "This sentence was not in the manuscript.",
+        text:
+          "It appeared after the book was closed. Please do not read it twice."
+      }
+    };
+
+    const secretMessage = document.getElementById("secret-message");
+    const secretTitle = document.getElementById("secret-title");
+    const secretText = document.getElementById("secret-text");
+    const secretClose = document.getElementById("secret-close");
+
+    document.querySelectorAll("[data-secret]").forEach((element) => {
+      element.addEventListener("click", () => {
+        const key = element.dataset.secret;
+
+        if (key === "rift") {
+          window.location.href = "after-dismissal.html";
+          return;
+        }
+
+        const secret = secretMessages[key];
+        if (!secret) return;
+
+        secretTitle.textContent = secret.title;
+        secretText.textContent = secret.text;
+        secretMessage.classList.add("open");
+      });
+    });
+
+    secretClose.addEventListener("click", () => {
+      secretMessage.classList.remove("open");
+    });
+
+    secretMessage.addEventListener("click", (event) => {
+      if (event.target === secretMessage) {
+        secretMessage.classList.remove("open");
+      }
+    });
+
     /* Game */
     const gameArea = document.getElementById("game-area");
-    const gameScoreElement = document.getElementById("game-score");
-    const gameRoundElement = document.getElementById("game-round");
-    const gameMoraleElement = document.getElementById("game-morale");
+    const startScreen = document.getElementById("game-start");
+    const resultScreen = document.getElementById("game-result");
+    const startButton = document.getElementById("start-game");
+    const restartButton = document.getElementById("restart-game");
 
-    const startScreen = document.getElementById("game-start-screen");
-    const resultScreen = document.getElementById("game-result-screen");
+    const scoreElement = document.getElementById("game-score");
+    const roundElement = document.getElementById("game-round");
+    const clearanceElement = document.getElementById("game-clearance");
 
-    const startButton = document.getElementById("start-game-button");
-    const restartButton = document.getElementById("restart-game-button");
-
-    const resultIcon = document.getElementById("result-icon");
-    const resultTitle = document.getElementById("result-title");
     const resultScore = document.getElementById("result-score");
+    const resultStatus = document.getElementById("result-status");
+    const resultRecommendation =
+      document.getElementById("result-recommendation");
     const resultMessage = document.getElementById("result-message");
 
-    const gameObjects = [
-      { symbol: "☕", name: "coffee", type: "good", points: 3 },
-      { symbol: "🖊️", name: "red pen", type: "good", points: 2 },
-      { symbol: "📚", name: "books", type: "good", points: 2 },
-      { symbol: "📝", name: "lesson plans", type: "good", points: 1 },
-      { symbol: "🌀", name: "interdimensional rift", type: "bad", points: -4 },
-      { symbol: "📨", name: "reply all email", type: "bad", points: -3 },
-      { symbol: "🤖", name: "suspicious AI essay", type: "bad", points: -2 },
-      { symbol: "📋", name: "cursed paperwork", type: "bad", points: -2 }
-    ];
+    let score = 0;
+    let round = 0;
+    let active = false;
+    let targetTimeout;
 
-    let gameScore = 0;
-    let gameRound = 0;
-    let gameActive = false;
-    let objectTimeout;
+    function updateHud() {
+      scoreElement.textContent = score;
+      roundElement.textContent = `${round} / 10`;
 
-    function updateGameHud() {
-      gameScoreElement.textContent = gameScore;
-      gameRoundElement.textContent = `${gameRound} / 10`;
-
-      if (gameScore >= 12) {
-        gameMoraleElement.textContent = "UNREASONABLY HIGH";
-      } else if (gameScore >= 5) {
-        gameMoraleElement.textContent = "STABLE";
-      } else if (gameScore >= 0) {
-        gameMoraleElement.textContent = "CONCERNING";
+      if (score >= 14) {
+        clearanceElement.textContent = "LEVEL 2";
+      } else if (score >= 7) {
+        clearanceElement.textContent = "LEVEL 1";
+      } else if (score >= 0) {
+        clearanceElement.textContent = "TRAINEE";
       } else {
-        gameMoraleElement.textContent = "CRITICAL";
+        clearanceElement.textContent = "REVOKED";
       }
     }
 
-    function removeCurrentGameObject() {
-      const currentObject = gameArea.querySelector(".game-object");
-
-      if (currentObject) {
-        currentObject.remove();
-      }
+    function removeTarget() {
+      const target = gameArea.querySelector(".rift-target");
+      if (target) target.remove();
     }
 
-    function createGameObject() {
-      if (!gameActive) {
-        return;
-      }
+    function createTarget() {
+      if (!active) return;
 
-      if (gameRound >= 10) {
+      if (round >= 10) {
         finishGame();
         return;
       }
 
-      gameRound += 1;
-      updateGameHud();
-      removeCurrentGameObject();
+      round += 1;
+      updateHud();
+      removeTarget();
 
-      const objectData =
-        gameObjects[Math.floor(Math.random() * gameObjects.length)];
+      const dangerous = Math.random() < 0.3;
+      const target = document.createElement("button");
 
-      const objectButton = document.createElement("button");
+      target.type = "button";
+      target.className = dangerous
+        ? "rift-target danger"
+        : "rift-target";
 
-      objectButton.type = "button";
-      objectButton.className = `game-object ${objectData.type}`;
-      objectButton.textContent = objectData.symbol;
-      objectButton.setAttribute("aria-label", objectData.name);
-
-      const objectSize = 68;
-      const minimumTop = 125;
-      const maximumTop = Math.max(
-        minimumTop,
-        gameArea.clientHeight - 205
+      target.setAttribute(
+        "aria-label",
+        dangerous ? "Dangerous anomaly" : "Stable rift"
       );
 
-      const maximumLeft = Math.max(
+      const width = 74;
+      const height = 110;
+      const minTop = 125;
+      const maxTop = Math.max(
+        minTop,
+        gameArea.clientHeight - height - 180
+      );
+
+      const maxLeft = Math.max(
         10,
-        gameArea.clientWidth - objectSize - 18
+        gameArea.clientWidth - width - 18
       );
 
-      objectButton.style.left =
-        `${Math.floor(Math.random() * maximumLeft) + 8}px`;
+      target.style.left =
+        `${Math.floor(Math.random() * maxLeft) + 8}px`;
 
-      objectButton.style.top =
+      target.style.top =
         `${Math.floor(
-          Math.random() * (maximumTop - minimumTop + 1)
-        ) + minimumTop}px`;
+          Math.random() * (maxTop - minTop + 1)
+        ) + minTop}px`;
 
-      objectButton.addEventListener("click", () => {
-        if (!gameActive) {
-          return;
-        }
+      target.addEventListener("click", () => {
+        if (!active) return;
 
-        clearTimeout(objectTimeout);
-        gameScore += objectData.points;
-        updateGameHud();
-        objectButton.remove();
+        clearTimeout(targetTimeout);
+        score += dangerous ? -3 : 3;
+        updateHud();
+        target.remove();
 
-        setTimeout(createGameObject, 220);
+        setTimeout(createTarget, 220);
       });
 
-      gameArea.appendChild(objectButton);
+      gameArea.appendChild(target);
 
-      objectTimeout = setTimeout(() => {
-        objectButton.remove();
+      targetTimeout = setTimeout(() => {
+        target.remove();
 
-        if (objectData.type === "good") {
-          gameScore -= 1;
+        if (!dangerous) {
+          score -= 1;
         }
 
-        updateGameHud();
-        createGameObject();
+        updateHud();
+        createTarget();
       }, 1350);
     }
 
     function startGame() {
-      clearTimeout(objectTimeout);
-      removeCurrentGameObject();
+      clearTimeout(targetTimeout);
+      removeTarget();
 
-      gameScore = 0;
-      gameRound = 0;
-      gameActive = true;
+      score = 0;
+      round = 0;
+      active = true;
 
-      startScreen.style.display = "none";
-      resultScreen.style.display = "none";
+      startScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
 
-      updateGameHud();
-      setTimeout(createGameObject, 350);
+      updateHud();
+      setTimeout(createTarget, 350);
     }
 
     function finishGame() {
-      gameActive = false;
-      clearTimeout(objectTimeout);
-      removeCurrentGameObject();
+      active = false;
+      clearTimeout(targetTimeout);
+      removeTarget();
 
-      resultScreen.style.display = "grid";
-      resultScore.textContent =
-        `Final faculty survival score: ${gameScore}`;
+      resultScreen.classList.remove("hidden");
+      resultScore.textContent = String(score);
 
-      if (gameScore >= 14) {
-        resultIcon.textContent = "🏆";
-        resultTitle.textContent = "Teacher of the Multiverse";
+      if (score >= 18) {
+        resultStatus.textContent = "Approved with distinction";
+        resultRecommendation.textContent =
+          "Eligible for supervised rift response";
         resultMessage.textContent =
-          "You collected the supplies, avoided the rifts, completed the paperwork, and somehow protected reality. Unfortunately, your reward is another duty assignment. You should probably go read about the book instead.";
-      } else if (gameScore >= 7) {
-        resultIcon.textContent = "🎉";
-        resultTitle.textContent = "Dismissal Achieved";
+          "Excellent work. The agency is impressed. This is usually a bad sign.";
+      } else if (score >= 8) {
+        resultStatus.textContent = "Approved";
+        resultRecommendation.textContent =
+          "Eligible for provisional F.I.I.A. training";
         resultMessage.textContent =
-          "You survived the school day with most of reality intact. That is well above district expectations. Your next professional responsibility is to go read about the book.";
-      } else if (gameScore >= 0) {
-        resultIcon.textContent = "☕";
-        resultTitle.textContent = "Technically Still Employed";
+          "Most structural problems were contained before dismissal.";
+      } else if (score >= 0) {
+        resultStatus.textContent = "Conditionally approved";
+        resultRecommendation.textContent =
+          "Additional training and coffee required";
         resultMessage.textContent =
-          "The rifts remain open, the coffee is cold, and someone scheduled a meeting during planning. The only reasonable response is to go read about the book.";
+          "Reality remains technically available.";
       } else {
-        resultIcon.textContent = "🌀";
-        resultTitle.textContent = "Reality Has Been Cancelled";
+        resultStatus.textContent = "Clearance revoked";
+        resultRecommendation.textContent =
+          "Return to ordinary teaching duties";
         resultMessage.textContent =
-          "You clicked too many cosmic threats and reply-all emails. School is closed indefinitely. Please use your unexpected free time to go read about the book.";
+          "The agency regrets to inform you that ordinary teaching may be more dangerous.";
       }
     }
 
