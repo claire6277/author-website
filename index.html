@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Official author website for CJ Maylock, author of The English Department vs. Chaos and Nonsense." name="description"/>
-<meta content="#070712" name="theme-color"/>
-<title>
-    CJ Maylock | The English Department vs. Chaos and Nonsense
-  </title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Orbitron:wght@500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Official author website for CJ Maylock, author of The English Department vs. Chaos and Nonsense."
+  >
+
+  <meta name="theme-color" content="#111722">
+
+  <title>CJ Maylock | Author</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
     :root {
-      --background: #060611;
-      --background-light: #0d0d22;
-
-      --panel: rgba(17, 18, 43, 0.86);
-      --panel-dark: rgba(8, 9, 23, 0.94);
-      --panel-soft: rgba(27, 25, 60, 0.68);
-
-      --text: #f8f4ff;
-      --muted: #aaa6c1;
-      --muted-dark: #747087;
-
-      --purple: #9b65ff;
-      --violet: #684dff;
-      --pink: #ff5ccc;
-      --cyan: #58ddff;
-      --blue: #4d72ff;
-      --gold: #ffdc86;
-      --red: #ff536f;
-      --green: #70ffd3;
-
-      --border: rgba(255, 255, 255, 0.14);
-      --border-bright: rgba(255, 255, 255, 0.26);
-
-      --maximum-width: 1080px;
-      --header-height: 72px;
+      --ink: #111722;
+      --ink-soft: #1a2230;
+      --paper: #f4f0e8;
+      --paper-deep: #e7dfd1;
+      --white: #fffdf9;
+      --text: #1c2430;
+      --muted: #67717f;
+      --line: rgba(17, 23, 34, 0.16);
+      --line-light: rgba(255, 255, 255, 0.16);
+      --gold: #b89a63;
+      --gold-dark: #8d7040;
+      --plum: #55415f;
+      --blue: #304963;
+      --sage: #66766b;
+      --danger: #8a4650;
+      --shadow: 0 28px 70px rgba(13, 19, 29, 0.14);
+      --radius: 18px;
+      --max-width: 1160px;
+      --header-height: 74px;
     }
 
     * {
@@ -52,28 +55,10 @@
     body {
       margin: 0;
       overflow-x: hidden;
-
       color: var(--text);
-
+      background: var(--paper);
       font-family: "DM Sans", sans-serif;
-
-      background:
-        radial-gradient(
-          circle at 10% 4%,
-          rgba(111, 68, 255, 0.18),
-          transparent 27%
-        ),
-        radial-gradient(
-          circle at 88% 16%,
-          rgba(255, 92, 204, 0.13),
-          transparent 28%
-        ),
-        linear-gradient(
-          180deg,
-          #070712 0%,
-          #090a1d 48%,
-          #05050d 100%
-        );
+      line-height: 1.6;
     }
 
     body.menu-open {
@@ -89,124 +74,95 @@
       font: inherit;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     ::selection {
-      color: #05050d;
-      background: var(--cyan);
+      color: var(--white);
+      background: var(--plum);
     }
 
     .shell {
-      width: min(
-        calc(100% - 2rem),
-        var(--maximum-width)
-      );
-
+      width: min(calc(100% - 2.4rem), var(--max-width));
       margin-inline: auto;
     }
 
-    .section {
-      position: relative;
-
-      padding: 4.25rem 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .section-label {
-      position: absolute;
-
-      top: 0;
-      left: 50%;
-
-      z-index: 5;
-
-      padding: 0.35rem 0.8rem;
-
-      transform: translate(-50%, -50%);
-
-      border: 1px solid var(--border);
-      border-radius: 999px;
-
-      color: rgba(255, 255, 255, 0.63);
-      background: #090a1b;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.54rem;
-      letter-spacing: 0.14em;
-      white-space: nowrap;
-    }
-
-    .panel {
-      padding: clamp(1.4rem, 3vw, 2.3rem);
-
-      border: 1px solid var(--border);
-      border-radius: 22px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(20, 21, 50, 0.72),
-          rgba(8, 9, 23, 0.91)
-        );
-
-      box-shadow:
-        0 20px 55px rgba(0, 0, 0, 0.26);
-    }
-
-    .section-tag,
-    .hero-kicker {
-      margin: 0 0 0.85rem;
-
-      color: var(--cyan);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-    }
-
-    .section h2,
-    .hero h1 {
-      margin: 0;
-
-      font-family: "Orbitron", sans-serif;
-      line-height: 1;
-      letter-spacing: -0.045em;
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      color: var(--gold-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    .section h2 {
-      font-size: clamp(2rem, 4vw, 3.7rem);
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 8vw, 7.4rem);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin-top: 0;
     }
 
     .body-copy {
       color: var(--muted);
-
       font-size: 1rem;
-      line-height: 1.65;
+      line-height: 1.75;
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(5rem, 8vw, 8.5rem) 0;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 2.5rem;
     }
 
     .button {
       min-height: 48px;
-
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
-      padding: 0.8rem 1.15rem;
-
+      gap: 0.45rem;
+      padding: 0.82rem 1.18rem;
       border: 1px solid transparent;
       border-radius: 999px;
-
-      font-weight: 800;
-      text-align: center;
+      font-size: 0.86rem;
+      font-weight: 700;
       text-decoration: none;
-
       cursor: pointer;
-
       transition:
         transform 0.2s ease,
+        background 0.2s ease,
         border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        color 0.2s ease;
     }
 
     .button:hover {
@@ -214,285 +170,211 @@
     }
 
     .button-primary {
-      color: #080813;
+      color: var(--white);
+      background: var(--ink);
+    }
 
-      background:
-        linear-gradient(
-          135deg,
-          var(--cyan),
-          #ad7cff 55%,
-          var(--pink)
-        );
-
-      box-shadow:
-        0 12px 30px rgba(117, 89, 255, 0.25);
+    .button-primary:hover {
+      background: var(--plum);
     }
 
     .button-secondary {
-      border-color: var(--border-bright);
-
-      background:
-        rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.06);
     }
 
     .button-secondary:hover {
-      border-color: var(--cyan);
+      border-color: var(--gold);
+      color: #f2dfb8;
     }
 
-    #starfield {
-      position: fixed;
-      inset: 0;
-
-      width: 100%;
-      height: 100%;
-
-      z-index: -4;
+    .button-light {
+      border-color: var(--line);
+      color: var(--text);
+      background: transparent;
     }
 
-    .background-glow {
-      position: fixed;
-
-      border-radius: 50%;
-
-      filter: blur(110px);
-      opacity: 0.2;
-
-      pointer-events: none;
-
-      z-index: -3;
+    .button-light:hover {
+      border-color: var(--gold-dark);
+      color: var(--gold-dark);
     }
 
-    .glow-one {
-      width: 500px;
-      height: 500px;
-
-      top: -170px;
-      left: -130px;
-
-      background: #7546ff;
-    }
-
-    .glow-two {
-      width: 600px;
-      height: 600px;
-
-      top: 20%;
-      right: -230px;
-
-      background: #d443ff;
-    }
-
-    .scanlines {
-      position: fixed;
-      inset: 0;
-
-      z-index: 9999;
-
-      opacity: 0.025;
-
-      pointer-events: none;
-
-      background:
-        repeating-linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.18) 0 1px,
-          transparent 1px 4px
-        );
-    }
-
+    /* Header */
     .site-header {
       position: fixed;
       inset: 0 0 auto;
-
       z-index: 1000;
-
       transition:
         background 0.2s ease,
-        border-color 0.2s ease;
+        box-shadow 0.2s ease;
     }
 
     .site-header.scrolled {
-      border-bottom: 1px solid var(--border);
-
-      background:
-        rgba(6, 6, 17, 0.83);
-
-      backdrop-filter: blur(17px);
+      background: rgba(244, 240, 232, 0.94);
+      box-shadow: 0 1px 0 var(--line);
+      backdrop-filter: blur(14px);
     }
 
     .navigation {
       min-height: var(--header-height);
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 1.5rem;
     }
 
     .logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-
       gap: 0.7rem;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.9rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-decoration: none;
     }
 
     .logo-mark {
-      color: var(--cyan);
-
-      text-shadow:
-        0 0 18px var(--cyan);
+      color: var(--gold-dark);
+      font-size: 0.9rem;
     }
 
     .navigation-links {
       display: flex;
       align-items: center;
-
-      gap: 1.05rem;
+      gap: 1.4rem;
     }
 
     .navigation-links a {
-      color: #d6d2e5;
-
-      font-size: 0.82rem;
+      color: #303945;
+      font-size: 0.81rem;
       font-weight: 700;
+      letter-spacing: 0.04em;
       text-decoration: none;
     }
 
     .navigation-links a:hover {
-      color: var(--cyan);
+      color: var(--gold-dark);
     }
 
     .navigation-contact {
       padding: 0.55rem 0.9rem;
-
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 999px;
     }
 
     .menu-toggle {
-      width: 42px;
-      height: 42px;
-
+      width: 44px;
+      height: 44px;
       display: none;
-
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 50%;
-
       background: transparent;
-
       cursor: pointer;
     }
 
     .menu-toggle span {
       width: 18px;
-      height: 2px;
-
+      height: 1px;
       display: block;
-
       margin: 5px auto;
-
-      background: white;
+      background: var(--ink);
     }
 
+    /* Hero */
     .hero {
       position: relative;
+      overflow: hidden;
+      padding: calc(var(--header-height) + 5.6rem) 0 6.5rem;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 75% 18%, rgba(184, 154, 99, 0.2), transparent 27%),
+        radial-gradient(circle at 25% 100%, rgba(85, 65, 95, 0.32), transparent 34%),
+        linear-gradient(135deg, #111722 0%, #1b2431 48%, #273345 100%);
+    }
 
-      padding: 7.4rem 0 4rem;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.26;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.25px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      right: -120px;
+      bottom: -250px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 45px rgba(255, 255, 255, 0.025),
+        0 0 0 95px rgba(255, 255, 255, 0.018);
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
-
-      gap: clamp(2rem, 5vw, 4rem);
+      gap: clamp(3rem, 7vw, 7rem);
     }
 
-    .hero h1 {
-      font-size: clamp(3rem, 6vw, 5.4rem);
+    .hero .eyebrow {
+      color: #d9c39a;
     }
 
-    .hero h1 em {
+    .hero h1 span {
       display: block;
-
-      color: transparent;
-
-      font-style: normal;
-
-      -webkit-text-stroke:
-        1px #dfd9ff;
-
-      text-shadow:
-        5px 5px 0 rgba(139, 92, 246, 0.2);
+      color: #d9c39a;
+      font-style: italic;
+      font-weight: 500;
     }
 
     .hero-tagline {
-      margin: 1.25rem 0 0;
-
-      color: #ded9f0;
-
-      font-family: "Playfair Display", serif;
-      font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+      margin: 1.35rem 0 0;
+      color: #ece4d7;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.5rem, 2.2vw, 2.15rem);
       font-style: italic;
     }
 
     .hero-description {
       max-width: 650px;
-
-      margin: 0.85rem 0 0;
-
-      color: var(--muted);
-
-      font-size: 1.04rem;
-      line-height: 1.65;
+      margin: 1rem 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1.03rem;
+      line-height: 1.75;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-
       gap: 0.75rem;
-
-      margin-top: 1.5rem;
+      margin-top: 1.8rem;
     }
 
     .publication-status {
       display: flex;
       align-items: center;
-
-      gap: 0.75rem;
-
-      margin-top: 1.6rem;
+      gap: 0.85rem;
+      margin-top: 2rem;
+      color: rgba(255, 255, 255, 0.76);
     }
 
-    .status-light {
-      width: 9px;
-      height: 9px;
-
-      border-radius: 50%;
-
-      background: var(--cyan);
-
-      box-shadow:
-        0 0 18px var(--cyan);
-
-      animation:
-        status-pulse 1.8s infinite;
-    }
-
-    @keyframes status-pulse {
-      50% {
-        opacity: 0.35;
-        transform: scale(0.75);
-      }
+    .status-line {
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
     }
 
     .publication-status small,
@@ -501,1172 +383,539 @@
     }
 
     .publication-status small {
-      color: #74718a;
-
-      font-size: 0.62rem;
-      letter-spacing: 0.13em;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .publication-status strong {
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.73rem;
+      margin-top: 0.15rem;
+      color: var(--white);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.02rem;
+      letter-spacing: 0.03em;
     }
 
     .hero-art {
       position: relative;
+      min-height: 510px;
+      display: grid;
+      place-items: center;
+    }
 
+    .hero-frame {
+      position: relative;
+      width: min(100%, 420px);
       min-height: 470px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 210px 210px 18px 18px;
+      background:
+        linear-gradient(rgba(16, 25, 37, 0.12), rgba(16, 25, 37, 0.8)),
+        radial-gradient(circle at 50% 26%, rgba(194, 166, 114, 0.2), transparent 28%),
+        #182331;
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 185px 185px 10px 10px;
     }
 
     .rift {
       position: absolute;
-
-      width: 180px;
-      height: 255px;
-
-      top: 38px;
+      width: 135px;
+      height: 235px;
+      top: 58px;
       left: 50%;
-
-      transform:
-        translateX(-50%)
-        rotate(7deg);
-
-      border-radius:
-        48% 52% 44% 56% /
-        39% 55% 45% 61%;
-
+      transform: translateX(-50%) rotate(7deg);
+      border-radius: 52% 48% 50% 50%;
       background:
         radial-gradient(
           ellipse,
-          #ffffff 0 3%,
-          var(--cyan) 8%,
-          #735bff 28%,
-          rgba(255, 91, 204, 0.8) 43%,
-          rgba(14, 11, 44, 0.95) 63%,
+          #f4efe4 0 4%,
+          #b89a63 10%,
+          #77627e 30%,
+          #334e67 48%,
+          #0b1018 68%,
           transparent 70%
         );
-
-      filter:
-        drop-shadow(
-          0 0 18px rgba(88, 221, 255, 0.8)
-        )
-        drop-shadow(
-          0 0 50px rgba(155, 101, 255, 0.55)
-        );
-
-      animation:
-        rift-breathe 5s infinite ease-in-out;
-    }
-
-    .rift::before {
-      content: "";
-
-      position: absolute;
-      inset: -14px;
-
-      border: 1px solid rgba(88, 221, 255, 0.55);
-      border-radius: inherit;
-
-      transform: rotate(14deg);
+      filter: drop-shadow(0 0 24px rgba(184, 154, 99, 0.4));
+      animation: rift-breathe 5.5s ease-in-out infinite;
     }
 
     .rift::after {
       content: "";
-
       position: absolute;
-
-      inset: 17% 35%;
-
+      inset: 16% 33%;
       border-radius: 50%;
-
-      background: #03020c;
+      background: #080d14;
     }
 
     @keyframes rift-breathe {
       50% {
-        transform:
-          translateX(-50%)
-          rotate(4deg)
-          scale(1.04);
+        transform: translateX(-50%) rotate(3deg) scale(1.025);
       }
     }
 
-    .floating-item {
+    .hero-note {
       position: absolute;
-
-      box-shadow:
-        0 18px 38px rgba(0, 0, 0, 0.4);
-
-      animation:
-        float-item 5s ease-in-out infinite alternate;
+      max-width: 150px;
+      padding: 0.85rem;
+      color: #222733;
+      background: #efe6d5;
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.24);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.92rem;
+      line-height: 1.25;
     }
 
-    @keyframes float-item {
-      to {
-        transform:
-          translateY(-12px)
-          rotate(-4deg);
-      }
+    .note-one {
+      top: 102px;
+      left: 22px;
+      transform: rotate(-6deg);
     }
 
-    .floating-paper {
-      width: 90px;
-      min-height: 112px;
-
-      padding: 0.6rem;
-
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 4px;
-
-      color: #201d31;
-      background: #eee9dc;
-
-      font-family: Georgia, serif;
-      font-size: 0.43rem;
-      line-height: 1.4;
-    }
-
-    .paper-one {
-      top: 55px;
-      left: 0;
-
-      transform: rotate(-12deg);
-    }
-
-    .paper-two {
-      top: 185px;
-      right: 0;
-
-      transform: rotate(10deg);
-
-      animation-delay: -2s;
-    }
-
-    .sticky-note {
-      width: 88px;
-      min-height: 78px;
-
-      display: grid;
-      place-items: center;
-
-      padding: 0.55rem;
-
-      color: #392f16;
-      background: #ffe985;
-
-      font-family: "Playfair Display", serif;
-      font-size: 0.72rem;
-      font-style: italic;
-      text-align: center;
-
-      top: 15px;
-      right: 25px;
-
-      transform: rotate(8deg);
-
-      animation-delay: -1s;
-    }
-
-    .coffee-cup {
-      width: 75px;
-      height: 70px;
-
-      left: 42px;
-      top: 245px;
-
-      border: 3px solid #ebe6ff;
-      border-radius: 5px 5px 18px 18px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #403568,
-          #1c1934
-        );
-
-      transform: rotate(-7deg);
-
-      animation-delay: -3s;
-    }
-
-    .coffee-cup::before {
-      content: "STAFF";
-      position: absolute;
-
-      inset: 0;
-
-      display: grid;
-      place-items: center;
-
-      color: white;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.52rem;
-      letter-spacing: 0.12em;
-    }
-
-    .coffee-cup::after {
-      content: "";
-
-      position: absolute;
-
-      width: 25px;
-      height: 28px;
-
-      top: 14px;
-      right: -22px;
-
-      border: 3px solid #ebe6ff;
-      border-left: 0;
-      border-radius: 0 15px 15px 0;
-    }
-
-    .red-pen-floating {
-      width: 105px;
-      height: 7px;
-
-      right: 60px;
-      top: 300px;
-
-      border-radius: 999px;
-
-      background: var(--red);
-
-      box-shadow:
-        0 0 15px rgba(255, 83, 111, 0.5);
-
-      transform: rotate(-18deg);
-    }
-
-    .red-pen-floating::after {
-      content: "";
-
-      position: absolute;
-
-      right: -14px;
-      top: -3px;
-
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-left: 16px solid var(--red);
-    }
-
-    .warning {
-      position: absolute;
-
-      top: 110px;
-      right: 0;
-
-      color: rgba(255, 255, 255, 0.43);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.48rem;
-      line-height: 1.7;
-      text-align: right;
+    .note-two {
+      top: 215px;
+      right: 20px;
+      transform: rotate(5deg);
     }
 
     .classroom {
       position: absolute;
-
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      height: 190px;
-
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      height: 150px;
       overflow: hidden;
-
-      border: 1px solid var(--border);
-      border-radius: 20px;
-
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
       background:
-        linear-gradient(
-          rgba(45, 35, 95, 0.78),
-          rgba(10, 13, 31, 0.96)
-        );
-
-      box-shadow:
-        0 24px 60px rgba(0, 0, 0, 0.4);
-    }
-
-    .classroom::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      opacity: 0.28;
-
-      background-image:
-        radial-gradient(
-          circle,
-          white 1px,
-          transparent 1.5px
-        );
-
-      background-size: 42px 42px;
+        linear-gradient(rgba(47, 66, 84, 0.6), rgba(10, 16, 24, 0.95));
     }
 
     .chalkboard {
-      position: absolute;
-
-      width: 48%;
-      height: 68px;
-
-      top: 18px;
-      left: 50%;
-
-      z-index: 2;
-
-      transform: translateX(-50%);
-
-      border: 5px solid #5c4630;
-
+      width: 55%;
+      margin: 18px auto 0;
+      padding: 0.7rem;
+      border: 5px solid #6d573d;
       color: rgba(255, 255, 255, 0.72);
-      background: #172c2a;
-
-      font-family: "Playfair Display", serif;
-      font-size: 0.68rem;
+      background: #263f3b;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.82rem;
       font-style: italic;
       text-align: center;
+    }
 
-      padding-top: 16px;
+    .desk-row {
+      position: absolute;
+      left: 13%;
+      right: 13%;
+      bottom: 26px;
+      display: flex;
+      justify-content: space-between;
     }
 
     .desk {
-      position: absolute;
-
-      bottom: 50px;
-
-      width: 66px;
-      height: 24px;
-
-      background: #15182d;
+      width: 52px;
+      height: 18px;
+      background: #101722;
+      box-shadow: 0 21px 0 -7px #101722;
     }
 
-    .desk::before,
-    .desk::after {
-      content: "";
-
-      position: absolute;
-
-      top: 22px;
-
-      width: 5px;
-      height: 42px;
-
-      background: #101224;
-    }
-
-    .desk::before {
-      left: 9px;
-    }
-
-    .desk::after {
-      right: 9px;
-    }
-
-    .desk-one {
-      left: 12%;
-    }
-
-    .desk-two {
-      left: 41%;
-    }
-
-    .desk-three {
-      right: 12%;
-    }
-
-    .school-floor {
-      position: absolute;
-
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      height: 55px;
-
-      background: #080915;
-    }
-
-    .classroom-caption {
-      position: absolute;
-
-      left: 14px;
-      bottom: 9px;
-
-      z-index: 2;
-
-      margin: 0;
-
-      color: rgba(255, 255, 255, 0.4);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.5rem;
-      letter-spacing: 0.11em;
-    }
-
-    .marquee {
-      overflow: hidden;
-
-      border-block: 1px solid var(--border);
-
+    /* Book */
+    .book-section {
       background:
-        rgba(92, 60, 188, 0.16);
+        linear-gradient(180deg, var(--paper) 0%, #eee8dc 100%);
     }
 
-    .marquee-track {
-      width: max-content;
-
-      display: flex;
-
-      gap: 1.2rem;
-
-      padding: 0.72rem 0;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.64rem;
-      letter-spacing: 0.13em;
-
-      animation:
-        marquee-scroll 28s linear infinite;
-    }
-
-    .marquee-track b {
-      color: var(--pink);
-    }
-
-    @keyframes marquee-scroll {
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .two-column {
+    .book-layout,
+    .about-layout,
+    .contact-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-
+      grid-template-columns: 0.9fr 1.1fr;
       align-items: center;
-
-      gap: clamp(2rem, 5vw, 4rem);
+      gap: clamp(3rem, 7vw, 7rem);
     }
 
     .book-stage {
       position: relative;
-
-      min-height: 470px;
-
+      min-height: 520px;
       display: grid;
       place-items: center;
-
       perspective: 1200px;
     }
 
     .book-object {
       position: relative;
-
-      width: 260px;
-
-      aspect-ratio: 0.68;
-
-      transform:
-        rotateY(-12deg)
-        rotateZ(-2deg);
-
-      transition:
-        transform 0.35s ease;
+      width: min(78%, 300px);
+      aspect-ratio: 0.67;
+      transform: rotateY(-9deg) rotateZ(-1.2deg);
+      transition: transform 0.35s ease;
     }
 
     .book-stage:hover .book-object {
-      transform:
-        rotateY(-3deg)
-        translateY(-7px);
+      transform: rotateY(-2deg) translateY(-7px);
     }
 
     .book-cover {
       position: absolute;
       inset: 0;
-
       overflow: hidden;
-
-      border: 1px solid rgba(255, 255, 255, 0.34);
-
+      border: 1px solid rgba(255, 255, 255, 0.2);
       background:
-        radial-gradient(
-          circle at 75% 18%,
-          rgba(255, 92, 204, 0.4),
-          transparent 23%
-        ),
-        radial-gradient(
-          circle at 28% 30%,
-          rgba(76, 142, 255, 0.34),
-          transparent 28%
-        ),
-        linear-gradient(
-          #211344,
-          #11183e 55%,
-          #070912
-        );
-
-      box-shadow:
-        -20px 24px 50px rgba(0, 0, 0, 0.5);
+        radial-gradient(circle at 75% 18%, rgba(184, 154, 99, 0.22), transparent 25%),
+        linear-gradient(145deg, #1c2736, #111722 58%, #2f2633);
+      box-shadow: -24px 34px 55px rgba(17, 23, 34, 0.3);
     }
 
     .book-cover::before {
       content: "";
-
       position: absolute;
       inset: 0;
-
-      opacity: 0.35;
-
+      opacity: 0.26;
       background-image:
-        radial-gradient(
-          circle,
-          white 1px,
-          transparent 1.4px
-        );
-
-      background-size: 37px 37px;
+        radial-gradient(circle, white 0 1px, transparent 1.4px);
+      background-size: 44px 44px;
     }
 
     .cover-rift {
       position: absolute;
-
-      width: 95px;
+      width: 90px;
       height: 150px;
-
-      top: 22%;
+      top: 23%;
       left: 50%;
-
-      transform:
-        translateX(-50%)
-        rotate(7deg);
-
-      border-radius: 48%;
-
+      transform: translateX(-50%) rotate(6deg);
+      border-radius: 50%;
       background:
         radial-gradient(
           ellipse,
-          white 0 4%,
-          var(--cyan) 10%,
-          #7b62ff 32%,
-          rgba(255, 92, 204, 0.67) 49%,
-          #070718 67%,
+          #eee8d8 0 4%,
+          #b89a63 11%,
+          #66536d 34%,
+          #2f4960 49%,
+          #090e15 67%,
           transparent 71%
         );
-
-      filter:
-        drop-shadow(
-          0 0 16px var(--cyan)
-        );
+      filter: drop-shadow(0 0 18px rgba(184, 154, 99, 0.35));
     }
 
     .cover-school {
       position: absolute;
-
       left: -5%;
       right: -5%;
       bottom: 0;
-
       height: 38%;
-
-      background: #070914;
-
+      background: #090e15;
       clip-path:
         polygon(
-          0 100%,
-          0 55%,
-          12% 55%,
-          12% 38%,
-          34% 38%,
-          34% 48%,
-          45% 48%,
-          45% 27%,
-          68% 27%,
-          68% 50%,
-          82% 50%,
-          82% 36%,
-          100% 36%,
-          100% 100%
+          0 100%, 0 55%, 12% 55%, 12% 38%, 34% 38%,
+          34% 48%, 45% 48%, 45% 27%, 68% 27%, 68% 50%,
+          82% 50%, 82% 36%, 100% 36%, 100% 100%
         );
     }
 
     .cover-copy {
       position: absolute;
       inset: 7% 7% 6%;
-
       z-index: 2;
-
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      color: var(--white);
       text-align: center;
     }
 
     .cover-copy small {
-      font-family: "Orbitron", sans-serif;
+      font-size: 0.62rem;
       letter-spacing: 0.22em;
     }
 
     .cover-copy h3 {
       margin: auto 0;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(1.65rem, 3vw, 2.45rem);
-      line-height: 0.92;
+      font-size: clamp(1.7rem, 3vw, 2.55rem);
+      line-height: 0.9;
       text-transform: uppercase;
-
-      text-shadow:
-        4px 4px 0 rgba(255, 77, 203, 0.34);
     }
 
     .cover-copy p {
       margin: auto 0 0;
-
-      font-family: "Orbitron", sans-serif;
-      font-weight: 800;
-      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
     }
 
     .cover-placeholder {
       position: absolute;
-
-      left: 4%;
+      left: 6%;
       bottom: 3%;
-
-      color: var(--pink);
-
-      font-family: "Playfair Display", serif;
+      color: var(--gold-dark);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1rem;
       font-style: italic;
     }
 
-    .book-copy h2 span {
-      color: transparent;
-
-      -webkit-text-stroke:
-        1px #dcd5ff;
+    .book-copy h2 em {
+      color: var(--plum);
+      font-style: italic;
+      font-weight: 500;
     }
 
     .genre-list {
       display: flex;
       flex-wrap: wrap;
-
-      gap: 0.48rem;
-
-      margin-top: 1.1rem;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
     }
 
     .genre-list span {
-      padding: 0.48rem 0.68rem;
-
-      border: 1px solid var(--border);
+      padding: 0.5rem 0.7rem;
+      border: 1px solid var(--line);
       border-radius: 999px;
-
-      background:
-        rgba(255, 255, 255, 0.03);
-
+      color: #3c4652;
+      background: rgba(255, 255, 255, 0.45);
       font-size: 0.72rem;
       font-weight: 700;
     }
 
     .book-metadata {
-      margin-top: 1.2rem;
-
-      border-top: 1px solid var(--border);
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--line);
     }
 
     .book-metadata div {
       display: grid;
-      grid-template-columns: 105px 1fr;
-
+      grid-template-columns: 112px 1fr;
       gap: 1rem;
-
-      padding: 0.72rem 0;
-
-      border-bottom: 1px solid var(--border);
+      padding: 0.78rem 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .book-metadata span {
-      color: var(--cyan);
-
-      font-size: 0.62rem;
-      font-weight: 800;
+      color: var(--gold-dark);
+      font-size: 0.66rem;
+      font-weight: 700;
       letter-spacing: 0.12em;
     }
 
     .book-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-
-      gap: 0.8rem;
-
-      margin-top: 1.3rem;
+      margin-top: 1.5rem;
     }
 
-    .excerpt-note {
-      color: var(--muted-dark);
-      font-size: 0.76rem;
+    /* About */
+    .about-section {
+      background: var(--white);
+    }
+
+    .about-layout {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .author-quote {
+      margin: 1.8rem 0 0;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--gold);
+      color: var(--plum);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      line-height: 1.25;
     }
 
     .author-card {
       overflow: hidden;
-
-      border: 1px solid var(--border);
-      border-radius: 18px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(34, 28, 72, 0.8),
-          rgba(10, 12, 28, 0.9)
-        );
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f0ebe2;
+      box-shadow: var(--shadow);
     }
 
     .author-photo {
-  position: relative;
-  aspect-ratio: 1.5;
-  overflow: hidden;
-  background: #17182e;
-}
+      position: relative;
+      aspect-ratio: 1.35;
+      overflow: hidden;
+      background: #cfc8bc;
+    }
 
-.author-photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center 25%;
-}
+    .author-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 25%;
+    }
 
     .author-details {
-      padding: 1.2rem;
+      padding: 1.35rem 1.45rem 1.5rem;
     }
 
     .author-details > span {
       display: block;
-
-      margin-bottom: 0.9rem;
-
-      color: var(--cyan);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+      color: var(--gold-dark);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
     }
 
     .author-details div {
-      padding: 0.65rem 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .author-details small,
-    .author-details strong {
-      display: block;
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 0.9rem;
+      padding: 0.72rem 0;
+      border-top: 1px solid var(--line);
     }
 
     .author-details small {
-      color: var(--muted-dark);
-
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-    }
-
-    .author-details strong {
-      margin-top: 0.2rem;
-    }
-
-    .author-quote {
-      margin: 1.5rem 0 0;
-
-      padding-left: 1.1rem;
-
-      border-left: 2px solid var(--purple);
-
-      color: #e9e4ff;
-
-      font-family: "Playfair Display", serif;
-      font-size: 1.25rem;
-      font-style: italic;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-
-      align-items: end;
-
-      gap: 2rem;
-
-      margin-bottom: 1.4rem;
-      padding: 1.35rem;
-
-      border: 1px solid var(--border);
-      border-radius: 17px;
-
-      background:
-        rgba(11, 12, 30, 0.64);
-    }
-
-    .section-heading p {
-      margin: 0;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 0.9rem;
-    }
-
-    .story-card,
-    .future-card {
-      display: flex;
-      flex-direction: column;
-
-      min-height: 285px;
-
-      padding: 1.3rem;
-
-      border: 1px solid var(--border);
-      border-radius: 17px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(22, 23, 52, 0.75),
-          rgba(8, 10, 23, 0.93)
-        );
-
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .future-card {
-      min-height: 210px;
-    }
-
-    .story-card:hover,
-    .future-card:hover {
-      transform: translateY(-5px);
-
-      border-color:
-        rgba(88, 221, 255, 0.55);
-    }
-
-    .card-number {
-      color: #74718a;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.63rem;
-      letter-spacing: 0.1em;
-    }
-
-    .card-icon {
-      margin-top: 1.7rem;
-
-      color: var(--cyan);
-
-      font-size: 1.8rem;
-
-      text-shadow:
-        0 0 18px var(--cyan);
-    }
-
-    .story-card h3,
-    .future-card h3 {
-      margin: 0.9rem 0 0.5rem;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-    }
-
-    .story-card p,
-    .future-card p {
       color: var(--muted);
-
-      font-size: 0.92rem;
-      line-height: 1.58;
-    }
-
-    .card-note {
-      margin-top: auto;
-
-      color: var(--pink);
-
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
-    }
-
-    .updates-grid,
-    .faq-grid,
-    .contact-grid {
-      display: grid;
-      align-items: start;
-
-      gap: clamp(2rem, 5vw, 4rem);
-    }
-
-    .updates-grid {
-      grid-template-columns:
-        0.7fr 1.3fr;
-    }
-
-    .faq-grid {
-      grid-template-columns:
-        0.65fr 1.35fr;
-    }
-
-    .contact-grid {
-      grid-template-columns:
-        1fr 1fr;
-
-      align-items: center;
-    }
-
-    .sticky-column {
-      position: sticky;
-      top: 105px;
-    }
-
-    .updates-list,
-    .faq-list {
-      display: grid;
-
-      gap: 0.7rem;
-    }
-
-    .update-card {
-      display: grid;
-      grid-template-columns: 105px 1fr;
-
-      gap: 1rem;
-
-      padding: 1.1rem;
-
-      border: 1px solid var(--border);
-      border-radius: 15px;
-
-      background:
-        rgba(18, 20, 47, 0.68);
-    }
-
-    .update-date {
-      color: var(--cyan);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.6rem;
+      font-size: 0.61rem;
       letter-spacing: 0.11em;
     }
 
-    .update-card h3 {
-      margin: 0;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 1rem;
-      text-transform: uppercase;
+    .author-details strong {
+      font-size: 0.9rem;
     }
 
-    .update-card p {
-      margin-bottom: 0;
-
-      color: var(--muted);
-
-      font-size: 0.92rem;
-      line-height: 1.56;
+    /* Game */
+    .game-section {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 90% 0%, rgba(184, 154, 99, 0.16), transparent 30%),
+        linear-gradient(145deg, #121a26 0%, #1b2635 55%, #17202c 100%);
     }
 
-    .status-chip {
-      display: inline-flex;
-
-      margin-top: 0.75rem;
-      padding: 0.32rem 0.55rem;
-
-      border: 1px solid rgba(88, 221, 255, 0.3);
-      border-radius: 999px;
-
-      color: var(--cyan);
-
-      font-size: 0.63rem;
-      font-weight: 800;
+    .game-section .eyebrow {
+      color: #d9c39a;
     }
 
-    .game-panel {
-      position: relative;
+    .game-section .body-copy {
+      color: rgba(255, 255, 255, 0.67);
+    }
 
-      overflow: hidden;
+    .game-intro {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .game-shell {
+      padding: 1rem;
+      border: 1px solid var(--line-light);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.035);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22);
     }
 
     .game-layout {
       display: grid;
-      grid-template-columns: 0.72fr 1.28fr;
-
-      align-items: stretch;
-
+      grid-template-columns: 0.7fr 1.3fr;
       gap: 1rem;
     }
 
     .game-instructions {
-      padding: 1.35rem;
-
-      border: 1px solid var(--border);
-      border-radius: 17px;
-
-      background:
-        rgba(10, 11, 29, 0.75);
+      padding: 1.4rem;
+      border: 1px solid var(--line-light);
+      border-radius: 14px;
+      background: rgba(8, 13, 20, 0.34);
     }
 
     .game-instructions h3 {
-      margin: 0 0 0.7rem;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 1.35rem;
-      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      color: #f0e3ca;
     }
 
     .game-instructions p {
-      color: var(--muted);
-
-      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.68);
     }
 
     .game-legend {
       display: grid;
-
       gap: 0.55rem;
-
-      margin-top: 1.1rem;
+      margin-top: 1rem;
     }
 
     .legend-item {
       display: flex;
       align-items: center;
-
-      gap: 0.7rem;
-
-      padding: 0.65rem;
-
-      border: 1px solid var(--border);
-      border-radius: 11px;
-
-      background:
-        rgba(255, 255, 255, 0.03);
-
+      gap: 0.75rem;
+      padding: 0.68rem;
+      border-top: 1px solid var(--line-light);
+      color: rgba(255, 255, 255, 0.78);
       font-size: 0.82rem;
     }
 
     .legend-symbol {
       width: 34px;
       height: 34px;
-
       display: grid;
       place-items: center;
-
       flex-shrink: 0;
-
-      border-radius: 9px;
-
-      background:
-        rgba(255, 255, 255, 0.06);
-
-      font-size: 1.05rem;
+      border: 1px solid var(--line-light);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .game-area {
       position: relative;
-
-      min-height: 410px;
-
+      min-height: 430px;
       overflow: hidden;
-
-      border: 1px solid var(--border);
-      border-radius: 17px;
-
+      border: 1px solid var(--line-light);
+      border-radius: 14px;
       background:
-        linear-gradient(
-          180deg,
-          rgba(42, 35, 83, 0.76),
-          rgba(8, 10, 25, 0.96)
-        );
-
+        linear-gradient(rgba(36, 52, 68, 0.68), rgba(8, 13, 20, 0.95));
       cursor: crosshair;
     }
 
     .game-area::before {
       content: "";
-
       position: absolute;
       inset: 0;
-
-      opacity: 0.3;
-
+      opacity: 0.18;
       background-image:
-        linear-gradient(
-          rgba(255, 255, 255, 0.035) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.035) 1px,
-          transparent 1px
-        );
-
-      background-size: 38px 38px;
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
 
     .game-blackboard {
       position: absolute;
-
-      width: 55%;
-      height: 86px;
-
+      width: 57%;
+      min-height: 84px;
       top: 22px;
       left: 50%;
-
       transform: translateX(-50%);
-
-      border: 6px solid #634b34;
-
-      color: rgba(255, 255, 255, 0.72);
-      background: #17312d;
-
-      font-family: "Playfair Display", serif;
+      border: 6px solid #6b563d;
+      color: rgba(255, 255, 255, 0.74);
+      background: #263f3b;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1rem;
       font-style: italic;
       text-align: center;
-
-      padding-top: 22px;
+      padding: 0.75rem;
     }
 
     .game-hud {
       position: absolute;
-
       left: 12px;
       right: 12px;
       bottom: 12px;
-
       z-index: 8;
-
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-
-      gap: 0.55rem;
+      gap: 0.5rem;
     }
 
     .hud-item {
       padding: 0.65rem;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background:
-        rgba(5, 6, 18, 0.84);
-
+      border: 1px solid var(--line-light);
+      border-radius: 9px;
+      background: rgba(7, 11, 18, 0.82);
       text-align: center;
     }
 
@@ -1676,74 +925,49 @@
     }
 
     .hud-item small {
-      color: var(--muted-dark);
-
+      color: rgba(255, 255, 255, 0.45);
       font-size: 0.56rem;
       letter-spacing: 0.11em;
     }
 
     .hud-item strong {
       margin-top: 0.18rem;
-
-      color: var(--cyan);
-
-      font-family: "Orbitron", sans-serif;
+      color: #e8d6b2;
       font-size: 0.9rem;
     }
 
     .game-object {
       position: absolute;
-
       z-index: 7;
-
-      width: 70px;
-      height: 70px;
-
+      width: 68px;
+      height: 68px;
       display: grid;
       place-items: center;
-
-      border: 1px solid var(--border-bright);
-      border-radius: 16px;
-
-      background:
-        rgba(10, 12, 30, 0.93);
-
-      box-shadow:
-        0 12px 25px rgba(0, 0, 0, 0.38);
-
-      font-size: 2rem;
-
+      border: 1px solid var(--line-light);
+      border-radius: 50%;
+      background: rgba(10, 16, 25, 0.94);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+      font-size: 1.8rem;
       cursor: pointer;
-
-      animation:
-        object-appear 0.2s ease;
+      animation: object-appear 0.2s ease;
     }
 
     .game-object.good {
-      border-color:
-        rgba(112, 255, 211, 0.6);
-
-      box-shadow:
-        0 0 20px rgba(112, 255, 211, 0.22);
+      border-color: rgba(153, 183, 158, 0.72);
     }
 
     .game-object.bad {
-      border-color:
-        rgba(255, 83, 111, 0.65);
-
-      box-shadow:
-        0 0 20px rgba(255, 83, 111, 0.25);
+      border-color: rgba(184, 102, 112, 0.8);
     }
 
     @keyframes object-appear {
       from {
         opacity: 0;
-        transform: scale(0.55) rotate(-12deg);
+        transform: scale(0.75);
       }
-
       to {
         opacity: 1;
-        transform: scale(1) rotate(0);
+        transform: scale(1);
       }
     }
 
@@ -1751,18 +975,12 @@
     .game-result-screen {
       position: absolute;
       inset: 0;
-
       z-index: 20;
-
       display: grid;
       place-items: center;
-
       padding: 1.3rem;
-
-      background:
-        rgba(5, 6, 17, 0.9);
-
-      backdrop-filter: blur(8px);
+      background: rgba(7, 11, 18, 0.9);
+      backdrop-filter: blur(7px);
     }
 
     .game-result-screen {
@@ -1771,504 +989,195 @@
 
     .game-modal {
       max-width: 430px;
-
-      padding: 1.5rem;
-
-      border: 1px solid var(--border-bright);
-      border-radius: 18px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(30, 29, 69, 0.96),
-          rgba(9, 10, 26, 0.98)
-        );
-
+      padding: 1.7rem;
+      border: 1px solid var(--line-light);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #222e3d, #111722);
       text-align: center;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.3);
     }
 
     .game-modal-icon {
       margin-bottom: 0.5rem;
-
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
 
     .game-modal h3 {
-      margin: 0;
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 1.35rem;
-      text-transform: uppercase;
+      color: #f2e5cc;
     }
 
     .game-modal p {
-      color: var(--muted);
-
-      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.67);
     }
 
     .game-result-score {
-      color: var(--cyan);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 1.05rem;
+      color: #dec89d;
+      font-weight: 700;
     }
 
     .game-buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
       gap: 0.65rem;
-
       margin-top: 1rem;
     }
 
-    .faq-item {
-      overflow: hidden;
-
-      border: 1px solid var(--border);
-      border-radius: 14px;
-
-      background:
-        rgba(18, 20, 47, 0.68);
+    /* Contact */
+    .contact-section {
+      background: #ebe4d8;
     }
 
-    .faq-question {
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 1rem;
-
-      padding: 0.95rem 1.05rem;
-
-      border: 0;
-
-      color: white;
-      background: transparent;
-
-      font-weight: 800;
-      text-align: left;
-
-      cursor: pointer;
-    }
-
-    .faq-question span:last-child {
-      color: var(--cyan);
-
-      font-family: "Orbitron", sans-serif;
-    }
-
-    .faq-answer {
-      max-height: 0;
-
-      overflow: hidden;
-
-      color: var(--muted);
-
-      transition:
-        max-height 0.28s ease;
-    }
-
-    .faq-answer p {
-      margin: 0;
-
-      padding:
-        0 1.05rem 0.95rem;
-
-      line-height: 1.6;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 300px;
-    }
-
-    .newsletter-panel {
-      display: grid;
+    .contact-layout {
       grid-template-columns: 1fr 1fr;
-
-      align-items: center;
-
-      gap: 2.3rem;
-
-      padding: clamp(1.4rem, 4vw, 2.5rem);
-
-      border: 1px solid var(--border);
-      border-radius: 22px;
-
-      background:
-        radial-gradient(
-          circle at 0 0,
-          rgba(85, 220, 255, 0.16),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 100% 100%,
-          rgba(255, 92, 207, 0.16),
-          transparent 35%
-        ),
-        linear-gradient(
-          145deg,
-          rgba(31, 31, 77, 0.88),
-          rgba(11, 13, 30, 0.95)
-        );
-    }
-
-    .newsletter-form {
-      padding: 1.4rem;
-
-      border: 1px solid var(--border);
-      border-radius: 17px;
-
-      background:
-        rgba(4, 5, 14, 0.44);
-    }
-
-    .newsletter-form label {
-      display: block;
-
-      margin-bottom: 0.55rem;
-
-      font-weight: 700;
-    }
-
-    .newsletter-row {
-      display: flex;
-
-      gap: 0.65rem;
-    }
-
-    .newsletter-row input {
-      min-width: 0;
-      min-height: 48px;
-
-      flex: 1;
-
-      padding: 0 0.9rem;
-
-      border: 1px solid var(--border-bright);
-      border-radius: 999px;
-
-      color: white;
-      background:
-        rgba(255, 255, 255, 0.05);
-
-      outline: none;
-    }
-
-    .newsletter-row input:focus {
-      border-color: var(--cyan);
-    }
-
-    .form-note,
-    .form-message {
-      margin: 0.65rem 0 0;
-
-      color: var(--muted-dark);
-
-      font-size: 0.72rem;
-    }
-
-    .form-message {
-      color: var(--cyan);
     }
 
     .contact-email {
       display: inline-block;
-
-      margin-top: 0.8rem;
-
-      color: var(--cyan);
-
-      font-size: clamp(1.1rem, 2vw, 1.7rem);
-      font-weight: 800;
+      margin-top: 0.7rem;
+      color: var(--plum);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.5rem, 3vw, 2.35rem);
+      font-weight: 600;
       text-underline-offset: 0.3rem;
     }
 
     .social-grid {
       display: grid;
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 0.65rem;
-
-      margin-top: 1.4rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem;
+      margin-top: 1.5rem;
     }
 
     .social-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 1rem;
-
-      padding: 0.85rem;
-
-      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
       border-radius: 12px;
-
-      background:
-        rgba(255, 255, 255, 0.03);
-
+      background: rgba(255, 255, 255, 0.5);
+      font-size: 0.86rem;
       font-weight: 700;
       text-decoration: none;
     }
 
     .social-link:hover {
-      color: var(--cyan);
-      border-color: var(--cyan);
+      border-color: var(--gold-dark);
+      color: var(--gold-dark);
     }
 
-    .contact-visual {
-      position: relative;
-
-      min-height: 330px;
-
-      overflow: hidden;
-
-      border: 1px solid var(--border);
-      border-radius: 18px;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(45, 38, 90, 0.72),
-          rgba(9, 10, 27, 0.96)
-        );
-    }
-
-    .contact-visual::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      opacity: 0.25;
-
-      background-image:
-        radial-gradient(
-          circle,
-          white 1px,
-          transparent 1.4px
-        );
-
-      background-size: 38px 38px;
-    }
-
-    .contact-desk {
-      position: absolute;
-
-      width: 68%;
-      height: 28px;
-
-      left: 50%;
-      bottom: 74px;
-
-      transform: translateX(-50%);
-
-      border-radius: 4px;
-
-      background: #17192e;
-    }
-
-    .contact-desk::before,
-    .contact-desk::after {
-      content: "";
-
-      position: absolute;
-
-      width: 8px;
-      height: 85px;
-
-      top: 26px;
-
-      background: #101224;
-    }
-
-    .contact-desk::before {
-      left: 20px;
-    }
-
-    .contact-desk::after {
-      right: 20px;
-    }
-
-    .contact-laptop {
-      position: absolute;
-
-      width: 125px;
-      height: 75px;
-
-      left: 50%;
-      bottom: 102px;
-
-      transform: translateX(-50%);
-
-      border: 4px solid #7a78a1;
-      border-radius: 7px;
-
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(88, 221, 255, 0.25),
-          #15162e 70%
-        );
-    }
-
-    .contact-laptop::after {
-      content: "NEW MESSAGE";
-      position: absolute;
-      inset: 0;
-
+    .contact-card {
+      min-height: 360px;
       display: grid;
       place-items: center;
-
-      color: var(--cyan);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.48rem;
-      letter-spacing: 0.11em;
-    }
-
-    .contact-papers {
-      position: absolute;
-
-      width: 78px;
-      height: 55px;
-
-      right: 13%;
-      bottom: 103px;
-
-      transform: rotate(8deg);
-
-      border: 1px solid white;
-
+      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       background:
-        repeating-linear-gradient(
-          180deg,
-          #eee9dc 0 8px,
-          #c3bfd3 8px 9px
-        );
+        radial-gradient(circle at 70% 16%, rgba(184, 154, 99, 0.2), transparent 25%),
+        linear-gradient(145deg, #1b2635, #111722);
+      box-shadow: var(--shadow);
+      color: var(--white);
+      text-align: center;
     }
 
-    .contact-coffee {
-      position: absolute;
-
-      width: 54px;
-      height: 50px;
-
-      left: 14%;
-      bottom: 101px;
-
-      border: 3px solid #ebe6ff;
-      border-radius: 4px 4px 14px 14px;
-
-      background: #332d58;
+    .contact-card-inner {
+      max-width: 330px;
     }
 
-    .contact-message {
-      position: absolute;
-
-      top: 20px;
-      left: 20px;
-
-      color: rgba(255, 255, 255, 0.5);
-
-      font-family: "Orbitron", sans-serif;
-      font-size: 0.56rem;
-      line-height: 1.7;
-      letter-spacing: 0.1em;
+    .contact-card-symbol {
+      display: block;
+      margin-bottom: 1rem;
+      color: #d8c39c;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 4rem;
+      line-height: 1;
     }
 
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    /* Footer */
     footer {
-      padding: 2.8rem 0 1.2rem;
+      padding: 2.7rem 0 1.2rem;
+      color: rgba(255, 255, 255, 0.72);
+      background: #0d131c;
+    }
 
-      border-top: 1px solid var(--border);
-
-      background: #04040b;
+    footer .logo {
+      color: var(--white);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns:
-        1.3fr 0.7fr 0.7fr;
-
+      grid-template-columns: 1.3fr 0.7fr 0.7fr;
       gap: 2rem;
     }
 
     .footer-grid p {
-      color: #6d6a7f;
+      max-width: 440px;
+      color: rgba(255, 255, 255, 0.5);
     }
 
     .footer-links {
       display: grid;
-
       gap: 0.55rem;
     }
 
     .footer-links a {
-      color: #aaa6bc;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 0.83rem;
       text-decoration: none;
     }
 
     .footer-links a:hover {
-      color: var(--cyan);
+      color: #dec89d;
     }
 
     .footer-socials {
       display: flex;
       justify-content: flex-end;
-
       gap: 0.5rem;
     }
 
     .footer-socials a {
       width: 39px;
       height: 39px;
-
       display: grid;
       place-items: center;
-
-      border: 1px solid var(--border);
+      border: 1px solid var(--line-light);
       border-radius: 50%;
-
       font-size: 0.68rem;
-      font-weight: 800;
+      font-weight: 700;
       text-decoration: none;
     }
 
     .footer-socials a:hover {
-      color: #050611;
-      background: var(--cyan);
+      color: #0d131c;
+      background: #dec89d;
     }
 
     .footer-bottom {
       display: flex;
       justify-content: space-between;
-
       gap: 1rem;
-
       margin-top: 2.2rem;
       padding-top: 1rem;
-
-      border-top: 1px solid var(--border);
-
-      color: #595668;
-
+      border-top: 1px solid var(--line-light);
+      color: rgba(255, 255, 255, 0.36);
       font-size: 0.7rem;
     }
 
+    /* Reveal */
     .reveal {
       opacity: 0;
-
-      transform: translateY(22px);
-
+      transform: translateY(18px);
       transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        opacity 0.65s ease,
+        transform 0.65s ease;
     }
 
     .reveal.visible {
@@ -2284,20 +1193,13 @@
       .navigation-links {
         position: fixed;
         inset: var(--header-height) 0 0;
-
         display: grid;
         align-content: center;
         justify-items: center;
-
-        gap: 1.35rem;
-
-        background:
-          rgba(6, 6, 17, 0.98);
-
+        gap: 1.45rem;
+        background: rgba(244, 240, 232, 0.98);
         transform: translateX(100%);
-
-        transition:
-          transform 0.25s ease;
+        transition: transform 0.25s ease;
       }
 
       .navigation-links.open {
@@ -2305,29 +1207,24 @@
       }
 
       .navigation-links a {
-        font-size: 1.15rem;
+        font-size: 1.08rem;
       }
 
       .hero-grid,
-      .two-column,
-      .updates-grid,
-      .faq-grid,
-      .newsletter-panel,
-      .contact-grid,
-      .game-layout {
+      .book-layout,
+      .about-layout,
+      .game-intro,
+      .game-layout,
+      .contact-layout {
         grid-template-columns: 1fr;
       }
 
       .hero-art {
+        min-height: 510px;
+      }
+
+      .book-stage {
         min-height: 470px;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .sticky-column {
-        position: static;
       }
 
       .footer-grid {
@@ -2340,91 +1237,43 @@
     }
 
     @media (max-width: 600px) {
-      .section {
-        padding: 3.6rem 0;
+      .shell {
+        width: min(calc(100% - 1.4rem), var(--max-width));
       }
 
       .hero {
-        padding: 6.5rem 0 3.2rem;
+        padding-top: calc(var(--header-height) + 3.7rem);
       }
 
-      .hero h1 {
-        font-size:
-          clamp(2.7rem, 13vw, 4.1rem);
+      h1 {
+        font-size: clamp(3.4rem, 16vw, 5rem);
       }
 
       .hero-art {
-        min-height: 420px;
+        min-height: 460px;
       }
 
-      .rift {
-        width: 145px;
-        height: 210px;
+      .hero-frame {
+        min-height: 430px;
       }
 
-      .floating-paper {
-        width: 75px;
-        min-height: 96px;
+      .hero-note {
+        max-width: 120px;
+        font-size: 0.78rem;
       }
 
-      .sticky-note {
-        width: 73px;
-        min-height: 64px;
-
-        font-size: 0.6rem;
-      }
-
-      .coffee-cup {
-        width: 60px;
-        height: 55px;
-      }
-
-      .classroom {
-        height: 175px;
-      }
-
-      .chalkboard {
-        font-size: 0.58rem;
-      }
-
-      .panel {
-        padding: 1.05rem;
-        border-radius: 17px;
-      }
-
-      .book-stage {
-        min-height: 410px;
-      }
-
-      .book-object {
-        width: 220px;
-      }
-
-      .book-metadata div {
+      .book-metadata div,
+      .author-details div {
         grid-template-columns: 1fr;
-
         gap: 0.25rem;
       }
 
-      .section-heading {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .update-card {
-        grid-template-columns: 1fr;
-      }
-
       .game-area {
-        min-height: 440px;
+        min-height: 470px;
       }
 
       .game-hud {
         grid-template-columns: 1fr;
-      }
-
-      .newsletter-row {
-        flex-direction: column;
       }
 
       .social-grid {
@@ -2456,947 +1305,589 @@
     }
   </style>
 </head>
-<body>
-<canvas aria-hidden="true" id="starfield"></canvas>
-<div aria-hidden="true" class="background-glow glow-one"></div>
-<div aria-hidden="true" class="background-glow glow-two"></div>
-<div aria-hidden="true" class="scanlines"></div>
-<header class="site-header">
-<nav aria-label="Main navigation" class="navigation shell">
-<a class="logo" href="#home">
-<span class="logo-mark">✦</span>
-<span>CJ MAYLOCK</span>
-</a>
-<button aria-expanded="false" aria-label="Open menu" class="menu-toggle" type="button">
-<span></span>
-<span></span>
-</button>
-<div class="navigation-links"><a href="#home">Home</a><a href="#book">Book</a><a href="#about">About</a><a href="#game">Play</a><a class="navigation-contact" href="#contact">Contact</a></div>
-</nav>
-</header>
-<main>
-<section class="hero" id="home">
-<div class="hero-grid shell">
-<div class="reveal">
-<p class="hero-kicker">COSMIC HORROR • SCIENCE FICTION • DARK COMEDY</p>
-<h1>
-            CJ Maylock
 
-            <em>
-              writes through the rift.
-            </em>
-</h1>
-<p class="hero-tagline">
+<body>
+  <header class="site-header">
+    <nav class="navigation shell" aria-label="Main navigation">
+      <a class="logo" href="#home">
+        <span class="logo-mark">✦</span>
+        <span>CJ MAYLOCK</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="navigation-links">
+        <a href="#home">Home</a>
+        <a href="#book">Book</a>
+        <a href="#about">About</a>
+        <a href="#game">Play</a>
+        <a class="navigation-contact" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid shell">
+        <div class="reveal">
+          <p class="eyebrow">Cosmic horror · Science fiction · Dark comedy</p>
+
+          <h1>
+            CJ Maylock
+            <span>writes through the rift.</span>
+          </h1>
+
+          <p class="hero-tagline">
             When nonsense is the only thing that makes sense.
           </p>
-<p class="hero-description">
+
+          <p class="hero-description">
             Strange classrooms. Impossible universes. Haunted lesson plans.
             Stories about ordinary people trying to hold themselves together
             while reality spectacularly fails around them.
           </p>
-<div class="hero-actions">
-<a class="button button-primary" href="#book">
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#book">
               Enter the English Department
             </a>
-<a class="button button-secondary" href="#game">
+
+            <a class="button button-secondary" href="#game">
               Play the Staff Survival Game
             </a>
-</div>
-<div class="publication-status">
-<div class="status-light"></div>
-<div>
-<small>PUBLICATION STATUS</small>
-<strong>
-                COMING SOON FROM RED FERN PRESS
-              </strong>
-</div>
-</div>
-</div>
-<div class="hero-art reveal">
-<div class="rift"></div>
-<div class="floating-item floating-paper paper-one">
-            Comparative Essay
-
-            <br/><br/>
-
-            The symbolism in this novel clearly represents...
-
-            <br/><br/>
-
-            This sentence was definitely not generated by AI.
           </div>
-<div class="floating-item floating-paper paper-two">
-            Lesson Plans
 
-            <br/><br/>
+          <div class="publication-status">
+            <span class="status-line"></span>
 
-            Monday: Close interdimensional rift.
-
-            <br/><br/>
-
-            Tuesday: Vocabulary quiz.
-          </div>
-<div class="floating-item sticky-note">
-            Remember:
-
-            <br/>
-
-            copies, coffee, cosmic emergency
-          </div>
-<div class="floating-item coffee-cup"></div>
-<div class="floating-item red-pen-floating"></div>
-<div class="warning">
-            RIFT STABILITY: QUESTIONABLE
-
-            <br/>
-
-            FACULTY MORALE: LOWER
-
-            <br/>
-
-            LESSON PLANS: STILL DUE
-          </div>
-<div class="classroom">
-<div class="chalkboard">
-              Today’s Objective:
-
-              <br/>
-
-              Survive until dismissal.
+            <div>
+              <small>Publication status</small>
+              <strong>Coming soon from Red Fern Press</strong>
             </div>
-<div class="desk desk-one"></div>
-<div class="desk desk-two"></div>
-<div class="desk desk-three"></div>
-<div class="school-floor"></div>
-<p class="classroom-caption">
-              ROOM 214 // NORMAL OPERATIONS HAVE BEEN SUSPENDED
-            </p>
-</div>
-</div>
-</div>
-</section>
+          </div>
+        </div>
 
-<section class="section" id="book">
-<span class="section-label">
-        FEATURED BOOK
-      </span>
-<div class="two-column panel shell">
-<div class="book-stage reveal">
-<div class="book-object">
-<div class="book-cover">
-<div class="cover-rift"></div>
-<div class="cover-school"></div>
-<div class="cover-copy">
-<small>A NOVEL</small>
-<h3>
+        <div class="hero-art reveal">
+          <div class="hero-frame">
+            <div class="rift"></div>
+
+            <div class="hero-note note-one">
+              Monday: close interdimensional rift.
+              <br><br>
+              Tuesday: vocabulary quiz.
+            </div>
+
+            <div class="hero-note note-two">
+              Today’s objective:
+              <br><br>
+              survive until dismissal.
+            </div>
+
+            <div class="classroom">
+              <div class="chalkboard">
+                The English Department
+                <br>
+                remains in session.
+              </div>
+
+              <div class="desk-row">
+                <div class="desk"></div>
+                <div class="desk"></div>
+                <div class="desk"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section book-section" id="book">
+      <div class="book-layout shell">
+        <div class="book-stage reveal">
+          <div class="book-object">
+            <div class="book-cover">
+              <div class="cover-rift"></div>
+              <div class="cover-school"></div>
+
+              <div class="cover-copy">
+                <small>A NOVEL</small>
+
+                <h3>
                   The English
-                  <br/>
+                  <br>
                   Department
-                  <br/>
+                  <br>
                   vs. Chaos
-                  <br/>
+                  <br>
                   and Nonsense
                 </h3>
-<p>CJ MAYLOCK</p>
-</div>
-</div>
-</div>
-<div class="cover-placeholder">
-            Official cover coming soon →
-          </div>
-</div>
-<div class="book-copy reveal">
-<p class="section-tag">
-            THE FEATURED NOVEL
-          </p>
-<h2>
-            The English Department
 
-            <br/>
-<span>
-              vs. Chaos and Nonsense
-            </span>
-</h2>
-<p class="body-copy">
+                <p>CJ MAYLOCK</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cover-placeholder">
+            Official cover coming soon
+          </div>
+        </div>
+
+        <div class="book-copy reveal">
+          <p class="eyebrow">Featured novel</p>
+
+          <h2>
+            The English Department
+            <br>
+            <em>vs. Chaos and Nonsense</em>
+          </h2>
+
+          <p class="body-copy">
             Sage Lyken is a high school English teacher who thought the worst
             part of her day was grading essays that were clearly written by AI.
             That changes when interdimensional rifts begin opening around the
             school.
           </p>
-<p class="body-copy">
+
+          <p class="body-copy">
             With the help of her two coworkers, Sage must close the rifts,
             protect her students, uncover what is happening, and somehow still
             have her lesson plans submitted by Monday morning.
           </p>
-<div class="genre-list">
-<span>Cosmic Horror</span>
-<span>Science Fiction</span>
-<span>Fantasy</span>
-<span>Teacher Comedy</span>
-<span>Mystery</span>
-<span>Sapphic Romance</span>
-</div>
-<div class="book-metadata">
-<div>
-<span>AUTHOR</span>
-<strong>CJ Maylock</strong>
-</div>
-<div>
-<span>PUBLISHER</span>
-<strong>Red Fern Press</strong>
-</div>
-<div>
-<span>STATUS</span>
-<strong>Coming Soon</strong>
-</div>
-<div>
-<span>TONE</span>
-<strong>
+
+          <div class="genre-list">
+            <span>Cosmic Horror</span>
+            <span>Science Fiction</span>
+            <span>Fantasy</span>
+            <span>Teacher Comedy</span>
+            <span>Mystery</span>
+            <span>Sapphic Romance</span>
+          </div>
+
+          <div class="book-metadata">
+            <div>
+              <span>AUTHOR</span>
+              <strong>CJ Maylock</strong>
+            </div>
+
+            <div>
+              <span>PUBLISHER</span>
+              <strong>Red Fern Press</strong>
+            </div>
+
+            <div>
+              <span>STATUS</span>
+              <strong>Coming Soon</strong>
+            </div>
+
+            <div>
+              <span>TONE</span>
+              <strong>
                 Beautiful, cosmic, funny, chaotic, and quietly unsettling
               </strong>
-</div>
-</div>
-<div class="book-actions">
-<a class="button button-primary" href="#contact">Follow CJ for Updates</a>
+            </div>
+          </div>
 
-</div>
-</div>
-</div>
-</section>
-<section class="section" id="about">
-<span class="section-label">
-        AUTHOR FILE
-      </span>
-<div class="two-column panel shell">
-<div class="reveal">
-<p class="section-tag">
-            ABOUT CJ
-          </p>
-<h2>
+          <div class="book-actions">
+            <a class="button button-light" href="#contact">
+              Follow CJ for Updates
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-layout shell">
+        <div class="reveal">
+          <p class="eyebrow">About CJ</p>
+
+          <h2>
             The ordinary collides with the impossible.
           </h2>
-<p class="body-copy">
+
+          <p class="body-copy">
             CJ Maylock is an Ohio author and educator who writes stories where
             the ordinary collides with the impossible.
           </p>
-<p class="body-copy">
+
+          <p class="body-copy">
             Inspired by classrooms, cosmic horror, science fiction, and absurd
             humor, her work explores friendship, identity, and what it means to
             keep going when the universe itself seems determined to fall apart.
           </p>
-<p class="body-copy">
+
+          <p class="body-copy">
             When she is not writing, CJ teaches students with autism, creates
             YouTube videos, and laughs at videos of basset hounds.
           </p>
-<blockquote class="author-quote">
+
+          <blockquote class="author-quote">
             “When nonsense is the only thing that makes sense.”
           </blockquote>
-</div>
-<div class="author-card reveal">
-<div class="author-photo">
-<img alt="Author CJ Maylock" src="download.jpeg"/>
-</div>
-<div class="author-details">
-<span>
-              FILE: CJ_MAYLOCK.AUTHOR
-            </span>
-<div>
-<small>LOCATION</small>
-<strong>Ohio</strong>
-</div>
-<div>
-<small>OCCUPATION</small>
-<strong>Author and educator</strong>
-</div>
-<div>
-<small>WRITES</small>
-<strong>
+        </div>
+
+        <div class="author-card reveal">
+          <div class="author-photo">
+            <img src="download.jpeg" alt="Author CJ Maylock">
+          </div>
+
+          <div class="author-details">
+            <span>CJ MAYLOCK · AUTHOR PROFILE</span>
+
+            <div>
+              <small>LOCATION</small>
+              <strong>Ohio</strong>
+            </div>
+
+            <div>
+              <small>OCCUPATION</small>
+              <strong>Author and educator</strong>
+            </div>
+
+            <div>
+              <small>WRITES</small>
+              <strong>
                 Science fiction, cosmic horror, comedy, and sapphic stories
               </strong>
-</div>
-<div>
-<small>KNOWN DISTRACTION</small>
-<strong>Basset hound videos</strong>
-</div>
-</div>
-</div>
-</div>
-</section>
+            </div>
 
+            <div>
+              <small>KNOWN DISTRACTION</small>
+              <strong>Basset hound videos</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="section" id="game">
-<span class="section-label">
-        STAFF SURVIVAL SIMULATION
-      </span>
-<div class="panel game-panel shell">
-<div class="section-heading reveal">
-<div>
-<p class="section-tag">
-              INTERACTIVE FACULTY TRAINING
-            </p>
-<h2>
-              Survive until dismissal.
-            </h2>
-</div>
-<p class="body-copy">
+    <section class="section game-section" id="game">
+      <div class="shell">
+        <div class="game-intro reveal">
+          <div>
+            <p class="eyebrow">Interactive faculty training</p>
+            <h2>Survive until dismissal.</h2>
+          </div>
+
+          <p class="body-copy">
             Collect useful teaching supplies. Avoid cosmic nonsense. The
             district has not approved additional planning time.
           </p>
-</div>
-<div class="game-layout">
-<div class="game-instructions reveal">
-<h3>
-              How to Play
-            </h3>
-<p>
-              Objects will appear around the classroom. Click the useful
-              teacher items to earn points. Do not click the rifts, cursed
-              paperwork, or suspicious AI essays.
-            </p>
-<div class="game-legend">
-<div class="legend-item">
-<span class="legend-symbol">☕</span>
-<span>
-                  Coffee restores approximately three minutes of hope.
-                </span>
-</div>
-<div class="legend-item">
-<span class="legend-symbol">🖊️</span>
-<span>
-                  Red pens maintain the illusion of academic control.
-                </span>
-</div>
-<div class="legend-item">
-<span class="legend-symbol">📚</span>
-<span>
-                  Books are generally safer than interdimensional portals.
-                </span>
-</div>
-<div class="legend-item">
-<span class="legend-symbol">🌀</span>
-<span>
-                  Clicking a rift is discouraged by the employee handbook.
-                </span>
-</div>
-</div>
-</div>
-<div class="game-area reveal" id="game-area">
-<div class="game-blackboard">
-              Today’s Objective:
+        </div>
 
-              <br/>
+        <div class="game-shell reveal">
+          <div class="game-layout">
+            <div class="game-instructions">
+              <h3>How to Play</h3>
 
-              Make it to dismissal without ending reality.
-            </div>
-<div class="game-hud">
-<div class="hud-item">
-<small>SCORE</small>
-<strong id="game-score">0</strong>
-</div>
-<div class="hud-item">
-<small>ROUND</small>
-<strong id="game-round">0 / 10</strong>
-</div>
-<div class="hud-item">
-<small>FACULTY MORALE</small>
-<strong id="game-morale">STABLE</strong>
-</div>
-</div>
-<div class="game-start-screen" id="game-start-screen">
-<div class="game-modal">
-<div class="game-modal-icon">🏫</div>
-<h3>
-                  Mandatory Faculty Training
-                </h3>
-<p>
-                  The English Department is experiencing a minor cosmic
-                  emergency. Collect the supplies you need and avoid anything
-                  that threatens reality—or requires another meeting.
-                </p>
-<button class="button button-primary" id="start-game-button" type="button">
-                  Begin the School Day
-                </button>
-</div>
-</div>
-<div class="game-result-screen" id="game-result-screen">
-<div class="game-modal">
-<div class="game-modal-icon" id="result-icon">
-                  🎉
+              <p>
+                Objects will appear around the classroom. Click the useful
+                teacher items to earn points. Do not click the rifts, cursed
+                paperwork, or suspicious AI essays.
+              </p>
+
+              <div class="game-legend">
+                <div class="legend-item">
+                  <span class="legend-symbol">☕</span>
+                  <span>Coffee restores approximately three minutes of hope.</span>
                 </div>
-<h3 id="result-title">
-                  Dismissal Achieved
-                </h3>
-<p class="game-result-score" id="result-score"></p>
-<p id="result-message"></p>
-<div class="game-buttons">
-<button class="button button-secondary" id="restart-game-button" type="button">
-                    Try Again
+
+                <div class="legend-item">
+                  <span class="legend-symbol">🖊️</span>
+                  <span>Red pens maintain the illusion of academic control.</span>
+                </div>
+
+                <div class="legend-item">
+                  <span class="legend-symbol">📚</span>
+                  <span>Books are generally safer than interdimensional portals.</span>
+                </div>
+
+                <div class="legend-item">
+                  <span class="legend-symbol">🌀</span>
+                  <span>Clicking a rift is discouraged by the employee handbook.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-area" id="game-area">
+              <div class="game-blackboard">
+                Today’s Objective:
+                <br>
+                Make it to dismissal without ending reality.
+              </div>
+
+              <div class="game-hud">
+                <div class="hud-item">
+                  <small>SCORE</small>
+                  <strong id="game-score">0</strong>
+                </div>
+
+                <div class="hud-item">
+                  <small>ROUND</small>
+                  <strong id="game-round">0 / 10</strong>
+                </div>
+
+                <div class="hud-item">
+                  <small>FACULTY MORALE</small>
+                  <strong id="game-morale">STABLE</strong>
+                </div>
+              </div>
+
+              <div class="game-start-screen" id="game-start-screen">
+                <div class="game-modal">
+                  <div class="game-modal-icon">🏫</div>
+
+                  <h3>Mandatory Faculty Training</h3>
+
+                  <p>
+                    The English Department is experiencing a minor cosmic
+                    emergency. Collect the supplies you need and avoid anything
+                    that threatens reality—or requires another meeting.
+                  </p>
+
+                  <button
+                    class="button button-primary"
+                    id="start-game-button"
+                    type="button"
+                  >
+                    Begin the School Day
                   </button>
-<!-- Replace # with the real purchase link when available. -->
-<a class="button button-primary" href="#book">
-                    Go Buy the Book
-                  </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+                </div>
+              </div>
 
+              <div class="game-result-screen" id="game-result-screen">
+                <div class="game-modal">
+                  <div class="game-modal-icon" id="result-icon">🎉</div>
 
+                  <h3 id="result-title">Dismissal Achieved</h3>
 
-<section class="section" id="contact">
-<span class="section-label">
-        OPEN CHANNEL
-      </span>
-<div class="contact-grid panel shell">
-<div class="reveal">
-<p class="section-tag">
-            CONTACT CJ
-          </p>
-<h2>
+                  <p class="game-result-score" id="result-score"></p>
+                  <p id="result-message"></p>
+
+                  <div class="game-buttons">
+                    <button
+                      class="button button-secondary"
+                      id="restart-game-button"
+                      type="button"
+                    >
+                      Try Again
+                    </button>
+
+                    <a class="button button-primary" href="#book">
+                      Go to the Book
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-layout shell">
+        <div class="reveal">
+          <p class="eyebrow">Contact CJ</p>
+
+          <h2>
             Contact CJ before reality closes again.
           </h2>
-<p class="body-copy">
+
+          <p class="body-copy">
             For interviews, events, publication inquiries, media requests, or
             other professional communication.
           </p>
-<a class="contact-email" href="mailto:cjmaylock@gmail.com">
-            cjmaylock@gmail.com ↗
+
+          <a class="contact-email" href="mailto:cjmaylock@gmail.com">
+            cjmaylock@gmail.com
           </a>
-<div class="social-grid">
-<a class="social-link" href="https://www.tiktok.com/@cj.maylock" rel="noopener noreferrer" target="_blank">
-<span>TikTok</span>
-<span>↗</span>
-</a>
-<a class="social-link" href="https://www.youtube.com/@CJMaylock/videos" rel="noopener noreferrer" target="_blank">
-<span>YouTube</span>
-<span>↗</span>
-</a>
-<!-- Replace # with the Instagram link later. -->
-<a class="social-link" href="#">
-<span>Instagram</span>
-<span>Coming Soon</span>
-</a>
-<a class="social-link" href="mailto:cjmaylock@gmail.com">
-<span>Email</span>
-<span>↗</span>
-</a>
-</div>
-</div>
-<div class="contact-visual reveal">
-<div class="contact-message">
-            INBOX STATUS: OPEN
 
-            <br/>
+          <div class="social-grid">
+            <a
+              class="social-link"
+              href="https://www.tiktok.com/@cj.maylock"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>TikTok</span>
+              <span>↗</span>
+            </a>
 
-            RIFT STATUS: MOSTLY CLOSED
+            <a
+              class="social-link"
+              href="https://www.youtube.com/@CJMaylock/videos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>YouTube</span>
+              <span>↗</span>
+            </a>
 
-            <br/>
+            <a class="social-link" href="#">
+              <span>Instagram</span>
+              <span>Coming Soon</span>
+            </a>
 
-            EMAIL RESPONSE: PROBABLY FASTER THAN DISTRICT IT
+            <a class="social-link" href="mailto:cjmaylock@gmail.com">
+              <span>Email</span>
+              <span>↗</span>
+            </a>
           </div>
-<div class="contact-laptop"></div>
-<div class="contact-papers"></div>
-<div class="contact-coffee"></div>
-<div class="contact-desk"></div>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<div class="footer-grid shell">
-<div>
-<a class="logo" href="#home">
-<span class="logo-mark">✦</span>
-<span>CJ MAYLOCK</span>
-</a>
-<p>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="contact-card-inner">
+            <span class="contact-card-symbol">✦</span>
+
+            <h3>Open Channel</h3>
+
+            <p>
+              Inbox status: open.
+              <br>
+              Rift status: mostly closed.
+              <br>
+              Email response: probably faster than district IT.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid shell">
+      <div>
+        <a class="logo" href="#home">
+          <span class="logo-mark">✦</span>
+          <span>CJ MAYLOCK</span>
+        </a>
+
+        <p>
           Science fiction. Cosmic horror. Teacher comedy. Sapphic stories.
         </p>
-</div>
-<div class="footer-links"><a href="#home">Home</a><a href="#book">Featured Book</a><a href="#about">About CJ</a><a href="#game">Play the Game</a><a href="#contact">Contact</a></div>
-<div class="footer-socials">
-<a aria-label="TikTok" href="https://www.tiktok.com/@cj.maylock" rel="noopener noreferrer" target="_blank">
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#book">Featured Book</a>
+        <a href="#about">About CJ</a>
+        <a href="#game">Play the Game</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-socials">
+        <a
+          href="https://www.tiktok.com/@cj.maylock"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
           TT
         </a>
-<a aria-label="YouTube" href="https://www.youtube.com/@CJMaylock/videos" rel="noopener noreferrer" target="_blank">
+
+        <a
+          href="https://www.youtube.com/@CJMaylock/videos"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
           YT
         </a>
-<a aria-label="Instagram coming soon" href="#">
-          IG
-        </a>
-<a aria-label="Email CJ Maylock" href="mailto:cjmaylock@gmail.com">
+
+        <a href="#" aria-label="Instagram coming soon">IG</a>
+
+        <a href="mailto:cjmaylock@gmail.com" aria-label="Email CJ Maylock">
           @
         </a>
-</div>
-</div>
-<div class="footer-bottom shell">
-<span>
-        © <span id="current-year"></span> CJ Maylock
-      </span>
-<span>
-        When nonsense is the only thing that makes sense.
-      </span>
-</div>
-</footer>
-<script>
-    /*
-      =========================================================
-      ANIMATED STARFIELD
-      =========================================================
-    */
+      </div>
+    </div>
 
-    const canvas =
-      document.getElementById("starfield");
+    <div class="footer-bottom shell">
+      <span>© <span id="current-year"></span> CJ Maylock</span>
+      <span>When nonsense is the only thing that makes sense.</span>
+    </div>
+  </footer>
 
-    const context =
-      canvas.getContext("2d");
+  <script>
+    /* Header */
+    const header = document.querySelector(".site-header");
 
-    let stars = [];
-    let screenWidth = 0;
-    let screenHeight = 0;
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    });
 
-    function resizeStarfield() {
-      screenWidth =
-        window.innerWidth;
+    /* Mobile navigation */
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigationLinks = document.querySelector(".navigation-links");
 
-      screenHeight =
-        window.innerHeight;
+    menuButton.addEventListener("click", () => {
+      const menuIsOpen =
+        menuButton.getAttribute("aria-expanded") === "true";
 
-      canvas.width =
-        screenWidth;
+      menuButton.setAttribute("aria-expanded", String(!menuIsOpen));
+      navigationLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open");
+    });
 
-      canvas.height =
-        screenHeight;
+    document.querySelectorAll(".navigation-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigationLinks.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
 
-      const starCount =
-        Math.min(
-          220,
-          Math.floor(
-            (
-              screenWidth *
-              screenHeight
-            ) / 7000
-          )
-        );
-
-      stars =
-        Array.from(
-          { length: starCount },
-          () => ({
-            x:
-              Math.random() *
-              screenWidth,
-
-            y:
-              Math.random() *
-              screenHeight,
-
-            radius:
-              Math.random() *
-              1.5 +
-              0.25,
-
-            opacity:
-              Math.random() *
-              0.7 +
-              0.2,
-
-            speed:
-              Math.random() *
-              0.16 +
-              0.03
-          })
-        );
-    }
-
-    function drawStarfield() {
-      context.clearRect(
-        0,
-        0,
-        screenWidth,
-        screenHeight
-      );
-
-      stars.forEach(
-        (star) => {
-          star.y += star.speed;
-
-          if (
-            star.y >
-            screenHeight + 4
-          ) {
-            star.y = -4;
-
-            star.x =
-              Math.random() *
-              screenWidth;
+    /* Scroll reveal */
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
           }
-
-          context.beginPath();
-
-          context.fillStyle =
-            `rgba(
-              255,
-              255,
-              255,
-              ${star.opacity}
-            )`;
-
-          context.arc(
-            star.x,
-            star.y,
-            star.radius,
-            0,
-            Math.PI * 2
-          );
-
-          context.fill();
-        }
-      );
-
-      requestAnimationFrame(
-        drawStarfield
-      );
-    }
-
-    window.addEventListener(
-      "resize",
-      resizeStarfield
+        });
+      },
+      { threshold: 0.1 }
     );
 
-    resizeStarfield();
-    drawStarfield();
+    document.querySelectorAll(".reveal").forEach((element) => {
+      revealObserver.observe(element);
+    });
 
-    /*
-      =========================================================
-      NAVIGATION
-      =========================================================
-    */
+    /* Game */
+    const gameArea = document.getElementById("game-area");
+    const gameScoreElement = document.getElementById("game-score");
+    const gameRoundElement = document.getElementById("game-round");
+    const gameMoraleElement = document.getElementById("game-morale");
 
-    const header =
-      document.querySelector(
-        ".site-header"
-      );
+    const startScreen = document.getElementById("game-start-screen");
+    const resultScreen = document.getElementById("game-result-screen");
 
-    window.addEventListener(
-      "scroll",
-      () => {
-        header.classList.toggle(
-          "scrolled",
-          window.scrollY > 20
-        );
-      }
-    );
+    const startButton = document.getElementById("start-game-button");
+    const restartButton = document.getElementById("restart-game-button");
 
-    const menuButton =
-      document.querySelector(
-        ".menu-toggle"
-      );
-
-    const navigationLinks =
-      document.querySelector(
-        ".navigation-links"
-      );
-
-    menuButton.addEventListener(
-      "click",
-      () => {
-        const menuIsOpen =
-          menuButton.getAttribute(
-            "aria-expanded"
-          ) === "true";
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          String(!menuIsOpen)
-        );
-
-        navigationLinks.classList.toggle(
-          "open"
-        );
-
-        document.body.classList.toggle(
-          "menu-open"
-        );
-      }
-    );
-
-    document
-      .querySelectorAll(
-        ".navigation-links a"
-      )
-      .forEach(
-        (link) => {
-          link.addEventListener(
-            "click",
-            () => {
-              navigationLinks.classList.remove(
-                "open"
-              );
-
-              document.body.classList.remove(
-                "menu-open"
-              );
-
-              menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-              );
-            }
-          );
-        }
-      );
-
-    /*
-      =========================================================
-      SCROLL REVEALS
-      =========================================================
-    */
-
-    const revealObserver =
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach(
-            (entry) => {
-              if (
-                entry.isIntersecting
-              ) {
-                entry.target.classList.add(
-                  "visible"
-                );
-
-                revealObserver.unobserve(
-                  entry.target
-                );
-              }
-            }
-          );
-        },
-        {
-          threshold: 0.1
-        }
-      );
-
-    document
-      .querySelectorAll(".reveal")
-      .forEach(
-        (element) => {
-          revealObserver.observe(
-            element
-          );
-        }
-      );
-
-    /*
-      =========================================================
-      FAQ
-      =========================================================
-    */
-
-    const faqItems =
-      document.querySelectorAll(
-        ".faq-item"
-      );
-
-    faqItems.forEach(
-      (faqItem) => {
-        const questionButton =
-          faqItem.querySelector(
-            ".faq-question"
-          );
-
-        questionButton.addEventListener(
-          "click",
-          () => {
-            const itemWasOpen =
-              faqItem.classList.contains(
-                "open"
-              );
-
-            faqItems.forEach(
-              (otherItem) => {
-                otherItem.classList.remove(
-                  "open"
-                );
-
-                otherItem.querySelector(
-                  ".faq-question span:last-child"
-                ).textContent = "+";
-              }
-            );
-
-            if (!itemWasOpen) {
-              faqItem.classList.add(
-                "open"
-              );
-
-              questionButton.querySelector(
-                "span:last-child"
-              ).textContent = "−";
-            }
-          }
-        );
-      }
-    );
-
-    /*
-      =========================================================
-      NEWSLETTER PLACEHOLDER
-      =========================================================
-    */
-
-    const newsletterForm =
-      document.getElementById(
-        "newsletter-form"
-      );
-
-    const formMessage =
-      document.getElementById(
-        "form-message"
-      );
-
-    newsletterForm.addEventListener(
-      "submit",
-      (event) => {
-        event.preventDefault();
-
-        formMessage.textContent =
-          "Signal received. Connect this form to a newsletter service before the website launches.";
-
-        newsletterForm.reset();
-      }
-    );
-
-    /*
-      =========================================================
-      STAFF SURVIVAL MINI-GAME
-      =========================================================
-    */
-
-    const gameArea =
-      document.getElementById(
-        "game-area"
-      );
-
-    const startScreen =
-      document.getElementById(
-        "game-start-screen"
-      );
-
-    const resultScreen =
-      document.getElementById(
-        "game-result-screen"
-      );
-
-    const startButton =
-      document.getElementById(
-        "start-game-button"
-      );
-
-    const restartButton =
-      document.getElementById(
-        "restart-game-button"
-      );
-
-    const scoreDisplay =
-      document.getElementById(
-        "game-score"
-      );
-
-    const roundDisplay =
-      document.getElementById(
-        "game-round"
-      );
-
-    const moraleDisplay =
-      document.getElementById(
-        "game-morale"
-      );
-
-    const resultTitle =
-      document.getElementById(
-        "result-title"
-      );
-
-    const resultScore =
-      document.getElementById(
-        "result-score"
-      );
-
-    const resultMessage =
-      document.getElementById(
-        "result-message"
-      );
-
-    const resultIcon =
-      document.getElementById(
-        "result-icon"
-      );
+    const resultIcon = document.getElementById("result-icon");
+    const resultTitle = document.getElementById("result-title");
+    const resultScore = document.getElementById("result-score");
+    const resultMessage = document.getElementById("result-message");
 
     const gameObjects = [
-      {
-        symbol: "☕",
-        name: "Coffee",
-        type: "good",
-        points: 2
-      },
-      {
-        symbol: "🖊️",
-        name: "Red Pen",
-        type: "good",
-        points: 2
-      },
-      {
-        symbol: "📚",
-        name: "Books",
-        type: "good",
-        points: 2
-      },
-      {
-        symbol: "📋",
-        name: "Completed Lesson Plans",
-        type: "good",
-        points: 3
-      },
-      {
-        symbol: "🔔",
-        name: "Dismissal Bell",
-        type: "good",
-        points: 3
-      },
-      {
-        symbol: "🌀",
-        name: "Interdimensional Rift",
-        type: "bad",
-        points: -3
-      },
-      {
-        symbol: "🤖",
-        name: "Suspicious AI Essay",
-        type: "bad",
-        points: -2
-      },
-      {
-        symbol: "📑",
-        name: "Unnecessary Meeting Agenda",
-        type: "bad",
-        points: -2
-      },
-      {
-        symbol: "🕳️",
-        name: "Unidentified Cosmic Hole",
-        type: "bad",
-        points: -3
-      },
-      {
-        symbol: "📧",
-        name: "Reply-All Email",
-        type: "bad",
-        points: -2
-      }
+      { symbol: "☕", name: "coffee", type: "good", points: 3 },
+      { symbol: "🖊️", name: "red pen", type: "good", points: 2 },
+      { symbol: "📚", name: "books", type: "good", points: 2 },
+      { symbol: "📝", name: "lesson plans", type: "good", points: 1 },
+      { symbol: "🌀", name: "interdimensional rift", type: "bad", points: -4 },
+      { symbol: "📨", name: "reply all email", type: "bad", points: -3 },
+      { symbol: "🤖", name: "suspicious AI essay", type: "bad", points: -2 },
+      { symbol: "📋", name: "cursed paperwork", type: "bad", points: -2 }
     ];
 
     let gameScore = 0;
@@ -3405,32 +1896,22 @@
     let objectTimeout;
 
     function updateGameHud() {
-      scoreDisplay.textContent =
-        gameScore;
+      gameScoreElement.textContent = gameScore;
+      gameRoundElement.textContent = `${gameRound} / 10`;
 
-      roundDisplay.textContent =
-        `${gameRound} / 10`;
-
-      if (gameScore >= 10) {
-        moraleDisplay.textContent =
-          "SUSPICIOUSLY HIGH";
-      } else if (gameScore >= 4) {
-        moraleDisplay.textContent =
-          "STABLE";
+      if (gameScore >= 12) {
+        gameMoraleElement.textContent = "UNREASONABLY HIGH";
+      } else if (gameScore >= 5) {
+        gameMoraleElement.textContent = "STABLE";
       } else if (gameScore >= 0) {
-        moraleDisplay.textContent =
-          "FRAGILE";
+        gameMoraleElement.textContent = "CONCERNING";
       } else {
-        moraleDisplay.textContent =
-          "FACULTY MEETING";
+        gameMoraleElement.textContent = "CRITICAL";
       }
     }
 
     function removeCurrentGameObject() {
-      const currentObject =
-        gameArea.querySelector(
-          ".game-object"
-        );
+      const currentObject = gameArea.querySelector(".game-object");
 
       if (currentObject) {
         currentObject.remove();
@@ -3442,8 +1923,6 @@
         return;
       }
 
-      removeCurrentGameObject();
-
       if (gameRound >= 10) {
         finishGame();
         return;
@@ -3451,222 +1930,116 @@
 
       gameRound += 1;
       updateGameHud();
+      removeCurrentGameObject();
 
       const objectData =
-        gameObjects[
-          Math.floor(
-            Math.random() *
-            gameObjects.length
-          )
-        ];
+        gameObjects[Math.floor(Math.random() * gameObjects.length)];
 
-      const objectButton =
-        document.createElement(
-          "button"
-        );
+      const objectButton = document.createElement("button");
 
-      objectButton.type =
-        "button";
+      objectButton.type = "button";
+      objectButton.className = `game-object ${objectData.type}`;
+      objectButton.textContent = objectData.symbol;
+      objectButton.setAttribute("aria-label", objectData.name);
 
-      objectButton.className =
-        `game-object ${objectData.type}`;
-
-      objectButton.textContent =
-        objectData.symbol;
-
-      objectButton.setAttribute(
-        "aria-label",
-        objectData.name
+      const objectSize = 68;
+      const minimumTop = 125;
+      const maximumTop = Math.max(
+        minimumTop,
+        gameArea.clientHeight - 205
       );
 
-      const objectSize = 70;
-
-      const minimumTop = 120;
-      const maximumTop =
-        Math.max(
-          minimumTop,
-          gameArea.clientHeight -
-          190
-        );
-
-      const maximumLeft =
-        Math.max(
-          10,
-          gameArea.clientWidth -
-          objectSize -
-          18
-        );
-
-      const randomLeft =
-        Math.floor(
-          Math.random() *
-          maximumLeft
-        ) + 8;
-
-      const randomTop =
-        Math.floor(
-          Math.random() *
-          (
-            maximumTop -
-            minimumTop +
-            1
-          )
-        ) +
-        minimumTop;
+      const maximumLeft = Math.max(
+        10,
+        gameArea.clientWidth - objectSize - 18
+      );
 
       objectButton.style.left =
-        `${randomLeft}px`;
+        `${Math.floor(Math.random() * maximumLeft) + 8}px`;
 
       objectButton.style.top =
-        `${randomTop}px`;
+        `${Math.floor(
+          Math.random() * (maximumTop - minimumTop + 1)
+        ) + minimumTop}px`;
 
-      objectButton.addEventListener(
-        "click",
-        () => {
-          if (!gameActive) {
-            return;
-          }
-
-          clearTimeout(
-            objectTimeout
-          );
-
-          gameScore +=
-            objectData.points;
-
-          updateGameHud();
-
-          objectButton.remove();
-
-          setTimeout(
-            createGameObject,
-            220
-          );
+      objectButton.addEventListener("click", () => {
+        if (!gameActive) {
+          return;
         }
-      );
 
-      gameArea.appendChild(
-        objectButton
-      );
+        clearTimeout(objectTimeout);
+        gameScore += objectData.points;
+        updateGameHud();
+        objectButton.remove();
 
-      objectTimeout =
-        setTimeout(
-          () => {
-            objectButton.remove();
+        setTimeout(createGameObject, 220);
+      });
 
-            if (
-              objectData.type ===
-              "good"
-            ) {
-              gameScore -= 1;
-            }
+      gameArea.appendChild(objectButton);
 
-            updateGameHud();
+      objectTimeout = setTimeout(() => {
+        objectButton.remove();
 
-            createGameObject();
-          },
-          1350
-        );
+        if (objectData.type === "good") {
+          gameScore -= 1;
+        }
+
+        updateGameHud();
+        createGameObject();
+      }, 1350);
     }
 
     function startGame() {
-      clearTimeout(
-        objectTimeout
-      );
-
+      clearTimeout(objectTimeout);
       removeCurrentGameObject();
 
       gameScore = 0;
       gameRound = 0;
       gameActive = true;
 
-      startScreen.style.display =
-        "none";
-
-      resultScreen.style.display =
-        "none";
+      startScreen.style.display = "none";
+      resultScreen.style.display = "none";
 
       updateGameHud();
-
-      setTimeout(
-        createGameObject,
-        350
-      );
+      setTimeout(createGameObject, 350);
     }
 
     function finishGame() {
       gameActive = false;
-
-      clearTimeout(
-        objectTimeout
-      );
-
+      clearTimeout(objectTimeout);
       removeCurrentGameObject();
 
-      resultScreen.style.display =
-        "grid";
-
+      resultScreen.style.display = "grid";
       resultScore.textContent =
         `Final faculty survival score: ${gameScore}`;
 
       if (gameScore >= 14) {
-        resultIcon.textContent =
-          "🏆";
-
-        resultTitle.textContent =
-          "Teacher of the Multiverse";
-
+        resultIcon.textContent = "🏆";
+        resultTitle.textContent = "Teacher of the Multiverse";
         resultMessage.textContent =
-          "You collected the supplies, avoided the rifts, completed the paperwork, and somehow protected reality. Unfortunately, your reward is another duty assignment. You should probably go buy the book instead.";
+          "You collected the supplies, avoided the rifts, completed the paperwork, and somehow protected reality. Unfortunately, your reward is another duty assignment. You should probably go read about the book instead.";
       } else if (gameScore >= 7) {
-        resultIcon.textContent =
-          "🎉";
-
-        resultTitle.textContent =
-          "Dismissal Achieved";
-
+        resultIcon.textContent = "🎉";
+        resultTitle.textContent = "Dismissal Achieved";
         resultMessage.textContent =
-          "You survived the school day with most of reality intact. That is well above district expectations. Your next professional responsibility is to go buy the book.";
+          "You survived the school day with most of reality intact. That is well above district expectations. Your next professional responsibility is to go read about the book.";
       } else if (gameScore >= 0) {
-        resultIcon.textContent =
-          "☕";
-
-        resultTitle.textContent =
-          "Technically Still Employed";
-
+        resultIcon.textContent = "☕";
+        resultTitle.textContent = "Technically Still Employed";
         resultMessage.textContent =
-          "The rifts remain open, the coffee is cold, and someone scheduled a meeting during planning. The only reasonable response is to go buy the book.";
+          "The rifts remain open, the coffee is cold, and someone scheduled a meeting during planning. The only reasonable response is to go read about the book.";
       } else {
-        resultIcon.textContent =
-          "🌀";
-
-        resultTitle.textContent =
-          "Reality Has Been Cancelled";
-
+        resultIcon.textContent = "🌀";
+        resultTitle.textContent = "Reality Has Been Cancelled";
         resultMessage.textContent =
-          "You clicked too many cosmic threats and reply-all emails. School is closed indefinitely. Please use your unexpected free time to go buy the book.";
+          "You clicked too many cosmic threats and reply-all emails. School is closed indefinitely. Please use your unexpected free time to go read about the book.";
       }
     }
 
-    startButton.addEventListener(
-      "click",
-      startGame
-    );
+    startButton.addEventListener("click", startGame);
+    restartButton.addEventListener("click", startGame);
 
-    restartButton.addEventListener(
-      "click",
-      startGame
-    );
-
-    /*
-      =========================================================
-      CURRENT YEAR
-      =========================================================
-    */
-
-    document.getElementById(
-      "current-year"
-    ).textContent =
+    document.getElementById("current-year").textContent =
       new Date().getFullYear();
   </script>
 </body>
