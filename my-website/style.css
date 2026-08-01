@@ -1,0 +1,5079 @@
+/* ============================================================
+   CJ MAYLOCK WEBSITE
+   THE ENGLISH DEPARTMENT vs. CHAOS AND NONSENSE
+   PART 1 — FOUNDATION
+============================================================ */
+
+
+/* ============================================================
+   GOOGLE FONTS
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+
+/* ============================================================
+   VARIABLES
+============================================================ */
+
+:root{
+
+    --background:#070A0D;
+    --background-light:#10161D;
+
+    --panel:rgba(18,24,31,.88);
+
+    --gold:#C2A86C;
+
+    --paper:#F3EBDD;
+
+    --chalk:#E5E9E1;
+
+    --text:#F7F5F2;
+
+    --text-soft:#B7BDC7;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:0 30px 80px rgba(0,0,0,.45);
+
+    --radius:22px;
+
+    --transition:.35s ease;
+
+}
+
+
+/* ============================================================
+   RESET
+============================================================ */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--background);
+
+    color:var(--text);
+
+    font-family:"DM Sans",sans-serif;
+
+    overflow-x:hidden;
+
+    line-height:1.75;
+
+    position:relative;
+
+}
+
+
+/* ============================================================
+   BACKGROUND
+============================================================ */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle at top,#1b2430 0%,transparent 55%),
+
+        radial-gradient(circle at bottom,#111923 0%,transparent 45%),
+
+        linear-gradient(180deg,#070A0D,#090D12);
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.18;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+
+h1,h2,h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-weight:600;
+
+    line-height:1.05;
+
+}
+
+h1{
+
+    font-size:clamp(3rem,7vw,6rem);
+
+}
+
+h2{
+
+    font-size:clamp(2.2rem,5vw,4rem);
+
+}
+
+h3{
+
+    font-size:2rem;
+
+}
+
+p{
+
+    color:var(--text-soft);
+
+    max-width:700px;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+
+section{
+
+    padding:120px 8%;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button{
+
+    font:inherit;
+
+    cursor:pointer;
+
+}
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.primary-button,
+
+.secondary-button,
+
+#enter-button,
+
+#play-game{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.6rem;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    transition:var(--transition);
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    cursor:pointer;
+
+}
+
+.primary-button,
+
+#enter-button,
+
+#play-game{
+
+    background:var(--gold);
+
+    color:#111;
+
+    border:none;
+
+}
+
+.primary-button:hover,
+
+#enter-button:hover,
+
+#play-game:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 0 25px rgba(194,168,108,.45);
+
+}
+
+.secondary-button{
+
+    border:1px solid var(--gold);
+
+    color:var(--gold);
+
+    background:transparent;
+
+}
+
+.secondary-button:hover{
+
+    background:rgba(194,168,108,.12);
+
+}
+
+
+/* ============================================================
+   INTRO SCREEN
+============================================================ */
+
+#intro-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050608;
+
+    z-index:9999;
+
+}
+
+.intro-card{
+
+    width:min(500px,90%);
+
+    padding:60px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    background:rgba(18,24,31,.92);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.fiia-logo{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:3rem;
+
+    color:var(--gold);
+
+    letter-spacing:.2em;
+
+    margin-bottom:20px;
+
+}
+
+.clearance{
+
+    text-transform:uppercase;
+
+    letter-spacing:.3em;
+
+    font-size:.75rem;
+
+    margin-bottom:40px;
+
+}
+
+
+/* ============================================================
+   FLASHLIGHT
+============================================================ */
+
+#flashlight{
+
+    position:fixed;
+
+    width:380px;
+
+    height:380px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(255,247,214,.18),
+
+    rgba(255,247,214,.06) 40%,
+
+    transparent 70%);
+
+    transform:translate(-50%,-50%);
+
+    z-index:999;
+
+    mix-blend-mode:screen;
+
+}
+
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0A0D12;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+
+    border-radius:100px;
+
+}
+
+
+/* ============================================================
+   TEXT SELECTION
+============================================================ */
+
+::selection{
+
+    background:rgba(194,168,108,.45);
+
+    color:white;
+
+}
+
+
+/* ============================================================
+   REVEAL ANIMATION
+============================================================ */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* ============================================================
+   UTILITIES
+============================================================ */
+
+.hidden{
+
+    display:none;
+
+}
+
+.center{
+
+    text-align:center;
+
+}
+
+.gold{
+
+    color:var(--gold);
+
+}
+#hero{
+    min-height:100vh;
+    padding:120px 8%;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.hero-left{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+}
+
+.presents{
+    color:var(--gold);
+    font-family:"DM Mono",monospace;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    font-size:.9rem;
+}
+
+#hero h1{
+    max-width:760px;
+}
+
+#hero h1 span{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.description{
+    font-size:1.08rem;
+    max-width:650px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    margin-top:.75rem;
+}
+
+.hero-right{
+    display:flex;
+    justify-content:center;
+}
+
+.hero-right img{
+    width:min(430px,100%);
+    border-radius:24px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    transition:transform .45s ease, box-shadow .45s ease;
+}
+
+.hero-right img:hover{
+    transform:translateY(-8px);
+    box-shadow:0 35px 90px rgba(0,0,0,.55);
+}
+
+/* ============================================================
+   ABOUT BOOK
+============================================================ */
+
+#about-book{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.book-column{
+    display:flex;
+    justify-content:center;
+}
+
+.book-placeholder{
+    width:320px;
+    aspect-ratio:2/3;
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+    font-family:"Cormorant Garamond",serif;
+    font-size:2rem;
+    border:2px dashed rgba(194,168,108,.4);
+    border-radius:18px;
+    background:
+      linear-gradient(rgba(255,255,255,.03),rgba(255,255,255,.01));
+    transition:all .35s ease;
+}
+
+.book-placeholder:hover{
+    transform:translateY(-8px) rotate(-1deg);
+    border-color:var(--gold);
+}
+
+.book-copy{
+    display:flex;
+    flex-direction:column;
+    gap:1.4rem;
+}
+
+.book-copy h2{
+    color:var(--paper);
+}
+
+.book-copy p{
+    font-size:1.05rem;
+}
+
+.book-copy .primary-button{
+    width:max-content;
+    margin-top:.5rem;
+}
+
+/* ============================================================
+   SUBTLE SECTION DIVIDERS
+============================================================ */
+
+#hero::after,
+#about-book::after{
+    content:"";
+    display:block;
+    width:120px;
+    height:1px;
+    background:linear-gradient(to right,transparent,var(--gold),transparent);
+    margin-top:4rem;
+    opacity:.45;
+}
+#hero > *{
+    animation:heroFade .9s ease both;
+}
+
+.hero-left{
+    animation-delay:.1s;
+}
+
+.hero-right{
+    animation-delay:.25s;
+}
+
+@keyframes heroFade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.presents{
+    position:relative;
+    display:inline-block;
+}
+
+.presents::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:80px;
+    height:2px;
+    background:var(--gold);
+    opacity:.6;
+}
+
+#hero h1{
+    text-wrap:balance;
+}
+
+.description{
+    margin-top:.5rem;
+}
+
+/* ============================================================
+   BOOK SECTION POLISH
+============================================================ */
+
+#about-book{
+    position:relative;
+}
+
+#about-book::before{
+    content:"";
+    position:absolute;
+    inset:40px;
+    border:1px solid rgba(255,255,255,.04);
+    border-radius:28px;
+    pointer-events:none;
+}
+
+.book-copy{
+    padding:1rem 0;
+}
+
+.book-copy h2{
+    margin-bottom:.5rem;
+}
+
+.book-copy p{
+    line-height:1.9;
+}
+
+.book-placeholder{
+    overflow:hidden;
+    position:relative;
+}
+
+.book-placeholder::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at top,
+        rgba(194,168,108,.18),
+        transparent 60%);
+    opacity:0;
+    transition:.35s ease;
+}
+
+.book-placeholder:hover::before{
+    opacity:1;
+}
+
+/* ============================================================
+   BUTTON POLISH
+============================================================ */
+
+.primary-button,
+.secondary-button{
+    min-width:170px;
+}
+
+.primary-button:active,
+.secondary-button:active{
+    transform:scale(.98);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width:1100px){
+
+    #hero,
+    #about-book{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-left,
+    .book-copy{
+        align-items:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-right{
+        order:-1;
+    }
+
+    .book-column{
+        margin-bottom:2rem;
+    }
+
+}
+
+@media (max-width:700px){
+
+    section{
+        padding:90px 7%;
+    }
+
+    #hero{
+        min-height:auto;
+        padding-top:140px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .primary-button,
+    .secondary-button{
+        width:100%;
+    }
+
+    .book-placeholder{
+        width:250px;
+    }
+
+    .presents{
+        letter-spacing:.2em;
+        font-size:.8rem;
+    }
+
+    h1{
+        font-size:clamp(2.5rem,12vw,4.5rem);
+    }
+
+    h2{
+        font-size:clamp(2rem,8vw,3rem);
+    }
+}
+#author{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.author-photo{
+    display:flex;
+    justify-content:center;
+}
+
+.author-photo img{
+    width:min(360px,100%);
+    border-radius:24px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    transition:all .4s ease;
+}
+
+.author-photo img:hover{
+    transform:translateY(-8px) rotate(-1deg);
+}
+
+.author-copy{
+    display:flex;
+    flex-direction:column;
+    gap:1.25rem;
+}
+
+.author-copy h2{
+    color:var(--paper);
+}
+
+.author-copy p{
+    max-width:650px;
+}
+
+
+/* ============================================================
+   ESCAPE THE CLASSROOM
+============================================================ */
+
+#game{
+    padding:140px 8%;
+}
+
+.game-card{
+    max-width:900px;
+    margin:0 auto;
+    text-align:center;
+    padding:4.5rem 3rem;
+    border-radius:28px;
+    border:1px solid var(--border);
+
+    background:
+        radial-gradient(circle at top,
+        rgba(194,168,108,.08),
+        transparent 40%),
+        var(--panel);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+    transition:.4s ease;
+}
+
+.game-card:hover{
+    transform:translateY(-8px);
+}
+
+.game-card small{
+
+    display:block;
+
+    margin-bottom:1rem;
+
+    color:var(--gold);
+
+    font-family:"DM Mono",monospace;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    font-size:.72rem;
+
+}
+
+.game-card h2{
+
+    margin-bottom:1rem;
+
+}
+
+.game-card p{
+
+    margin:0 auto 2rem;
+
+    font-size:1.1rem;
+
+    color:var(--paper);
+
+}
+
+
+/* ============================================================
+   CONTACT
+============================================================ */
+
+#contact{
+
+    text-align:center;
+
+    padding:120px 8% 80px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+}
+
+#contact h2{
+
+    margin-bottom:1rem;
+
+}
+
+#contact p{
+
+    margin:0 auto 2rem;
+
+}
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.2rem;
+
+    flex-wrap:wrap;
+
+}
+
+.social-links a{
+
+    width:52px;
+
+    height:52px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    border:1px solid var(--border);
+
+    transition:.35s ease;
+
+    color:var(--gold);
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(194,168,108,.12);
+
+    border-color:var(--gold);
+
+}
+
+
+/* ============================================================
+   SUBTLE DIVIDERS
+============================================================ */
+
+#author,
+#game,
+#contact{
+    position:relative;
+}
+
+#author::before,
+#game::before,
+#contact::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:140px;
+    height:1px;
+    background:linear-gradient(to right,transparent,var(--gold),transparent);
+    opacity:.35;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width:1000px){
+
+    #author{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .author-copy{
+        align-items:center;
+    }
+
+}
+
+@media (max-width:700px){
+
+    .game-card{
+        padding:3rem 1.75rem;
+    }
+
+    .social-links{
+        gap:.75rem;
+    }
+
+}
+#secret-owl,
+#secret-coffee,
+#secret-note,
+#secret-rift{
+    position:absolute;
+    width:42px;
+    height:42px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+    opacity:.28;
+    transition:all .35s ease;
+    z-index:25;
+}
+
+#secret-owl:hover,
+#secret-coffee:hover,
+#secret-note:hover,
+#secret-rift:hover{
+    opacity:1;
+    transform:scale(1.18) rotate(6deg);
+    filter:drop-shadow(0 0 10px rgba(194,168,108,.45));
+}
+
+#secret-owl{
+    top:120px;
+    right:7%;
+}
+
+#secret-coffee{
+    bottom:180px;
+    left:6%;
+}
+
+#secret-note{
+    top:50%;
+    right:12%;
+}
+
+#secret-rift{
+    bottom:120px;
+    right:18%;
+}
+
+/* ============================================================
+   FLASHLIGHT POLISH
+============================================================ */
+
+#flashlight{
+    transition:
+        width .25s ease,
+        height .25s ease,
+        opacity .35s ease;
+    opacity:.95;
+}
+
+body:hover #flashlight{
+    width:420px;
+    height:420px;
+}
+
+/* ============================================================
+   PAGE FLICKER
+============================================================ */
+
+body.page-flicker{
+    animation:pageFlicker .6s steps(2,end);
+}
+
+@keyframes pageFlicker{
+    0%,100%{filter:brightness(1);}
+    15%{filter:brightness(.25);}
+    28%{filter:brightness(1.15);}
+    40%{filter:brightness(.35);}
+    58%{filter:brightness(1.08);}
+    76%{filter:brightness(.18);}
+}
+
+/* ============================================================
+   FILM GRAIN
+============================================================ */
+
+body::after{
+    animation:grainShift 10s linear infinite;
+}
+
+@keyframes grainShift{
+    0%{transform:translate(0,0);}
+    25%{transform:translate(-10px,6px);}
+    50%{transform:translate(8px,-4px);}
+    75%{transform:translate(-6px,-8px);}
+    100%{transform:translate(0,0);}
+}
+
+/* ============================================================
+   SUBTLE FLOATING GLOW
+============================================================ */
+
+#hero,
+#about-book,
+#author,
+#game{
+    position:relative;
+    overflow:hidden;
+}
+
+#hero::before,
+#about-book::after,
+#author::after,
+#game::after{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(194,168,108,.08),
+        transparent 70%);
+    filter:blur(8px);
+    animation:floatGlow 16s ease-in-out infinite;
+    pointer-events:none;
+}
+
+#hero::before{
+    top:-120px;
+    right:-100px;
+}
+
+#about-book::after{
+    bottom:-140px;
+    left:-120px;
+}
+
+#author::after{
+    top:-120px;
+    left:60%;
+}
+
+#game::after{
+    bottom:-150px;
+    right:-80px;
+}
+
+@keyframes floatGlow{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(35px);}
+}
+
+/* ============================================================
+   CREEPY NOTES
+============================================================ */
+
+.secret-note{
+    position:absolute;
+    padding:.85rem 1rem;
+    border:1px solid rgba(194,168,108,.2);
+    background:#efe4c8;
+    color:#29251d;
+    font-family:"Cormorant Garamond",serif;
+    transform:rotate(-4deg);
+    box-shadow:0 12px 24px rgba(0,0,0,.25);
+}
+
+.secret-note small{
+    display:block;
+    margin-top:.4rem;
+    color:#5d5344;
+    font-family:"DM Mono",monospace;
+    font-size:.65rem;
+}
+
+/* ============================================================
+   GLOBAL HOVER POLISH
+============================================================ */
+
+img,
+.game-card,
+.book-placeholder,
+.intro-card{
+    transition:all .4s ease;
+}
+
+img:hover{
+    filter:brightness(1.03);
+}
+
+/* ============================================================
+   FINAL RESPONSIVE
+============================================================ */
+
+@media(max-width:700px){
+
+    #secret-owl,
+    #secret-coffee,
+    #secret-note,
+    #secret-rift{
+        width:36px;
+        height:36px;
+    }
+
+    #flashlight{
+        width:260px;
+        height:260px;
+    }
+}
+/* ============================================================
+   DISCOVERY WINDOW
+============================================================ */
+
+#discovery-window{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:2rem;
+
+    background:rgba(5,8,12,.65);
+
+    backdrop-filter:blur(8px);
+
+    z-index:99999;
+
+    animation:fadeIn .35s ease;
+
+}
+
+.discovery-card{
+
+    position:relative;
+
+    width:min(560px,95vw);
+
+    padding:3rem;
+
+    border-radius:22px;
+
+    border:1px solid rgba(194,168,108,.35);
+
+    background:
+
+        linear-gradient(
+
+            rgba(255,250,238,.98),
+
+            rgba(244,236,219,.96)
+
+        );
+
+    color:#2b241c;
+
+    box-shadow:
+
+        0 40px 100px rgba(0,0,0,.45);
+
+    transform:rotate(-1deg);
+
+}
+
+.discovery-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:35px;
+
+    top:-14px;
+
+    left:50%;
+
+    transform:translateX(-50%) rotate(-2deg);
+
+    background:rgba(230,220,180,.55);
+
+    border-radius:4px;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.18);
+
+}
+
+#discovery-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2.3rem;
+
+    margin-bottom:1rem;
+
+    color:#2d2418;
+
+}
+
+#discovery-text{
+
+    color:#463d32;
+
+    line-height:1.85;
+
+    font-size:1.05rem;
+
+}
+
+#close-discovery{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.08);
+
+    color:#333;
+
+    font-size:1.3rem;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+#close-discovery:hover{
+
+    background:var(--gold);
+
+    color:white;
+
+    transform:rotate(90deg);
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.discovery-card{
+
+    animation:noteDrop .45s ease;
+
+}
+
+@keyframes noteDrop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(-40px)
+
+            rotate(-5deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+
+            rotate(-1deg);
+
+    }
+
+}
+/* ============================================================
+   CONDENSED WEBSITE WIDTH
+============================================================ */
+
+#hero,
+#about-book,
+#author,
+#game,
+#contact {
+    width: min(1180px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hero,
+#about-book,
+#author {
+    padding-left: clamp(28px, 5vw, 70px);
+    padding-right: clamp(28px, 5vw, 70px);
+}
+
+#game,
+#contact {
+    padding-left: clamp(28px, 5vw, 70px);
+    padding-right: clamp(28px, 5vw, 70px);
+}
+
+/* Slightly tighter desktop layouts */
+
+#hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.75fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+#about-book {
+    grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.1fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+#author {
+    grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.15fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+/* Keep text from becoming too wide */
+
+.hero-left,
+.book-copy,
+.author-copy {
+    max-width: 680px;
+}
+
+.description,
+.book-copy p,
+.author-copy p {
+    max-width: 620px;
+}
+
+/* Make the game feel like a contained feature */
+
+.game-card {
+    max-width: 760px;
+}
+
+/* Tighter spacing between sections */
+
+section {
+    padding-top: 95px;
+    padding-bottom: 95px;
+}
+
+@media (max-width: 1100px) {
+    #hero,
+    #about-book,
+    #author {
+        width: min(760px, 100%);
+    }
+}
+
+@media (max-width: 700px) {
+    #hero,
+    #about-book,
+    #author,
+    #game,
+    #contact {
+        width: 100%;
+    }
+
+    section {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+}
+/* ============================================================
+   INDEX V2 — FINAL LAYOUT SUPPORT
+============================================================ */
+
+/* Keep each scene centered and comfortably condensed */
+
+#hero,
+#author,
+#game,
+#contact {
+    width: min(1120px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ============================================================
+   HERO TEXT
+============================================================ */
+
+.presents {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hero-summary {
+    max-width: 620px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-soft);
+}
+
+
+/* Make the title display on intentional separate lines */
+
+#hero h1 span {
+    display: block;
+    margin: 0.15em 0;
+}
+
+
+/* ============================================================
+   BOOK DISPLAY
+============================================================ */
+
+.book-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.book-placeholder {
+    width: min(330px, 80vw);
+    min-height: 490px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+
+    border: 1px solid rgba(194, 168, 108, 0.42);
+    border-radius: 18px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(194, 168, 108, 0.18),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #18222e,
+            #0c1118 58%,
+            #29202b
+        );
+
+    box-shadow:
+        -18px 28px 55px rgba(0, 0, 0, 0.4);
+
+    color: var(--paper);
+}
+
+.book-placeholder strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.05rem;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.book-small-text,
+.book-author {
+    font-family: "DM Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.book-small-text {
+    color: var(--gold);
+}
+
+.book-author {
+    color: var(--paper);
+}
+
+.cover-status {
+    font-family: "DM Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+
+/* ============================================================
+   AUTHOR QUOTE
+============================================================ */
+
+.author-quote {
+    max-width: 580px;
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+
+    border-left: 2px solid var(--gold);
+
+    color: var(--paper);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.55rem;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+
+/* ============================================================
+   GAME
+============================================================ */
+
+.game-invitation {
+    margin-top: -0.7rem !important;
+    color: var(--text-soft) !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem !important;
+    font-style: italic;
+}
+
+
+/* ============================================================
+   CONTACT
+============================================================ */
+
+.contact-email {
+    display: inline-block;
+    margin-bottom: 1.8rem;
+
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    font-weight: 600;
+
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.35rem;
+
+    transition: var(--transition);
+}
+
+.contact-email:hover {
+    color: var(--paper);
+}
+
+.copyright {
+    margin: 3rem auto 0;
+    font-family: "DM Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+}
+
+
+/* ============================================================
+   INTRO CLEANUP
+============================================================ */
+
+.intro-card {
+    max-width: 440px;
+    padding: 3.5rem 2.5rem;
+}
+
+.fiia-logo {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+.clearance {
+    margin-bottom: 2rem;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    #hero,
+    #author,
+    #game,
+    #contact {
+        width: 100%;
+    }
+
+    .book-placeholder {
+        min-height: 420px;
+    }
+
+    .book-placeholder strong {
+        font-size: 1.7rem;
+    }
+
+    .author-quote {
+        text-align: left;
+    }
+}
+#game-overlay{
+    position:fixed;
+    inset:0;
+    z-index:100000;
+    display:none;
+    color:var(--text);
+    background:#05080c;
+}
+
+#game-overlay.open{
+    display:block;
+}
+
+.game-interface{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    background:#080d13;
+}
+
+.game-sidebar{
+    min-width:0;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    padding:1.4rem;
+    border-right:1px solid var(--border);
+    background:#0a1017;
+    overflow-y:auto;
+}
+
+.game-agency-label{
+    margin:0;
+    color:var(--gold);
+    font-family:"DM Mono",monospace;
+    font-size:.62rem;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+}
+
+.game-sidebar h2{
+    margin:.8rem 0 1.2rem;
+    font-size:2.65rem;
+    line-height:.92;
+}
+
+.game-objective{
+    padding:1rem;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+}
+
+.game-objective small,
+.game-panel-label{
+    display:block;
+    color:var(--gold);
+    font-family:"DM Mono",monospace;
+    font-size:.57rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+
+.game-objective strong{
+    display:block;
+    margin-top:.45rem;
+    font-family:"Cormorant Garamond",serif;
+    font-size:1.25rem;
+    line-height:1.15;
+}
+
+.game-inventory,
+.game-log{
+    margin-top:1.3rem;
+}
+
+.inventory-slots{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:.55rem;
+}
+
+.inventory-slot{
+    min-height:66px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.02);
+    color:rgba(255,255,255,.24);
+    font-size:1.35rem;
+}
+
+.inventory-slot.filled{
+    color:var(--text);
+    border-color:rgba(194,168,108,.5);
+    background:rgba(194,168,108,.06);
+}
+
+#game-log-content{
+    min-height:190px;
+    max-height:240px;
+    overflow-y:auto;
+    padding:.8rem;
+    border:1px solid var(--border);
+    background:rgba(0,0,0,.18);
+    font-family:"DM Mono",monospace;
+    font-size:.65rem;
+    line-height:1.6;
+}
+
+.game-log-entry{
+    margin-bottom:.65rem;
+    color:rgba(255,255,255,.6);
+}
+
+.game-log-entry strong{
+    color:#dbc499;
+}
+
+.game-sidebar-buttons{
+    display:grid;
+    gap:.6rem;
+    margin-top:auto;
+    padding-top:1rem;
+}
+
+#restart-game,
+#close-game{
+    min-height:44px;
+    padding:.7rem .9rem;
+    border:1px solid var(--border);
+    color:var(--text);
+    background:rgba(255,255,255,.025);
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+#restart-game:hover,
+#close-game:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+.classroom{
+    position:relative;
+    min-width:0;
+    height:100%;
+    overflow:hidden;
+    background:
+        linear-gradient(rgba(29,43,56,.42),rgba(6,10,15,.94)),
+        linear-gradient(90deg,#1d2a36 0 16%,#263747 16% 84%,#1d2a36 84%);
+}
+
+.classroom::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.13;
+    pointer-events:none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:48px 48px;
+}
+
+.classroom.flicker{
+    animation:classroomFlicker .85s steps(2,end);
+}
+
+.classroom.shake{
+    animation:classroomShake .45s linear;
+}
+
+.classroom.dark .classroom-light{
+    background:#3d3e3a;
+    box-shadow:none;
+}
+
+@keyframes classroomFlicker{
+    0%,100%{filter:brightness(1);}
+    12%{filter:brightness(.22);}
+    22%{filter:brightness(1.16);}
+    33%{filter:brightness(.38);}
+    46%{filter:brightness(1.06);}
+    62%{filter:brightness(.18);}
+    77%{filter:brightness(1.12);}
+}
+
+@keyframes classroomShake{
+    0%,100%{transform:translateX(0);}
+    20%{transform:translateX(-5px);}
+    40%{transform:translateX(5px);}
+    60%{transform:translateX(-3px);}
+    80%{transform:translateX(3px);}
+}
+
+.classroom-ceiling{
+    position:absolute;
+    inset:0 0 auto;
+    height:120px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    background:linear-gradient(#131d26,#0f171f);
+}
+
+.classroom-light{
+    position:absolute;
+    top:28px;
+    left:50%;
+    width:230px;
+    height:18px;
+    transform:translateX(-50%);
+    border:1px solid rgba(255,255,255,.24);
+    background:#d6d4bc;
+    box-shadow:
+        0 0 38px rgba(230,224,190,.35),
+        0 0 90px rgba(230,224,190,.13);
+}
+
+.classroom-chalkboard{
+    position:absolute;
+    top:145px;
+    left:50%;
+    width:min(58%,600px);
+    min-height:155px;
+    transform:translateX(-50%);
+    padding:1.2rem;
+    border:10px solid #655039;
+    color:#d9e0d4;
+    background:#213a36;
+    box-shadow:0 20px 45px rgba(0,0,0,.28);
+    cursor:pointer;
+}
+
+.classroom-chalkboard strong,
+.classroom-chalkboard span{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    text-align:center;
+}
+
+.classroom-chalkboard strong{
+    font-size:2rem;
+    font-weight:500;
+}
+
+.classroom-chalkboard span{
+    margin-top:.55rem;
+    color:rgba(255,255,255,.58);
+    font-style:italic;
+}
+
+.classroom-poster{
+    position:absolute;
+    top:160px;
+    left:6%;
+    width:125px;
+    min-height:150px;
+    padding:.8rem;
+    border:1px solid rgba(255,255,255,.13);
+    color:#222831;
+    background:#e9dfcf;
+    box-shadow:0 18px 34px rgba(0,0,0,.24);
+    transform:rotate(-2deg);
+    text-align:left;
+    cursor:pointer;
+}
+
+.classroom-poster strong{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:1.3rem;
+    line-height:1;
+}
+
+.classroom-poster small{
+    display:block;
+    margin-top:.8rem;
+    color:#6f665d;
+    font-family:"DM Mono",monospace;
+    font-size:.53rem;
+    line-height:1.6;
+}
+
+.classroom-clock{
+    position:absolute;
+    top:155px;
+    right:7%;
+    width:90px;
+    height:90px;
+    border:8px solid #d7d0c3;
+    border-radius:50%;
+    background:#f5f0e7;
+    box-shadow:0 18px 34px rgba(0,0,0,.24);
+    cursor:pointer;
+}
+
+.classroom-clock::before,
+.classroom-clock::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform-origin:0 50%;
+    background:#171d24;
+}
+
+.classroom-clock::before{
+    width:25px;
+    height:3px;
+    transform:rotate(12deg);
+}
+
+.classroom-clock::after{
+    width:18px;
+    height:3px;
+    transform:rotate(112deg);
+}
+
+.filing-cabinet{
+    position:absolute;
+    left:5%;
+    bottom:70px;
+    width:150px;
+    height:250px;
+    border:1px solid rgba(255,255,255,.12);
+    background:#51606b;
+    box-shadow:18px 26px 40px rgba(0,0,0,.28);
+}
+
+.filing-drawer{
+    position:relative;
+    width:100%;
+    height:25%;
+    display:block;
+    border:0;
+    border-bottom:2px solid #35424c;
+    background:transparent;
+    cursor:pointer;
+}
+
+.filing-drawer::before{
+    content:"";
+    position:absolute;
+    width:48px;
+    height:8px;
+    left:50%;
+    top:18px;
+    transform:translateX(-50%);
+    background:#2e3942;
+}
+
+.filing-drawer.open{
+    transform:translateX(32px);
+    background:#647581;
+    box-shadow:-22px 10px 22px rgba(0,0,0,.32);
+}
+
+.teacher-desk{
+    position:absolute;
+    left:50%;
+    bottom:66px;
+    width:360px;
+    height:125px;
+    transform:translateX(-50%);
+    border-top:18px solid #6a5038;
+    background:#5a432f;
+    box-shadow:0 26px 45px rgba(0,0,0,.32);
+}
+
+.desk-object{
+    position:absolute;
+    z-index:6;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    transition:transform .18s ease;
+}
+
+.desk-object:hover{
+    transform:translateY(-4px) scale(1.04);
+}
+
+.coffee-object{
+    left:44px;
+    top:-72px;
+    font-size:2.55rem;
+}
+
+.paper-object{
+    left:128px;
+    top:-52px;
+    width:95px;
+    height:58px;
+    transform:rotate(-4deg);
+    border:1px solid #aaa194;
+    background:
+        repeating-linear-gradient(
+            180deg,
+            transparent 0 10px,
+            rgba(61,68,75,.2) 10px 11px
+        ),
+        #e9e1d5;
+    box-shadow:0 8px 16px rgba(0,0,0,.2);
+}
+
+.book-object{
+    right:42px;
+    top:-60px;
+    width:70px;
+    height:48px;
+    border:3px solid #231a22;
+    background:#654a60;
+    box-shadow:7px 7px 0 #252e3a;
+}
+
+.classroom-door{
+    position:absolute;
+    right:5%;
+    bottom:72px;
+    width:150px;
+    height:320px;
+    border:9px solid #151d26;
+    background:#263747;
+    box-shadow:-20px 24px 45px rgba(0,0,0,.32);
+    cursor:pointer;
+}
+
+.door-window{
+    display:block;
+    width:68px;
+    height:90px;
+    margin:32px auto 0;
+    border:6px solid #151d26;
+    background:#536879;
+}
+
+.door-handle{
+    position:absolute;
+    width:34px;
+    height:8px;
+    right:18px;
+    top:178px;
+    background:#b79a69;
+    box-shadow:0 0 0 4px #151d26;
+}
+
+.classroom-floor{
+    position:absolute;
+    inset:auto 0 0;
+    height:72px;
+    border-top:1px solid rgba(255,255,255,.06);
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #111922 0 110px,
+            #17222e 110px 112px
+        );
+}
+
+.classroom-whisper{
+    position:absolute;
+    z-index:18;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    color:rgba(255,255,255,.11);
+    font-family:"Cormorant Garamond",serif;
+    font-size:1.1rem;
+    font-style:italic;
+    pointer-events:none;
+}
+
+.game-screen{
+    position:absolute;
+    inset:0;
+    z-index:50;
+    display:grid;
+    place-items:center;
+    padding:1rem;
+    background:rgba(4,7,11,.84);
+    backdrop-filter:blur(8px);
+}
+
+.game-screen.hidden{
+    display:none;
+}
+
+.game-screen-card{
+    width:min(100%,540px);
+    padding:1.5rem;
+    border:1px solid var(--border);
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(194,161,107,.13),
+            transparent 28%
+        ),
+        linear-gradient(145deg,#1a2633,#0b1118);
+    box-shadow:var(--shadow);
+}
+
+.game-screen-code{
+    margin:0;
+    color:var(--gold);
+    font-family:"DM Mono",monospace;
+    font-size:.6rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.game-screen-card h2{
+    margin:.75rem 0 0;
+    font-size:2.5rem;
+}
+
+.game-screen-card p{
+    color:var(--text-soft);
+}
+
+.game-screen-card button{
+    min-height:44px;
+    padding:.7rem .95rem;
+    border:1px solid var(--border);
+    color:var(--text);
+    background:rgba(255,255,255,.025);
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.game-screen-card button:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+.keypad-display{
+    min-height:52px;
+    display:grid;
+    place-items:center;
+    margin-top:1rem;
+    border:1px solid var(--border);
+    color:#e4cfaa;
+    background:rgba(0,0,0,.22);
+    font-family:"DM Mono",monospace;
+    letter-spacing:.35em;
+}
+
+.keypad-buttons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:.55rem;
+    margin:1rem 0;
+}
+
+.keypad-buttons button{
+    min-height:52px;
+}
+
+.game-ending-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+    margin-top:1rem;
+}
+
+@media(max-width:1000px){
+    #game-overlay{
+        overflow-y:auto;
+    }
+
+    .game-interface{
+        min-height:100%;
+        grid-template-columns:1fr;
+    }
+
+    .game-sidebar{
+        height:auto;
+        min-height:500px;
+        border-right:0;
+        border-bottom:1px solid var(--border);
+    }
+
+    .classroom{
+        min-height:820px;
+    }
+}
+
+@media(max-width:700px){
+    .classroom-chalkboard{
+        width:54%;
+    }
+
+    .filing-cabinet{
+        left:2%;
+        width:120px;
+    }
+
+    .classroom-door{
+        right:2%;
+        width:125px;
+    }
+
+    .teacher-desk{
+        width:280px;
+    }
+
+    .game-sidebar h2{
+        font-size:2.2rem;
+    }
+}
+/* ============================================================
+   ESCAPE THE CLASSROOM — INTERACTION POLISH
+============================================================ */
+
+/* Make clickable classroom objects quietly invite attention */
+
+.classroom button {
+    transition:
+        transform .2s ease,
+        filter .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.classroom-poster:hover,
+.classroom-clock:hover,
+.classroom-chalkboard:hover,
+.classroom-door:hover,
+.filing-drawer:hover,
+.desk-object:hover {
+    filter: brightness(1.12);
+}
+
+
+/* Chalkboard */
+
+.classroom-chalkboard:hover {
+    transform: translateX(-50%) translateY(-4px);
+
+    border-color: #816747;
+
+    box-shadow:
+        0 22px 48px rgba(0, 0, 0, .35),
+        0 0 28px rgba(194, 168, 108, .12);
+}
+
+
+/* Clock */
+
+.classroom-clock:hover {
+    transform: scale(1.07);
+
+    box-shadow:
+        0 20px 38px rgba(0, 0, 0, .3),
+        0 0 24px rgba(235, 225, 190, .18);
+}
+
+
+/* Poster */
+
+.classroom-poster:hover {
+    transform: rotate(0deg) translateY(-5px);
+
+    box-shadow:
+        0 22px 40px rgba(0, 0, 0, .32),
+        0 0 20px rgba(194, 168, 108, .1);
+}
+
+
+/* Filing drawers */
+
+.filing-drawer:hover {
+    background: rgba(255, 255, 255, .055);
+}
+
+.filing-drawer.open:hover {
+    transform: translateX(36px);
+}
+
+
+/* Desk objects */
+
+.coffee-object:hover {
+    transform: translateY(-6px) rotate(4deg) scale(1.08);
+}
+
+.paper-object:hover {
+    transform: translateY(-6px) rotate(0deg) scale(1.04);
+}
+
+.book-object:hover {
+    transform: translateY(-6px) rotate(-2deg) scale(1.05);
+}
+
+
+/* Door */
+
+.classroom-door:hover {
+    transform: translateY(-3px);
+
+    border-color: #202d39;
+
+    box-shadow:
+        -24px 28px 48px rgba(0, 0, 0, .4),
+        0 0 30px rgba(194, 168, 108, .08);
+}
+
+.classroom-door:hover .door-handle {
+    background: #d0b37a;
+}
+
+
+/* ============================================================
+   CREEPIER CLASSROOM LIGHTING
+============================================================ */
+
+.classroom::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            transparent 0 16%,
+            rgba(2, 5, 8, .12) 48%,
+            rgba(2, 5, 8, .42) 100%
+        );
+}
+
+.classroom-ceiling,
+.classroom-chalkboard,
+.classroom-poster,
+.classroom-clock,
+.filing-cabinet,
+.teacher-desk,
+.classroom-door,
+.classroom-floor,
+.classroom-whisper {
+    z-index: 3;
+}
+
+.classroom-light {
+    animation: classroomLightHum 4.5s ease-in-out infinite;
+}
+
+@keyframes classroomLightHum {
+    0%,
+    100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+
+    46% {
+        opacity: .94;
+        filter: brightness(.95);
+    }
+
+    48% {
+        opacity: .72;
+        filter: brightness(.78);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.08);
+    }
+
+    52% {
+        opacity: .88;
+        filter: brightness(.92);
+    }
+}
+
+
+/* ============================================================
+   WHISPER POLISH
+============================================================ */
+
+.classroom-whisper {
+    animation: whisperPulse 7s ease-in-out infinite;
+}
+
+@keyframes whisperPulse {
+    0%,
+    100% {
+        opacity: .35;
+        letter-spacing: .02em;
+    }
+
+    50% {
+        opacity: .8;
+        letter-spacing: .07em;
+    }
+}
+
+
+/* ============================================================
+   GAME SCREEN POLISH
+============================================================ */
+
+.game-screen-card {
+    animation: gameCardAppear .35s ease;
+}
+
+@keyframes gameCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-18px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.game-screen-card button {
+    margin-top: .75rem;
+}
+
+#begin-game {
+    min-width: 150px;
+
+    color: #111;
+
+    background: var(--gold);
+
+    font-weight: 700;
+}
+
+#begin-game:hover {
+    color: #111;
+
+    background: #d7bd82;
+
+    box-shadow: 0 0 24px rgba(194, 168, 108, .3);
+}
+
+
+/* ============================================================
+   OBJECTIVE AND INVENTORY FEEDBACK
+============================================================ */
+
+.game-objective strong {
+    transition:
+        color .25s ease,
+        text-shadow .25s ease;
+}
+
+.inventory-slot.filled {
+    animation: inventoryFound .45s ease;
+}
+
+@keyframes inventoryFound {
+    0% {
+        transform: scale(.8);
+        opacity: .2;
+    }
+
+    65% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .classroom-light,
+    .classroom-whisper,
+    .game-screen-card,
+    .inventory-slot.filled {
+        animation: none;
+    }
+}
+/* ============================================================
+   HOMEPAGE SECRET DISCOVERIES
+============================================================ */
+
+/* Shared secret-object styling */
+
+#secret-owl,
+#secret-note,
+#secret-coffee,
+#secret-rift {
+    position: absolute;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(194, 168, 108, 0.34);
+
+    color: var(--gold);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(194, 168, 108, 0.12),
+            rgba(255, 255, 255, 0.025) 58%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.22),
+        inset 0 0 16px rgba(255, 255, 255, 0.025);
+
+    opacity: 0.78;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+#secret-owl:hover,
+#secret-note:hover,
+#secret-coffee:hover,
+#secret-rift:hover {
+    opacity: 1;
+
+    transform: translateY(-5px) scale(1.08);
+
+    border-color: rgba(194, 168, 108, 0.78);
+
+    box-shadow:
+        0 20px 42px rgba(0, 0, 0, 0.32),
+        0 0 30px rgba(194, 168, 108, 0.24);
+
+    filter: brightness(1.14);
+}
+
+
+/* ============================================================
+   F.I.I.A. OWL SEAL
+============================================================ */
+
+#secret-owl {
+    top: 9%;
+    right: 3%;
+
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0;
+
+    transform: rotate(4deg);
+}
+
+#secret-owl::before {
+    content: "F.I.I.A.";
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.62rem;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+}
+
+#secret-owl::after {
+    content: "◉";
+
+    position: absolute;
+
+    top: 9px;
+
+    font-size: 1.1rem;
+
+    opacity: 0.62;
+}
+
+#secret-owl:hover {
+    transform: translateY(-5px) scale(1.08) rotate(0deg);
+}
+
+
+/* ============================================================
+   FOLDED FACULTY NOTE
+============================================================ */
+
+#secret-note {
+    right: 2%;
+    top: 52%;
+
+    width: 92px;
+    height: 74px;
+
+    border-radius: 5px;
+
+    color: #3e3528;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee1c7 0 78%,
+            #cbbb9c 79% 100%
+        );
+
+    box-shadow:
+        0 18px 30px rgba(0,0,0,.28);
+
+    font-size:1.25rem;
+
+    transform:rotate(7deg);
+
+    z-index:15;
+}
+
+    width: 92px;
+    height: 74px;
+
+    border-radius: 5px;
+
+    color: #3e3528;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee1c7 0 78%,
+            #cbbb9c 79% 100%
+        );
+
+    box-shadow:
+        0 18px 30px rgba(0, 0, 0, 0.28);
+
+    font-size: 1.25rem;
+
+    transform: rotate(-6deg);
+}
+
+#secret-note::before {
+    content: "PLEASE READ";
+
+    position: absolute;
+
+    color: #594d3d;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.05em;
+}
+
+#secret-note:hover {
+    transform: translateY(-6px) rotate(-1deg) scale(1.08);
+}
+
+
+/* ============================================================
+   NATHAN’S COFFEE
+============================================================ */
+
+#secret-coffee {
+    right: 5%;
+    bottom: 8%;
+
+    width: 76px;
+    height: 76px;
+
+    border-radius: 50%;
+
+    font-size: 2.1rem;
+
+    transform: rotate(5deg);
+}
+
+#secret-coffee::after {
+    content: "still warm";
+
+    position: absolute;
+
+    bottom: -21px;
+
+    width: 100px;
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+}
+
+#secret-coffee:hover {
+    transform: translateY(-6px) rotate(-3deg) scale(1.08);
+}
+
+
+/* ============================================================
+   CONTACT-SECTION RIFT
+============================================================ */
+
+#secret-rift {
+    right: 5%;
+    bottom: 70px;
+
+    width: 82px;
+    height: 82px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    color: transparent;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #fff8df 0 4%,
+            #c2a86c 11%,
+            #725f78 28%,
+            #36536d 46%,
+            #080c12 66%,
+            transparent 69%
+        );
+
+    box-shadow:
+        0 0 28px rgba(194, 168, 108, 0.28);
+
+    animation: homepageRiftPulse 4.5s ease-in-out infinite;
+}
+
+#secret-rift:hover {
+    transform: translateY(-5px) scale(1.13) rotate(5deg);
+
+    box-shadow:
+        0 0 42px rgba(194, 168, 108, 0.48),
+        0 0 80px rgba(70, 92, 119, 0.22);
+}
+
+@keyframes homepageRiftPulse {
+    0%,
+    100% {
+        filter: brightness(0.88);
+    }
+
+    50% {
+        filter: brightness(1.18);
+    }
+}
+
+
+/* ============================================================
+   MOBILE SECRET PLACEMENT
+============================================================ */
+
+@media (max-width: 800px) {
+    #secret-owl {
+        top: 20px;
+        right: 18px;
+
+        width: 68px;
+        height: 68px;
+    }
+
+    #secret-note {
+        left: 18px;
+        bottom: 20px;
+
+        width: 78px;
+        height: 64px;
+    }
+
+    #secret-coffee {
+        right: 18px;
+        bottom: 28px;
+
+        width: 66px;
+        height: 66px;
+    }
+
+    #secret-rift {
+        right: 18px;
+        bottom: 52px;
+
+        width: 68px;
+        height: 68px;
+    }
+}
+/* ============================================================
+   INTEGRATED HOMEPAGE DISCOVERIES
+   Keeps secrets attached to the page design
+============================================================ */
+
+
+/* ============================================================
+   HERO — F.I.I.A. SEAL
+============================================================ */
+
+#secret-owl {
+    top: 34px;
+    right: 34px;
+
+    width: 78px;
+    height: 78px;
+
+    z-index: 20;
+}
+
+
+/* ============================================================
+   HERO — NOTE TUCKED BEHIND THE BOOK
+============================================================ */
+
+#secret-note {
+    top: 43%;
+    right: 24px;
+    left: auto;
+    bottom: auto;
+
+    width: 92px;
+    height: 74px;
+
+    transform: rotate(7deg);
+
+    z-index: 4;
+}
+
+#secret-note:hover {
+    transform:
+        translateY(-6px)
+        rotate(2deg)
+        scale(1.08);
+}
+
+
+/* Put the book above most of the note so it looks tucked behind it */
+
+.hero-right {
+    position: relative;
+}
+
+.book-display {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* ============================================================
+   MEET CJ — COFFEE RESTING BY THE PHOTO
+============================================================ */
+
+#author {
+    position: relative;
+}
+
+#secret-coffee {
+    left: clamp(250px, 31%, 390px);
+    right: auto;
+
+    bottom: 70px;
+
+    width: 74px;
+    height: 74px;
+
+    z-index: 12;
+}
+
+#secret-coffee::after {
+    content: "";
+}
+
+
+/* Gentle steam above the mug */
+
+#secret-coffee::before {
+    content: "~";
+
+    position: absolute;
+
+    top: -28px;
+    left: 50%;
+
+    color: rgba(255, 255, 255, 0.36);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+
+    transform: translateX(-50%);
+
+    animation: coffeeSteam 3s ease-in-out infinite;
+}
+
+@keyframes coffeeSteam {
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: translateX(-50%) translateY(5px);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+
+/* ============================================================
+   CONTACT — RIFT EMBEDDED IN THE FOOTER
+============================================================ */
+
+#contact {
+    position: relative;
+}
+
+#secret-rift {
+    right: 30px;
+    bottom: 28px;
+
+    width: 74px;
+    height: 74px;
+
+    z-index: 12;
+}
+
+
+/* ============================================================
+   MOBILE PLACEMENT
+============================================================ */
+
+@media (max-width: 900px) {
+
+    #secret-owl {
+        top: 18px;
+        right: 18px;
+    }
+
+    #secret-note {
+        top: auto;
+        right: 18px;
+        bottom: 22px;
+    }
+
+    #secret-coffee {
+        left: auto;
+        right: 20px;
+        bottom: 24px;
+    }
+
+    #secret-rift {
+        right: 18px;
+        bottom: 24px;
+    }
+}
+/* ============================================================
+   HOMEPAGE SCENE FLOW
+   One screen, one clear idea
+============================================================ */
+
+#hero,
+#author,
+#game {
+    min-height: min(880px, 100vh);
+
+    display: grid;
+    align-items: center;
+}
+
+
+/* ============================================================
+   HERO SCENE
+============================================================ */
+
+#hero {
+    padding-top: clamp(90px, 10vh, 130px);
+    padding-bottom: clamp(70px, 9vh, 110px);
+}
+
+.hero-left {
+    justify-self: end;
+}
+
+.hero-right {
+    justify-self: start;
+}
+
+
+/* Make “CJ Maylock Presents” more noticeable */
+
+#hero .presents {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+
+    letter-spacing: 0.28em;
+
+    margin-bottom: 0.4rem;
+}
+
+
+/* Keep the opening text compact */
+
+#hero h1 {
+    max-width: 720px;
+}
+
+.hero-summary {
+    max-width: 580px;
+}
+
+
+/* ============================================================
+   AUTHOR SCENE
+============================================================ */
+
+#author {
+    padding-top: clamp(75px, 9vh, 105px);
+    padding-bottom: clamp(75px, 9vh, 105px);
+}
+
+.author-photo img {
+    max-height: 590px;
+
+    object-fit: cover;
+}
+
+.author-copy {
+    max-width: 620px;
+}
+
+
+/* ============================================================
+   GAME SCENE
+============================================================ */
+
+#game {
+    padding-top: clamp(80px, 10vh, 120px);
+    padding-bottom: clamp(80px, 10vh, 120px);
+}
+
+.game-card {
+    width: min(720px, 100%);
+
+    padding: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.game-card h2 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.game-card p {
+    font-size: 1.25rem;
+}
+
+
+/* Make PLAY feel important */
+
+#play-game {
+    min-width: 180px;
+
+    padding: 17px 38px;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   CONTACT SCENE
+============================================================ */
+
+#contact {
+    min-height: 540px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ============================================================
+   SCENE TRANSITIONS
+============================================================ */
+
+#author,
+#game,
+#contact {
+    border-top: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+#author::before,
+#game::before,
+#contact::before {
+    width: 180px;
+
+    opacity: 0.48;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    #hero,
+    #author,
+    #game {
+        min-height: auto;
+    }
+
+    .hero-left,
+    .hero-right {
+        justify-self: center;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    #hero,
+    #author,
+    #game {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    #hero .presents {
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
+    }
+
+    .game-card h2 {
+        font-size: clamp(2.6rem, 13vw, 4rem);
+    }
+
+}
+/* ============================================================
+   F.I.I.A. ENTRY SCREEN — CINEMATIC POLISH
+============================================================ */
+
+#intro-screen {
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+#intro-screen.intro-closing {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-card {
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(194, 168, 108, 0.12),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(24, 32, 41, 0.98),
+            rgba(9, 14, 20, 0.98)
+        );
+
+    animation: archiveCardArrives 0.8s ease both;
+}
+
+.fiia-logo,
+.clearance,
+#enter-button {
+    opacity: 0;
+    animation: archiveItemAppears 0.7s ease forwards;
+}
+
+.fiia-logo {
+    animation-delay: 0.2s;
+}
+
+.clearance {
+    animation-delay: 0.65s;
+}
+
+#enter-button {
+    animation-delay: 1.05s;
+}
+
+.clearance {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.28em;
+
+    text-transform: uppercase;
+}
+
+#enter-button {
+    min-width: 190px;
+
+    letter-spacing: 0.08em;
+}
+
+#enter-button::after {
+    content: " →";
+
+    transition: transform 0.25s ease;
+}
+
+#enter-button:hover::after {
+    display: inline-block;
+    transform: translateX(5px);
+}
+
+@keyframes archiveCardArrives {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes archiveItemAppears {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* ============================================================
+   NIGHT SKY SYSTEM
+   Stars, dust, parallax, and shooting stars
+============================================================ */
+
+
+/* ============================================================
+   ATMOSPHERE CONTAINER
+============================================================ */
+
+#night-sky {
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(72, 92, 117, 0.12),
+            transparent 38%
+        );
+}
+
+
+/* ============================================================
+   STAR + DUST LAYERS
+============================================================ */
+
+.night-stars,
+.night-dust,
+.shooting-star-layer {
+    position: absolute;
+    inset: -30px;
+
+    transition: transform 0.18s ease-out;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   TWINKLING STARS
+============================================================ */
+
+.night-star {
+    position: absolute;
+
+    width: var(--star-size);
+    height: var(--star-size);
+
+    border-radius: 50%;
+
+    background: rgba(255, 249, 228, 0.82);
+
+    box-shadow:
+        0 0 6px rgba(255, 247, 214, 0.34);
+
+    opacity: 0.22;
+
+    animation:
+        nightTwinkle
+        var(--twinkle-duration)
+        ease-in-out
+        var(--twinkle-delay)
+        infinite;
+}
+
+@keyframes nightTwinkle {
+    0%,
+    100% {
+        opacity: 0.16;
+        transform: scale(0.82);
+    }
+
+    45% {
+        opacity: 0.72;
+        transform: scale(1.16);
+    }
+
+    70% {
+        opacity: 0.32;
+        transform: scale(0.96);
+    }
+}
+
+
+/* ============================================================
+   DRIFTING DUST
+============================================================ */
+
+.dust-particle {
+    position: absolute;
+
+    width: var(--dust-size);
+    height: var(--dust-size);
+
+    border-radius: 50%;
+
+    background: rgba(240, 225, 192, 0.24);
+
+    box-shadow:
+        0 0 8px rgba(240, 225, 192, 0.12);
+
+    opacity: 0;
+
+    animation:
+        dustDrift
+        var(--dust-duration)
+        linear
+        var(--dust-delay)
+        infinite;
+}
+
+@keyframes dustDrift {
+    0% {
+        opacity: 0;
+        transform:
+            translate3d(0, 30px, 0)
+            scale(0.7);
+    }
+
+    16% {
+        opacity: 0.28;
+    }
+
+    52% {
+        opacity: 0.46;
+        transform:
+            translate3d(24px, -44px, 0)
+            scale(1);
+    }
+
+    84% {
+        opacity: 0.18;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate3d(-18px, -105px, 0)
+            scale(1.15);
+    }
+}
+
+
+/* ============================================================
+   SHOOTING STARS
+============================================================ */
+
+.shooting-star {
+    position: absolute;
+
+    width: 130px;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 248, 220, 0.95),
+            rgba(194, 168, 108, 0.45),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(255, 245, 210, 0.42);
+
+    transform:
+        rotate(-24deg)
+        translateX(-180px);
+
+    opacity: 0;
+
+    animation:
+        shootingStarCrosses
+        1.6s
+        cubic-bezier(0.2, 0.7, 0.2, 1)
+        forwards;
+}
+
+.shooting-star::before {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 5px;
+    height: 5px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #fff9e8;
+
+    box-shadow:
+        0 0 12px rgba(255, 249, 232, 0.95),
+        0 0 24px rgba(194, 168, 108, 0.55);
+}
+
+@keyframes shootingStarCrosses {
+    0% {
+        opacity: 0;
+        transform:
+            rotate(-24deg)
+            translateX(-180px);
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    72% {
+        opacity: 0.92;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            rotate(-24deg)
+            translateX(125vw);
+    }
+}
+
+
+/* ============================================================
+   KEEP CONTENT ABOVE THE SKY
+============================================================ */
+
+#intro-screen,
+main,
+#flashlight,
+#game-overlay,
+#discovery-window {
+    position: relative;
+}
+
+main {
+    z-index: 1;
+}
+
+#intro-screen,
+#game-overlay,
+#discovery-window {
+    z-index: 9999;
+}
+
+#flashlight {
+    z-index: 999;
+}
+
+
+/* ============================================================
+   SECTION BACKGROUND TRANSPARENCY
+============================================================ */
+
+#hero,
+#author,
+#game,
+#contact {
+    background: transparent;
+}
+
+
+/* ============================================================
+   PERFORMANCE + ACCESSIBILITY
+============================================================ */
+
+@media (max-width: 700px) {
+    .night-dust {
+        opacity: 0.45;
+    }
+
+    .night-star:nth-child(even) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .night-star,
+    .dust-particle,
+    .shooting-star {
+        animation: none;
+    }
+
+    .night-stars,
+    .night-dust {
+        transform: none !important;
+    }
+}
+/* ============================================================
+   FIX — FULL-SCREEN INTRO AND OVERLAYS
+============================================================ */
+
+#intro-screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100000;
+}
+
+#game-overlay {
+    position: fixed;
+    inset: 0;
+}
+
+#discovery-window {
+    position: fixed;
+    inset: 0;
+}
+/* ============================================================
+   FIX — CONDENSE THE HOMEPAGE SCENES
+============================================================ */
+
+/* Stop forcing each section to fill the entire screen */
+
+#hero,
+#author,
+#game {
+    min-height: auto;
+}
+
+
+/* Pull the opening content upward and reduce empty space */
+
+#hero {
+    padding-top: 90px;
+    padding-bottom: 80px;
+    align-items: center;
+}
+
+
+/* Keep the hero comfortably compact */
+
+#hero {
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(280px, 0.72fr);
+
+    gap: clamp(2rem, 4vw, 4rem);
+}
+
+
+/* Reduce the vertical size of the later scenes */
+
+#author {
+    padding-top: 85px;
+    padding-bottom: 85px;
+}
+
+#game {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+
+/* Prevent the book and text from sitting too low */
+
+.hero-left,
+.hero-right {
+    align-self: center;
+}
+
+
+/* Slightly tighten the hero text */
+
+.hero-left {
+    gap: 1.15rem;
+}
+
+.hero-buttons {
+    margin-top: 0.35rem;
+}
+
+
+/* Keep the full page centered without feeling stretched */
+
+#hero,
+#author,
+#game,
+#contact {
+    width: min(1080px, 100%);
+}
+
+
+/* Mobile spacing */
+
+@media (max-width: 1000px) {
+    #hero {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    #author,
+    #game {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+/* ============================================================
+   FINAL FIX — REMOVE EMPTY SPACE ABOVE HERO
+============================================================ */
+
+main {
+    margin: 0;
+    padding: 0;
+}
+
+#hero {
+    min-height: 0 !important;
+    height: auto !important;
+
+    margin-top: 0 !important;
+
+    padding-top: 45px !important;
+    padding-bottom: 70px !important;
+
+    align-content: center;
+    align-items: center;
+}
+
+/* An older decorative divider was becoming an extra grid item */
+
+#hero::after {
+    display: none !important;
+}
+
+/* Keep the actual hero content at the top of its grid */
+
+.hero-left,
+.hero-right {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    align-self: center !important;
+}
+
+/* Prevent decorative items from affecting the grid layout */
+
+#secret-owl,
+#secret-note {
+    position: absolute;
+}
+
+/* Desktop layout */
+
+@media (min-width: 1001px) {
+    #hero {
+        grid-template-columns:
+            minmax(0, 1.05fr)
+            minmax(280px, 0.72fr);
+
+        grid-template-rows: auto !important;
+    }
+}
+
+/* Mobile/tablet */
+
+@media (max-width: 1000px) {
+    #hero {
+        padding-top: 35px !important;
+    }
+}
+/* ============================================================
+   BOOK DISPLAY — PREMIUM POLISH
+============================================================ */
+
+.book-placeholder {
+    position: relative;
+    overflow: hidden;
+
+    transform:
+        perspective(1000px)
+        rotateY(-2deg);
+
+    box-shadow:
+        -16px 26px 52px rgba(0, 0, 0, 0.48),
+        inset 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+.book-placeholder:hover {
+    transform:
+        perspective(1000px)
+        rotateY(0deg)
+        translateY(-8px)
+        scale(1.015);
+
+    border-color: rgba(194, 168, 108, 0.72);
+
+    box-shadow:
+        -8px 34px 68px rgba(0, 0, 0, 0.58),
+        0 0 34px rgba(194, 168, 108, 0.12),
+        inset 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+
+/* Soft gold light moving across the cover */
+
+.book-placeholder::after {
+    content: "";
+
+    position: absolute;
+    inset: -40% -70%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255, 244, 205, 0.04) 43%,
+            rgba(255, 244, 205, 0.22) 50%,
+            rgba(194, 168, 108, 0.08) 56%,
+            transparent 64%
+        );
+
+    transform: translateX(-55%) rotate(4deg);
+
+    opacity: 0;
+
+    transition:
+        transform 1.1s ease,
+        opacity 0.35s ease;
+}
+
+.book-placeholder:hover::after {
+    transform: translateX(55%) rotate(4deg);
+    opacity: 1;
+}
+
+
+/* Slight depth along the book’s left edge */
+
+.book-display::before {
+    content: "";
+
+    position: absolute;
+
+    left: calc(50% - 172px);
+    top: 14px;
+
+    width: 12px;
+    height: calc(100% - 54px);
+
+    border-radius: 10px 0 0 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.48),
+            rgba(194, 168, 108, 0.12),
+            transparent
+        );
+
+    opacity: 0.72;
+
+    pointer-events: none;
+}
+
+
+/* Keep the cover wording above the shimmer */
+
+.book-placeholder > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Mobile adjustment */
+
+@media (max-width: 700px) {
+    .book-display::before {
+        display: none;
+    }
+
+    .book-placeholder {
+        transform: none;
+    }
+
+    .book-placeholder:hover {
+        transform: translateY(-5px);
+    }
+}
+/* ============================================================
+   MEET CJ — PREMIUM POLISH
+============================================================ */
+
+.author-photo {
+    position: relative;
+}
+
+.author-photo::before {
+    content: "";
+
+    position: absolute;
+    inset: 8% 5% -5% 12%;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(194, 168, 108, 0.16),
+            transparent 42%
+        );
+
+    filter: blur(18px);
+
+    opacity: 0.75;
+
+    pointer-events: none;
+}
+
+.author-photo img {
+    position: relative;
+    z-index: 2;
+
+    transform:
+        perspective(1000px)
+        rotateY(2deg);
+
+    box-shadow:
+        18px 28px 58px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        filter 0.45s ease;
+}
+
+.author-photo:hover img {
+    transform:
+        perspective(1000px)
+        rotateY(0deg)
+        translateY(-7px);
+
+    filter:
+        brightness(1.04)
+        contrast(1.02);
+
+    box-shadow:
+        10px 34px 70px rgba(0, 0, 0, 0.58),
+        0 0 28px rgba(194, 168, 108, 0.11);
+}
+
+
+/* Soft frame line around the portrait */
+
+.author-photo::after {
+    content: "";
+
+    position: absolute;
+    z-index: 3;
+
+    inset: 14px -14px -14px 14px;
+
+    border: 1px solid rgba(194, 168, 108, 0.22);
+    border-radius: 24px;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease;
+}
+
+.author-photo:hover::after {
+    transform: translate(-4px, 4px);
+    border-color: rgba(194, 168, 108, 0.48);
+}
+
+
+/* Refine the author text rhythm */
+
+.author-copy h2 {
+    margin-bottom: 0.2rem;
+}
+
+.author-copy p {
+    max-width: 600px;
+}
+
+.author-copy p + p {
+    margin-top: 0.15rem;
+}
+
+.author-quote {
+    position: relative;
+
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.author-quote::before {
+    content: "“";
+
+    position: absolute;
+
+    left: -1.1rem;
+    top: -1.4rem;
+
+    color: rgba(194, 168, 108, 0.22);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 5rem;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .author-photo img {
+        transform: none;
+    }
+
+    .author-photo:hover img {
+        transform: translateY(-5px);
+    }
+
+    .author-photo::after {
+        inset: 10px -8px -8px 10px;
+    }
+}
+/* ============================================================
+   ESCAPE THE CLASSROOM — PREMIUM POLISH
+============================================================ */
+
+.game-card {
+    position: relative;
+    overflow: hidden;
+
+    border-color: rgba(194, 168, 108, 0.26);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(194, 168, 108, 0.13),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(24, 34, 45, 0.96),
+            rgba(8, 13, 19, 0.98)
+        );
+
+    box-shadow:
+        0 36px 90px rgba(0, 0, 0, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.035);
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(194, 168, 108, 0.55);
+
+    box-shadow:
+        0 44px 110px rgba(0, 0, 0, 0.58),
+        0 0 36px rgba(194, 168, 108, 0.1);
+}
+
+
+/* Faint classroom grid behind the content */
+
+.game-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px
+        );
+
+    background-size: 44px 44px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.9),
+            transparent 82%
+        );
+}
+
+
+/* Soft moving light across the game card */
+
+.game-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: -55%;
+    left: -35%;
+
+    width: 55%;
+    height: 210%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 247, 214, 0.09),
+            transparent
+        );
+
+    transform: rotate(18deg);
+
+    animation: gameLightSweep 11s ease-in-out infinite;
+}
+
+@keyframes gameLightSweep {
+    0%,
+    68% {
+        transform:
+            translateX(-20%)
+            rotate(18deg);
+
+        opacity: 0;
+    }
+
+    76% {
+        opacity: 0.7;
+    }
+
+    92% {
+        transform:
+            translateX(290%)
+            rotate(18deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Keep the text and button above the effects */
+
+.game-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Stronger game title */
+
+.game-card h2 {
+    color: var(--paper);
+
+    text-shadow:
+        0 10px 32px rgba(0, 0, 0, 0.42);
+}
+
+
+/* Refined PLAY button */
+
+#play-game {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.28),
+        0 0 20px rgba(194, 168, 108, 0.12);
+}
+
+#play-game::after {
+    content: " →";
+
+    display: inline-block;
+
+    transition: transform 0.25s ease;
+}
+
+#play-game:hover::after {
+    transform: translateX(6px);
+}
+
+#play-game:hover {
+    box-shadow:
+        0 18px 36px rgba(0, 0, 0, 0.34),
+        0 0 34px rgba(194, 168, 108, 0.28);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .game-card::after {
+        display: none;
+    }
+}
+/* ============================================================
+   CONTACT — PREMIUM POLISH
+============================================================ */
+
+#contact {
+    position: relative;
+    overflow: hidden;
+
+    padding-top: 100px;
+    padding-bottom: 85px;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(194, 168, 108, 0.08),
+            transparent 34%
+        );
+}
+
+#contact h2 {
+    color: var(--paper);
+
+    text-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.38);
+}
+
+#contact > p {
+    max-width: 560px;
+}
+
+.contact-email {
+    position: relative;
+
+    transition:
+        color 0.25s ease,
+        letter-spacing 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.contact-email:hover {
+    letter-spacing: 0.02em;
+
+    text-shadow:
+        0 0 18px rgba(194, 168, 108, 0.32);
+}
+
+
+/* Social buttons */
+
+.social-links a {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.social-links a::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(194, 168, 108, 0.18),
+            transparent 68%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}
+
+.social-links a:hover::before {
+    opacity: 1;
+}
+
+.social-links a:hover {
+    transform:
+        translateY(-6px)
+        scale(1.04);
+
+    box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.3),
+        0 0 22px rgba(194, 168, 108, 0.12);
+}
+
+
+/* Final divider */
+
+.copyright {
+    position: relative;
+
+    padding-top: 2rem;
+}
+
+.copyright::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 120px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(194, 168, 108, 0.5),
+            transparent
+        );
+}
+
+
+/* Make the footer rift feel embedded instead of floating */
+
+#secret-rift {
+    opacity: 0.82;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+#secret-rift:hover {
+    opacity: 1;
+
+    transform:
+        translateY(-6px)
+        scale(1.14)
+        rotate(6deg);
+}
+
+
+/* Tiny glow behind the rift */
+
+#secret-rift::before {
+    content: "";
+
+    position: absolute;
+    inset: -24px;
+
+    z-index: -1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(194, 168, 108, 0.14),
+            transparent 68%
+        );
+
+    animation:
+        footerRiftGlow
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes footerRiftGlow {
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 0.72;
+        transform: scale(1.08);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    #contact {
+        padding-top: 80px;
+        padding-bottom: 75px;
+    }
+
+    #secret-rift {
+        width: 62px;
+        height: 62px;
+    }
+}
+/* ============================================================
+   SCENE ARRIVAL TRANSITIONS
+============================================================ */
+
+/* Softer, more cinematic starting position */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(34px)
+        scale(0.992);
+
+    filter: blur(3px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.9s ease;
+}
+
+
+/* Section settles naturally into place */
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter: blur(0);
+}
+
+
+/* Let the major pieces arrive at slightly different speeds */
+
+.reveal.active .author-photo,
+.reveal.active .game-card {
+    animation:
+        sceneObjectArrives
+        0.85s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+.reveal.active .author-copy {
+    animation:
+        sceneTextArrives
+        0.9s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        0.1s
+        both;
+}
+
+
+/* Author image and game card rise gently */
+
+@keyframes sceneObjectArrives {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(24px)
+            scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* Text moves in slightly from the side */
+
+@keyframes sceneTextArrives {
+    from {
+        opacity: 0;
+
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+/* ============================================================
+   DIVIDER SHIMMER
+============================================================ */
+
+#author::before,
+#game::before,
+#contact::before {
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(194, 168, 108, 0.18),
+            rgba(194, 168, 108, 0.68),
+            rgba(194, 168, 108, 0.18),
+            transparent
+        );
+
+    background-size: 220% 100%;
+
+    animation:
+        dividerBreath
+        7s
+        ease-in-out
+        infinite;
+}
+
+@keyframes dividerBreath {
+    0%,
+    100% {
+        background-position: 100% 0;
+        opacity: 0.28;
+    }
+
+    50% {
+        background-position: 0 0;
+        opacity: 0.62;
+    }
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.active,
+    .reveal.active .author-photo,
+    .reveal.active .author-copy,
+    .reveal.active .game-card,
+    #author::before,
+    #game::before,
+    #contact::before {
+        animation: none;
+        transition: none;
+        filter: none;
+        transform: none;
+        opacity: 1;
+    }
+}
+/* ============================================================
+   WEBSITE HEARTBEAT — VISUAL RESPONSE
+============================================================ */
+
+.ambient-pulse {
+    animation:
+        ambientDetailPulse
+        1.8s
+        ease-in-out
+        both;
+}
+
+@keyframes ambientDetailPulse {
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    35% {
+        filter:
+            brightness(1.08)
+            drop-shadow(
+                0 0 14px
+                rgba(194, 168, 108, 0.16)
+            );
+    }
+
+    65% {
+        filter:
+            brightness(1.03)
+            drop-shadow(
+                0 0 8px
+                rgba(194, 168, 108, 0.08)
+            );
+    }
+}
+
+
+/* Slightly different movement for individual details */
+
+.book-placeholder.ambient-pulse {
+    animation:
+        bookHeartbeat
+        1.8s
+        ease-in-out
+        both;
+}
+
+@keyframes bookHeartbeat {
+    0%,
+    100% {
+        transform:
+            perspective(1000px)
+            rotateY(-2deg);
+    }
+
+    45% {
+        transform:
+            perspective(1000px)
+            rotateY(-1deg)
+            translateY(-4px)
+            scale(1.008);
+    }
+}
+
+
+.author-photo.ambient-pulse {
+    animation:
+        portraitHeartbeat
+        1.8s
+        ease-in-out
+        both;
+}
+
+@keyframes portraitHeartbeat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+
+.game-card.ambient-pulse {
+    animation:
+        gameHeartbeat
+        1.8s
+        ease-in-out
+        both;
+}
+
+@keyframes gameHeartbeat {
+    0%,
+    100% {
+        box-shadow:
+            0 36px 90px
+            rgba(0, 0, 0, 0.5);
+    }
+
+    50% {
+        box-shadow:
+            0 40px 100px
+            rgba(0, 0, 0, 0.56),
+            0 0 30px
+            rgba(194, 168, 108, 0.13);
+    }
+}
+
+
+#secret-owl.ambient-pulse,
+#secret-coffee.ambient-pulse,
+#secret-rift.ambient-pulse {
+    animation:
+        secretHeartbeat
+        1.8s
+        ease-in-out
+        both;
+}
+
+@keyframes secretHeartbeat {
+    0%,
+    100% {
+        opacity: 0.82;
+    }
+
+    50% {
+        opacity: 1;
+
+        filter:
+            brightness(1.18)
+            drop-shadow(
+                0 0 18px
+                rgba(194, 168, 108, 0.24)
+            );
+    }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .ambient-pulse,
+    .book-placeholder.ambient-pulse,
+    .author-photo.ambient-pulse,
+    .game-card.ambient-pulse,
+    #secret-owl.ambient-pulse,
+    #secret-coffee.ambient-pulse,
+    #secret-rift.ambient-pulse {
+        animation: none;
+    }
+}
+/* ============================================================
+   HERO — CINEMATIC ART DIRECTION
+============================================================ */
+
+#hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+
+/* Soft spotlight behind the book */
+
+#hero::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 4%;
+
+    width: 520px;
+    height: 520px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(194, 168, 108, 0.16),
+            rgba(81, 99, 123, 0.08) 36%,
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        heroSpotlightBreath
+        9s
+        ease-in-out
+        infinite;
+}
+
+@keyframes heroSpotlightBreath {
+    0%,
+    100% {
+        opacity: 0.68;
+        transform:
+            translateY(-50%)
+            scale(0.96);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translateY(-50%)
+            scale(1.04);
+    }
+}
+
+
+/* Faint line connecting the title and book */
+
+.hero-left::after {
+    content: "";
+
+    display: block;
+
+    width: 150px;
+    height: 1px;
+
+    margin-top: 0.7rem;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(194, 168, 108, 0.75),
+            transparent
+        );
+
+    opacity: 0.58;
+}
+
+
+/* Stronger title hierarchy */
+
+#hero h1 {
+    color: var(--paper);
+
+    letter-spacing: -0.025em;
+
+    text-shadow:
+        0 14px 42px rgba(0, 0, 0, 0.45);
+}
+
+#hero h1 span {
+    color: var(--gold);
+
+    font-size: 0.74em;
+
+    letter-spacing: 0.04em;
+
+    text-shadow:
+        0 0 24px rgba(194, 168, 108, 0.14);
+}
+
+
+/* Make CJ Maylock Presents feel intentional */
+
+#hero .presents {
+    color: rgba(225, 204, 157, 0.88);
+
+    text-shadow:
+        0 0 18px rgba(194, 168, 108, 0.12);
+}
+
+
+/* Refined synopsis panel without making it look boxed-in */
+
+.hero-summary {
+    position: relative;
+
+    padding-left: 1.2rem;
+
+    border-left:
+        1px solid
+        rgba(194, 168, 108, 0.25);
+}
+
+
+/* Book floats very slightly */
+
+.book-display {
+    animation:
+        bookDisplayFloat
+        7s
+        ease-in-out
+        infinite;
+}
+
+@keyframes bookDisplayFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* Ground the book with a soft shadow underneath */
+
+.book-display::after {
+    content: "";
+
+    width: 78%;
+    height: 24px;
+
+    margin-top: -5px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(0, 0, 0, 0.48),
+            transparent 72%
+        );
+
+    filter: blur(5px);
+
+    pointer-events: none;
+}
+
+
+/* Buttons feel slightly more deliberate */
+
+.hero-buttons {
+    padding-top: 0.4rem;
+}
+
+.hero-buttons a {
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Mobile */
+
+@media (max-width: 1000px) {
+    #hero::before {
+        top: 32%;
+        right: 50%;
+
+        width: 430px;
+        height: 430px;
+
+        transform: translate(50%, -50%);
+    }
+
+    @keyframes heroSpotlightBreath {
+        0%,
+        100% {
+            opacity: 0.6;
+            transform:
+                translate(50%, -50%)
+                scale(0.96);
+        }
+
+        50% {
+            opacity: 0.9;
+            transform:
+                translate(50%, -50%)
+                scale(1.03);
+        }
+    }
+
+    .hero-left::after {
+        margin-left: auto;
+        margin-right: auto;
+
+        background:
+            linear-gradient(
+                to right,
+                transparent,
+                rgba(194, 168, 108, 0.75),
+                transparent
+            );
+    }
+
+    .hero-summary {
+        padding-left: 0;
+
+        border-left: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #hero::before,
+    .book-display {
+        animation: none;
+    }
+}
+
