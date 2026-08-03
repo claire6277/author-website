@@ -6741,3 +6741,240 @@ body::before{
 #secret-rift:visited {
     color: var(--gold);
 }
+/* ============================================================
+   FINAL MOBILE LAYOUT
+   Homepage foundation
+============================================================ */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #hero,
+    #author,
+    #game,
+    #contact {
+        width: calc(100% - 28px);
+        max-width: 620px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+    /* HERO */
+
+    #hero {
+        display: flex;
+        flex-direction: column;
+
+        gap: 2.5rem;
+
+        padding-top: 32px !important;
+        padding-bottom: 65px !important;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        justify-self: auto;
+        align-self: auto;
+    }
+
+    .hero-left {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    #hero h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(2.7rem, 13vw, 4.2rem);
+        line-height: 0.98;
+
+        overflow-wrap: normal;
+    }
+
+    .description,
+    .hero-summary {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        min-height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* BOOK */
+
+    .hero-right,
+    .book-display {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-placeholder {
+        width: min(310px, 82vw);
+        min-height: 430px;
+
+        transform: none !important;
+    }
+
+    .book-display {
+        animation: none;
+    }
+
+
+    /* AUTHOR */
+
+    #author {
+        display: flex;
+        flex-direction: column;
+
+        gap: 2.5rem;
+
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .author-photo,
+    .author-copy {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .author-photo img {
+        width: 100%;
+        max-height: none;
+
+        transform: none !important;
+    }
+
+    .author-copy {
+        text-align: left;
+    }
+
+
+    /* GAME INVITATION */
+
+    #game {
+        display: block;
+
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .game-card {
+        width: 100%;
+
+        padding: 2.2rem 1.2rem;
+    }
+
+    .game-card h2 {
+        font-size: clamp(2.6rem, 13vw, 4rem);
+        line-height: 0.95;
+    }
+
+    #play-game {
+        width: 100%;
+    }
+
+
+    /* CONTACT */
+
+    #contact {
+        min-height: auto;
+
+        padding-top: 72px !important;
+        padding-bottom: 80px !important;
+
+        text-align: center;
+    }
+
+    .contact-email {
+        max-width: 100%;
+
+        font-size: 1.25rem;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* SECRET ITEMS */
+
+    #secret-owl {
+        top: 10px;
+        right: 8px;
+
+        width: 58px;
+        height: 58px;
+    }
+
+    #secret-note {
+        top: auto;
+        right: 8px;
+        bottom: 12px;
+
+        width: 58px;
+        height: 48px;
+    }
+
+    #secret-coffee {
+        left: auto;
+        right: 8px;
+        bottom: 12px;
+
+        width: 58px;
+        height: 58px;
+    }
+
+    #secret-rift {
+        right: 8px;
+        bottom: 16px;
+
+        width: 58px;
+        height: 58px;
+    }
+
+
+    /* HIDE DESKTOP-ONLY EFFECTS */
+
+    #flashlight,
+    .flashlight-message,
+    .constellation,
+    #surveillance-notice {
+        display: none !important;
+    }
+}
