@@ -664,4 +664,439 @@ document.addEventListener(
     "DOMContentLoaded",
     initAmbientDirector
 );
+/* ============================================================
+   RARE CONSTELLATION
+   Quietly draws itself in the background, then disappears
+============================================================ */
+
+function createConstellation() {
+    const nightSky = document.getElementById("night-sky");
+
+    if (!nightSky || document.querySelector(".constellation")) {
+        return;
+    }
+
+    const constellation = document.createElement("div");
+    constellation.className = "constellation";
+    constellation.setAttribute("aria-hidden", "true");
+
+    constellation.innerHTML = `
+        <svg
+            viewBox="0 0 320 220"
+            role="presentation"
+        >
+            <g class="constellation-lines">
+                <line x1="38" y1="150" x2="92" y2="94"></line>
+                <line x1="92" y1="94" x2="150" y2="120"></line>
+                <line x1="150" y1="120" x2="205" y2="62"></line>
+                <line x1="205" y1="62" x2="274" y2="92"></line>
+                <line x1="150" y1="120" x2="186" y2="178"></line>
+                <line x1="186" y1="178" x2="246" y2="158"></line>
+            </g>
+
+            <g class="constellation-stars">
+                <circle cx="38" cy="150" r="3"></circle>
+                <circle cx="92" cy="94" r="4"></circle>
+                <circle cx="150" cy="120" r="3.5"></circle>
+                <circle cx="205" cy="62" r="4"></circle>
+                <circle cx="274" cy="92" r="3"></circle>
+                <circle cx="186" cy="178" r="3"></circle>
+                <circle cx="246" cy="158" r="3.5"></circle>
+            </g>
+        </svg>
+    `;
+
+    nightSky.appendChild(constellation);
+
+    window.setTimeout(() => {
+        constellation.classList.add("constellation-visible");
+    }, 100);
+
+    window.setTimeout(() => {
+        constellation.classList.remove("constellation-visible");
+    }, 9000);
+
+    window.setTimeout(() => {
+        constellation.remove();
+    }, 11000);
+}
+
+
+function scheduleConstellation() {
+    const nextDelay =
+        Math.random() * 65000 + 40000;
+
+    window.setTimeout(() => {
+        const shouldAppear = Math.random() < 0.7;
+
+        if (shouldAppear) {
+            createConstellation();
+        }
+
+        scheduleConstellation();
+    }, nextDelay);
+}
+
+
+function initConstellation() {
+    scheduleConstellation();
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initConstellation
+);
+/* ============================================================
+   BOOK PARALLAX
+============================================================ */
+
+const book = document.querySelector(".book-placeholder");
+
+if (book) {
+
+    document.addEventListener("mousemove",(e)=>{
+
+        const rect = book.getBoundingClientRect();
+
+        const x =
+            (e.clientX-(rect.left+rect.width/2))
+            /rect.width;
+
+        const y =
+            (e.clientY-(rect.top+rect.height/2))
+            /rect.height;
+
+        const rotateY = x*5;
+        const rotateX = -y*5;
+
+        book.style.transform = `
+            perspective(1200px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateY(-2px)
+        `;
+
+    });
+
+    document.addEventListener("mouseleave",()=>{
+
+        book.style.transform=`
+            perspective(1200px)
+            rotateX(0deg)
+            rotateY(0deg)
+            translateY(0px)
+        `;
+
+    });
+
+}
+/* ============================================================
+   BOOK CURSOR LIGHT
+   A soft highlight follows the mouse across the cover
+============================================================ */
+
+function initBookCursorLight() {
+    const book = document.querySelector(".book-placeholder");
+
+    if (!book || book.querySelector(".book-cursor-light")) {
+        return;
+    }
+
+    const light = document.createElement("span");
+    light.className = "book-cursor-light";
+    light.setAttribute("aria-hidden", "true");
+
+    book.appendChild(light);
+
+    book.addEventListener("mousemove", (event) => {
+        const bounds = book.getBoundingClientRect();
+
+        const x = event.clientX - bounds.left;
+        const y = event.clientY - bounds.top;
+
+        light.style.setProperty("--book-light-x", `${x}px`);
+        light.style.setProperty("--book-light-y", `${y}px`);
+
+        light.classList.add("visible");
+    });
+
+    book.addEventListener("mouseleave", () => {
+        light.classList.remove("visible");
+    });
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initBookCursorLight
+);
+/* ============================================================
+   RARE F.I.I.A. SURVEILLANCE NOTICE
+============================================================ */
+
+function showSurveillanceNotice() {
+    if (document.getElementById("surveillance-notice")) {
+        return;
+    }
+
+    const notice = document.createElement("div");
+
+    notice.id = "surveillance-notice";
+    notice.setAttribute("aria-hidden", "true");
+
+    notice.innerHTML = `
+        <span>CAMERA 03</span>
+        <strong>SUBJECT OBSERVED</strong>
+    `;
+
+    document.body.appendChild(notice);
+
+    window.setTimeout(() => {
+        notice.classList.add("visible");
+    }, 100);
+
+    window.setTimeout(() => {
+        notice.classList.remove("visible");
+    }, 3200);
+
+    window.setTimeout(() => {
+        notice.remove();
+    }, 4000);
+}
+
+
+function scheduleSurveillanceNotice() {
+    const nextDelay =
+        Math.random() * 80000 + 50000;
+
+    window.setTimeout(() => {
+        const shouldAppear = Math.random() < 0.55;
+
+        if (shouldAppear) {
+            if (typeof runPageFlicker === "function") {
+                runPageFlicker();
+            }
+
+            window.setTimeout(
+                showSurveillanceNotice,
+                350
+            );
+        }
+
+        scheduleSurveillanceNotice();
+    }, nextDelay);
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    scheduleSurveillanceNotice
+);
+/* ============================================================
+   FLASHLIGHT-REVEALED MESSAGE
+============================================================ */
+
+function initFlashlightMessage() {
+    const hero = document.getElementById("hero");
+
+    if (!hero || document.querySelector(".flashlight-message")) {
+        return;
+    }
+
+    const message = document.createElement("span");
+
+    message.className = "flashlight-message";
+    message.textContent = "This was not here yesterday.";
+    message.setAttribute("aria-hidden", "true");
+
+    hero.appendChild(message);
+
+    document.addEventListener("mousemove", (event) => {
+        const bounds = message.getBoundingClientRect();
+
+        const messageX =
+            bounds.left + bounds.width / 2;
+
+        const messageY =
+            bounds.top + bounds.height / 2;
+
+        const distance = Math.hypot(
+            event.clientX - messageX,
+            event.clientY - messageY
+        );
+
+        const revealDistance = 180;
+
+        const visibility =
+            Math.max(
+                0,
+                1 - distance / revealDistance
+            );
+
+        message.style.opacity =
+            String(visibility * 0.72);
+
+        message.style.filter =
+            `blur(${(1 - visibility) * 3}px)`;
+    });
+
+    document.addEventListener("mouseleave", () => {
+        message.style.opacity = "0";
+    });
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initFlashlightMessage
+);
+/* ============================================================
+   MORE FLASHLIGHT-REVEALED MESSAGES
+============================================================ */
+
+function createFlashlightMessage(section, text, className) {
+    if (!section || section.querySelector(`.${className}`)) {
+        return;
+    }
+
+    const message = document.createElement("span");
+
+    message.className = `flashlight-message ${className}`;
+    message.textContent = text;
+    message.setAttribute("aria-hidden", "true");
+
+    section.appendChild(message);
+
+    document.addEventListener("mousemove", (event) => {
+        const bounds = message.getBoundingClientRect();
+
+        const messageX =
+            bounds.left + bounds.width / 2;
+
+        const messageY =
+            bounds.top + bounds.height / 2;
+
+        const distance = Math.hypot(
+            event.clientX - messageX,
+            event.clientY - messageY
+        );
+
+        const revealDistance = 170;
+
+        const visibility =
+            Math.max(
+                0,
+                1 - distance / revealDistance
+            );
+
+        message.style.opacity =
+            String(visibility * 0.7);
+
+        message.style.filter =
+            `blur(${(1 - visibility) * 3}px)`;
+    });
+
+    document.addEventListener("mouseleave", () => {
+        message.style.opacity = "0";
+    });
+}
+
+
+function initAdditionalFlashlightMessages() {
+    createFlashlightMessage(
+        document.getElementById("author"),
+        "CJ did not write this part.",
+        "author-flashlight-message"
+    );
+
+    createFlashlightMessage(
+        document.getElementById("game"),
+        "The classroom is still occupied.",
+        "game-flashlight-message"
+    );
+
+    createFlashlightMessage(
+        document.getElementById("contact"),
+        "Someone else is reading this.",
+        "contact-flashlight-message"
+    );
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initAdditionalFlashlightMessages
+);
+/* ============================================================
+   RETURNING VISITOR
+   The archive quietly remembers previous visits
+============================================================ */
+
+function initReturningVisitor() {
+    const clearanceText =
+        document.querySelector("#intro-screen .clearance");
+
+    const enterButton =
+        document.getElementById("enter-button");
+
+    if (!clearanceText || !enterButton) {
+        return;
+    }
+
+    const hasVisitedBefore =
+        localStorage.getItem("fiia-archive-visited") === "true";
+
+    if (hasVisitedBefore) {
+        clearanceText.textContent = "WELCOME BACK";
+    }
+
+    enterButton.addEventListener("click", () => {
+        localStorage.setItem(
+            "fiia-archive-visited",
+            "true"
+        );
+    });
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initReturningVisitor
+);
+/* ============================================================
+   CLEARANCE-AWARE INTRO
+   Rewards visitors who discovered every hidden object
+============================================================ */
+
+function initClearanceIntro() {
+    const clearanceText =
+        document.querySelector("#intro-screen .clearance");
+
+    if (!clearanceText) {
+        return;
+    }
+
+    const requiredSecrets = [
+        "owl",
+        "note",
+        "coffee",
+        "rift"
+    ];
+
+    const hasFullClearance =
+        requiredSecrets.every((secretName) => {
+            return localStorage.getItem(
+                `fiia-secret-${secretName}`
+            ) === "found";
+        });
+
+    if (hasFullClearance) {
+        clearanceText.textContent =
+            "CLEARANCE CONFIRMED";
+    }
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initClearanceIntro
+);
+
 

@@ -329,17 +329,41 @@ button{
 
 .fiia-logo{
 
-    font-family:"Cormorant Garamond",serif;
+    display:flex;
 
-    font-size:3rem;
+    justify-content:center;
 
-    color:var(--gold);
-
-    letter-spacing:.2em;
+    align-items:center;
 
     margin-bottom:20px;
 
 }
+.fiia-badge{
+
+    width:110px;
+
+    height:110px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 0 25px rgba(214,194,128,.25));
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+
+}
+
+.fiia-badge:hover{
+
+    transform:scale(1.05);
+
+    filter:
+        drop-shadow(0 0 35px rgba(214,194,128,.45));
+
+}
+
 
 .clearance{
 
@@ -2685,39 +2709,50 @@ section {
     width: 82px;
     height: 82px;
 
+    padding: 0;
+
     border-radius: 50%;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 0;
+    overflow: hidden;
 
     transform: rotate(4deg);
 }
 
-#secret-owl::before {
-    content: "F.I.I.A.";
+.secret-badge {
+    display: block;
 
-    font-family: "DM Mono", monospace;
+    width: 100%;
+    height: 100%;
 
-    font-size: 0.62rem;
-    font-weight: 500;
+    object-fit: cover;
 
-    letter-spacing: 0.08em;
-}
+    border-radius: 50%;
 
-#secret-owl::after {
-    content: "◉";
+    opacity: 0.82;
 
-    position: absolute;
-
-    top: 9px;
-
-    font-size: 1.1rem;
-
-    opacity: 0.62;
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        filter 0.35s ease;
 }
 
 #secret-owl:hover {
-    transform: translateY(-5px) scale(1.08) rotate(0deg);
+    transform:
+        translateY(-5px)
+        scale(1.08)
+        rotate(0deg);
+}
+
+#secret-owl:hover .secret-badge {
+    opacity: 1;
+
+    transform: scale(1.05);
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(194, 168, 108, 0.42)
+        );
 }
 
 
@@ -5015,8 +5050,63 @@ main {
 }
 
 .hero-buttons a {
+
+    position: relative;
+
+    overflow: hidden;
+
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.22);
+        0 12px 26px rgba(0,0,0,.22),
+        inset 0 1px rgba(255,255,255,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.hero-buttons a:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 22px 40px rgba(0,0,0,.34),
+        0 0 20px rgba(194,168,108,.08);
+
+}
+
+.hero-buttons a::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-140%;
+
+    width:60%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    transition:left .7s ease;
+
+}
+
+.hero-buttons a:hover::before{
+
+    left:170%;
+
 }
 
 
@@ -5076,4 +5166,1815 @@ main {
         animation: none;
     }
 }
+/* ============================================================
+   HERO BOOK — FINAL VISUAL BALANCE
+============================================================ */
 
+.book-placeholder {
+    width: 330px;
+
+    border-color: rgba(194, 168, 108, 0.52);
+
+    box-shadow:
+        -14px 30px 64px rgba(0, 0, 0, 0.58),
+        0 0 32px rgba(194, 168, 108, 0.08),
+        inset 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.book-display {
+    filter: drop-shadow(
+        0 22px 28px rgba(0, 0, 0, 0.28)
+    );
+}
+/* Make the folded note a supporting detail */
+
+#secret-note {
+    width: 72px;
+    height: 58px;
+
+    right: 8px;
+
+    opacity: 0.7;
+
+    transform: rotate(7deg) translateX(-8px);
+}
+
+#secret-note:hover {
+    opacity: 1;
+
+    transform:
+        rotate(2deg)
+        translateX(-4px)
+        translateY(-5px)
+        scale(1.06);
+}
+/* ============================================================
+   LUXURY SECTION LIGHTING
+============================================================ */
+
+section{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+section::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 50% 12%,
+            rgba(194,168,108,.055),
+            transparent 48%
+        );
+
+    opacity:.75;
+
+}
+
+section:nth-of-type(even)::before{
+
+    background:
+        radial-gradient(
+            circle at 65% 18%,
+            rgba(255,255,255,.03),
+            transparent 50%
+        );
+
+}
+
+section>*{
+
+    position:relative;
+    z-index:1;
+
+}
+/* ============================================================
+   REFINED GOLD ACCENTS
+============================================================ */
+
+/* Softer, more consistent gold treatment */
+
+:root {
+    --luxury-gold: #c7ae75;
+    --luxury-gold-soft: rgba(199, 174, 117, 0.42);
+    --luxury-gold-faint: rgba(199, 174, 117, 0.12);
+}
+
+
+/* Thin gold details feel more premium than heavy borders */
+
+.presents,
+.game-agency-label,
+.game-screen-code,
+.book-small-text,
+.clearance {
+    color: var(--luxury-gold);
+}
+
+
+/* Buttons */
+
+.primary-button,
+#play-game,
+#begin-game,
+#enter-button {
+    background:
+        linear-gradient(
+            180deg,
+            #cfb77e,
+            #bda367
+        );
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.28),
+        inset 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.primary-button:hover,
+#play-game:hover,
+#begin-game:hover,
+#enter-button:hover {
+    background:
+        linear-gradient(
+            180deg,
+            #d8c18a,
+            #c4aa6b
+        );
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.34),
+        0 0 24px rgba(199, 174, 117, 0.18);
+}
+
+
+/* Secondary buttons */
+
+.secondary-button {
+    border-color: var(--luxury-gold-soft);
+    color: var(--luxury-gold);
+}
+
+.secondary-button:hover {
+    border-color: var(--luxury-gold);
+    color: #f7f1e4;
+
+    background:
+        rgba(199, 174, 117, 0.06);
+}
+
+
+/* Divider lines */
+
+#author::before,
+#game::before,
+#contact::before,
+.copyright::before {
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(199, 174, 117, 0.58),
+            transparent
+        );
+}
+
+
+/* Cards and framed elements */
+
+.book-placeholder,
+.game-card,
+.discovery-card,
+.intro-card {
+    border-color:
+        rgba(199, 174, 117, 0.28);
+}
+
+
+/* Links */
+
+.contact-email,
+.social-links a:hover {
+    color: var(--luxury-gold);
+}
+
+
+/* Keep gold restrained on smaller details */
+
+#secret-owl,
+#secret-note,
+#secret-coffee,
+#secret-rift {
+    border-color:
+        rgba(199, 174, 117, 0.32);
+}
+/* ============================================================
+   REFINED TEXT SPACING
+============================================================ */
+
+/* Headings */
+
+#hero h1,
+#author h2,
+#game h2,
+#contact h2 {
+    text-wrap: balance;
+}
+
+#author h2,
+#game h2,
+#contact h2 {
+    margin-bottom: 0.85rem;
+}
+
+
+/* Paragraph rhythm */
+
+.hero-left p,
+.author-copy p,
+.game-card p,
+#contact p {
+    margin-bottom: 0;
+}
+
+.author-copy {
+    gap: 1.05rem;
+}
+
+.author-copy p {
+    line-height: 1.82;
+}
+
+.author-copy p + p {
+    margin-top: 0.1rem;
+}
+
+
+/* Hero copy */
+
+.description {
+    margin-top: 0.15rem;
+    margin-bottom: 0.2rem;
+}
+
+.hero-summary {
+    margin-top: 0.1rem;
+    margin-bottom: 0.35rem;
+}
+
+
+/* Small labels */
+
+.presents,
+.game-card small,
+.clearance {
+    line-height: 1.4;
+}
+
+
+/* Game section */
+
+.game-card h2 {
+    margin-top: 0.35rem;
+}
+
+.game-invitation {
+    margin-top: -0.25rem !important;
+    margin-bottom: 0.8rem !important;
+}
+
+
+/* Contact section */
+
+#contact h2 {
+    margin-top: 0.35rem;
+}
+
+.contact-email {
+    margin-top: 0.25rem;
+}
+
+
+/* Keep line lengths elegant */
+
+.hero-summary,
+.author-copy p,
+#contact > p {
+    max-width: 58ch;
+}
+/* ============================================================
+   PREMIUM SURFACES
+============================================================ */
+
+.book-placeholder,
+.author-photo img,
+.game-card,
+.intro-card,
+.discovery-card {
+
+    backdrop-filter: blur(10px);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.055);
+
+}
+
+/* Give every surface the same lighting language */
+
+.book-placeholder::before,
+.game-card::before,
+.discovery-card::before,
+.intro-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    opacity:.7;
+
+}
+
+/* Softer corners everywhere */
+
+.book-placeholder,
+.game-card,
+.discovery-card,
+.intro-card{
+
+    border-radius:24px;
+
+}
+
+/* Richer shadows */
+
+.book-placeholder,
+.author-photo img,
+.game-card{
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.22),
+        0 36px 90px rgba(0,0,0,.35);
+
+}
+/* ============================================================
+   EDITORIAL SECTION SPACING
+============================================================ */
+
+/* Keep the overall page compact and deliberate */
+
+#hero {
+    padding-top: 48px !important;
+    padding-bottom: 76px !important;
+}
+
+#author {
+    padding-top: 88px !important;
+    padding-bottom: 88px !important;
+}
+
+#game {
+    padding-top: 92px !important;
+    padding-bottom: 92px !important;
+}
+
+#contact {
+    padding-top: 92px !important;
+    padding-bottom: 78px !important;
+}
+
+
+/* Give each section a consistent content width */
+
+#hero,
+#author,
+#game,
+#contact {
+    width: min(1080px, calc(100% - 48px));
+}
+
+
+/* Tighten the space inside the hero composition */
+
+.hero-left {
+    gap: 1rem;
+}
+
+.hero-buttons {
+    margin-top: 0.7rem;
+}
+
+
+/* Keep the author section balanced */
+
+#author {
+    gap: clamp(2.8rem, 5vw, 4.5rem);
+}
+
+
+/* Give the game card breathing room without making it huge */
+
+.game-card {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* Prevent decorative items from changing section height */
+
+#secret-owl,
+#secret-note,
+#secret-coffee,
+#secret-rift {
+    position: absolute;
+}
+
+
+/* Mobile spacing */
+
+@media (max-width: 700px) {
+    #hero,
+    #author,
+    #game,
+    #contact {
+        width: min(100% - 30px, 680px);
+    }
+
+    #hero {
+        padding-top: 34px !important;
+        padding-bottom: 62px !important;
+    }
+
+    #author,
+    #game {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    #contact {
+        padding-top: 72px !important;
+        padding-bottom: 64px !important;
+    }
+}
+/* ============================================================
+   CONSISTENT LUXURY DEPTH
+============================================================ */
+
+:root {
+    --luxury-shadow-soft:
+        0 14px 30px rgba(0, 0, 0, 0.22);
+
+    --luxury-shadow-deep:
+        0 28px 70px rgba(0, 0, 0, 0.42);
+
+    --luxury-glow:
+        0 0 28px rgba(199, 174, 117, 0.10);
+}
+
+
+/* Shared depth language */
+
+.book-placeholder,
+.author-photo img,
+.game-card {
+    box-shadow:
+        var(--luxury-shadow-soft),
+        var(--luxury-shadow-deep);
+}
+
+
+/* Hover depth */
+
+.book-placeholder:hover,
+.author-photo:hover img,
+.game-card:hover {
+    box-shadow:
+        0 18px 36px rgba(0, 0, 0, 0.28),
+        0 38px 90px rgba(0, 0, 0, 0.52),
+        var(--luxury-glow);
+}
+
+
+/* Slightly soften the resting surfaces */
+
+.book-placeholder,
+.author-photo img,
+.game-card {
+    filter:
+        saturate(0.98)
+        contrast(1.01);
+}
+
+
+/* Add a subtle grounding shadow below the author portrait */
+
+.author-photo::before {
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.26);
+}
+
+
+/* Keep the game card visually substantial */
+
+.game-card {
+    border-color:
+        rgba(199, 174, 117, 0.24);
+}
+
+
+/* Preserve gentler motion on mobile */
+
+@media (max-width: 700px) {
+    .book-placeholder,
+    .author-photo img,
+    .game-card {
+        box-shadow:
+            0 14px 34px rgba(0, 0, 0, 0.34);
+    }
+
+    .book-placeholder:hover,
+    .author-photo:hover img,
+    .game-card:hover {
+        box-shadow:
+            0 18px 42px rgba(0, 0, 0, 0.4);
+    }
+}
+/* ============================================================
+   ATMOSPHERIC DEPTH
+============================================================ */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(255,255,255,.022),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 82% 28%,
+            rgba(194,168,108,.028),
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 52% 82%,
+            rgba(255,255,255,.018),
+            transparent 32%
+        );
+
+    animation:
+        atmosphereFloat
+        28s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes atmosphereFloat{
+
+    0%,100%{
+
+        transform:
+            translateY(0px);
+
+        opacity:.85;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-12px);
+
+        opacity:1;
+
+    }
+
+}
+/* ============================================================
+   REFINED FLASHLIGHT CURSOR
+============================================================ */
+
+#flashlight {
+    display: grid;
+    place-items: center;
+
+    opacity: 0.82;
+
+    filter: blur(0.2px);
+
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        opacity 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* Tiny gold focal point */
+
+#flashlight::after {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(235, 215, 165, 0.9);
+
+    box-shadow:
+        0 0 7px rgba(235, 215, 165, 0.7),
+        0 0 18px rgba(199, 174, 117, 0.3);
+
+    opacity: 0.72;
+}
+
+
+/* Slightly warmer light over interactive objects */
+
+body:has(
+    a:hover,
+    button:hover,
+    #secret-owl:hover,
+    #secret-note:hover,
+    #secret-coffee:hover,
+    #secret-rift:hover
+) #flashlight {
+    opacity: 1;
+
+    filter:
+        brightness(1.1)
+        blur(0);
+}
+
+body:has(
+    a:hover,
+    button:hover
+) #flashlight::after {
+    transform: scale(1.35);
+
+    opacity: 1;
+}
+
+
+/* Hide the effect on touch devices */
+
+@media (hover: none), (pointer: coarse) {
+    #flashlight {
+        display: none;
+    }
+}
+/* ============================================================
+   FIX — CENTER FLASHLIGHT ON CURSOR
+============================================================ */
+
+#flashlight {
+    position: fixed !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    transform-origin: center !important;
+
+    margin: 0 !important;
+
+    pointer-events: none;
+}
+/* ============================================================
+   AUTHOR PORTRAIT — SOFT LUXURY LIGHT
+============================================================ */
+
+.author-photo {
+    position: relative;
+    isolation: isolate;
+}
+
+.author-photo::before {
+    content: "";
+
+    position: absolute;
+    inset: 10% 8% -2% 10%;
+
+    z-index: -1;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(199, 174, 117, 0.16),
+            transparent 58%
+        );
+
+    filter: blur(24px);
+
+    opacity: 0.55;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+.author-photo:hover::before {
+    opacity: 0.82;
+
+    transform: scale(1.04);
+}
+
+.author-photo img {
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.author-photo:hover img {
+    filter:
+        brightness(1.035)
+        contrast(1.015);
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 20px 42px rgba(0, 0, 0, 0.3),
+        0 42px 92px rgba(0, 0, 0, 0.5),
+        0 0 28px rgba(199, 174, 117, 0.09);
+}
+/* ============================================================
+   PREMIUM MOTION
+============================================================ */
+
+/* Heavy objects */
+
+.book-placeholder,
+.author-photo img,
+.game-card {
+
+    transition:
+        transform .55s cubic-bezier(.22,.61,.36,1),
+        box-shadow .55s cubic-bezier(.22,.61,.36,1),
+        filter .55s ease;
+
+}
+
+/* Buttons feel quicker */
+
+.primary-button,
+.secondary-button,
+button {
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        background .18s ease,
+        color .18s ease;
+
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+button:hover{
+
+    transform:
+        translateY(-2px);
+
+}
+
+.primary-button:active,
+.secondary-button:active,
+button:active{
+
+    transform:
+        translateY(0px) scale(.98);
+
+}
+
+/* Secret discoveries feel playful */
+
+#secret-owl,
+#secret-note,
+#secret-coffee,
+#secret-rift{
+
+    transition:
+        transform .32s ease,
+        opacity .32s ease,
+        box-shadow .32s ease;
+
+}
+
+#secret-owl:hover,
+#secret-note:hover,
+#secret-coffee:hover,
+#secret-rift:hover{
+
+    transform:
+        translateY(-5px)
+        rotate(-2deg);
+
+}
+/* ============================================================
+   RARE CONSTELLATION
+============================================================ */
+
+.constellation {
+    position: absolute;
+
+    top: 12%;
+    right: 7%;
+
+    width: min(320px, 34vw);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translateY(12px)
+        scale(0.98);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s ease;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(199, 174, 117, 0.12)
+        );
+}
+
+.constellation-visible {
+    opacity: 0.48;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.constellation svg {
+    width: 100%;
+    height: auto;
+
+    overflow: visible;
+}
+
+.constellation-lines line {
+    stroke:
+        rgba(199, 174, 117, 0.36);
+
+    stroke-width: 1;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+
+    animation:
+        drawConstellationLine
+        2.8s
+        ease
+        forwards;
+}
+
+.constellation-lines line:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.constellation-lines line:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.constellation-lines line:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.constellation-lines line:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.constellation-lines line:nth-child(6) {
+    animation-delay: 1.25s;
+}
+
+.constellation-stars circle {
+    fill:
+        rgba(246, 235, 205, 0.92);
+
+    opacity: 0;
+
+    transform-box: fill-box;
+    transform-origin: center;
+
+    animation:
+        revealConstellationStar
+        1s
+        ease
+        forwards;
+}
+
+.constellation-stars circle:nth-child(1) {
+    animation-delay: 0.35s;
+}
+
+.constellation-stars circle:nth-child(2) {
+    animation-delay: 0.65s;
+}
+
+.constellation-stars circle:nth-child(3) {
+    animation-delay: 0.95s;
+}
+
+.constellation-stars circle:nth-child(4) {
+    animation-delay: 1.25s;
+}
+
+.constellation-stars circle:nth-child(5) {
+    animation-delay: 1.55s;
+}
+
+.constellation-stars circle:nth-child(6) {
+    animation-delay: 1.85s;
+}
+
+.constellation-stars circle:nth-child(7) {
+    animation-delay: 2.15s;
+}
+
+@keyframes drawConstellationLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes revealConstellationStar {
+    0% {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    65% {
+        opacity: 1;
+        transform: scale(1.18);
+    }
+
+    100% {
+        opacity: 0.88;
+        transform: scale(1);
+    }
+}
+
+
+/* Keep it subtle on smaller screens */
+
+@media (max-width: 800px) {
+    .constellation {
+        top: 9%;
+        right: 3%;
+
+        width: 220px;
+
+        opacity: 0;
+    }
+
+    .constellation-visible {
+        opacity: 0.32;
+    }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .constellation,
+    .constellation-lines line,
+    .constellation-stars circle {
+        animation: none;
+        transition: none;
+    }
+
+    .constellation-visible {
+        opacity: 0.28;
+    }
+}
+/* ============================================================
+   BOOK PARALLAX
+============================================================ */
+
+.book-placeholder{
+
+    transform-style:preserve-3d;
+
+    will-change:transform;
+
+    transition:
+        transform .35s ease-out,
+        box-shadow .45s ease;
+
+}
+/* ============================================================
+   BOOK CURSOR LIGHT
+============================================================ */
+
+.book-cursor-light {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle 115px at
+            var(--book-light-x, 50%)
+            var(--book-light-y, 50%),
+            rgba(255, 247, 219, 0.2),
+            rgba(199, 174, 117, 0.07) 35%,
+            transparent 70%
+        );
+
+    mix-blend-mode: screen;
+
+    transition: opacity 0.35s ease;
+}
+
+.book-cursor-light.visible {
+    opacity: 1;
+}
+
+/* Keep the cover wording above the moving light */
+
+.book-placeholder > span:not(.book-cursor-light),
+.book-placeholder > strong {
+    position: relative;
+    z-index: 2;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .book-cursor-light {
+        display: none;
+    }
+}
+/* ============================================================
+   RARE F.I.I.A. SURVEILLANCE NOTICE
+============================================================ */
+
+#surveillance-notice {
+    position: fixed;
+
+    top: 24px;
+    right: 28px;
+
+    z-index: 9000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+
+    padding: 0.7rem 0.85rem;
+
+    border-left:
+        1px solid
+        rgba(199, 174, 117, 0.52);
+
+    color:
+        rgba(235, 225, 201, 0.72);
+
+    background:
+        rgba(7, 11, 16, 0.72);
+
+    backdrop-filter: blur(8px);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform:
+        translateY(-8px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+#surveillance-notice.visible {
+    opacity: 0.82;
+
+    transform:
+        translateY(0);
+}
+
+#surveillance-notice span {
+    color:
+        rgba(199, 174, 117, 0.72);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.14em;
+}
+
+#surveillance-notice strong {
+    font-size: 0.6rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 700px) {
+    #surveillance-notice {
+        top: 16px;
+        right: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #surveillance-notice {
+        transition: none;
+    }
+}
+/* ============================================================
+   FLASHLIGHT-REVEALED MESSAGE
+============================================================ */
+
+.flashlight-message {
+    position: absolute;
+
+    right: 4%;
+    bottom: 28px;
+
+    z-index: 12;
+
+    color:
+        rgba(224, 213, 188, 0.82);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.05rem;
+    font-style: italic;
+
+    letter-spacing: 0.035em;
+
+    opacity: 0;
+
+    filter: blur(3px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.1s linear,
+        filter 0.1s linear;
+
+    text-shadow:
+        0 0 14px
+        rgba(199, 174, 117, 0.24);
+}
+
+@media (max-width: 800px),
+       (hover: none),
+       (pointer: coarse) {
+
+    .flashlight-message {
+        display: none;
+    }
+}
+/* ============================================================
+   ADDITIONAL FLASHLIGHT MESSAGES
+============================================================ */
+
+.author-flashlight-message {
+    left: 5%;
+    bottom: 28px;
+}
+
+.game-flashlight-message {
+    right: 6%;
+    top: 44px;
+}
+
+.contact-flashlight-message {
+    left: 5%;
+    bottom: 38px;
+}
+
+@media (max-width: 800px),
+       (hover: none),
+       (pointer: coarse) {
+
+    .author-flashlight-message,
+    .game-flashlight-message,
+    .contact-flashlight-message {
+        display: none;
+    }
+}
+/* ============================================================
+   LUXURY FILM GRAIN
+============================================================ */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:9998;
+
+    opacity:.025;
+
+    background-image:
+
+        radial-gradient(circle,rgba(255,255,255,.6) 1px,transparent 1px);
+
+    background-size:7px 7px;
+
+    mix-blend-mode:soft-light;
+
+    animation:
+        grainShift
+        10s
+        linear
+        infinite;
+
+}
+
+@keyframes grainShift{
+
+    0%{
+
+        transform:
+            translate(0,0);
+
+    }
+
+    25%{
+
+        transform:
+            translate(-2px,1px);
+
+    }
+
+    50%{
+
+        transform:
+            translate(1px,-2px);
+
+    }
+
+    75%{
+
+        transform:
+            translate(2px,1px);
+
+    }
+
+    100%{
+
+        transform:
+            translate(0,0);
+
+    }
+
+}
+/* ============================================================
+   GAME — CLASSIFIED TERMINAL POLISH
+============================================================ */
+
+#game-overlay {
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(199, 174, 117, 0.08),
+            transparent 34%
+        ),
+        rgba(3, 6, 10, 0.94);
+
+    backdrop-filter: blur(10px);
+}
+
+.game-window {
+    position: relative;
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(199, 174, 117, 0.3);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17, 24, 32, 0.98),
+            rgba(6, 10, 15, 0.99)
+        );
+
+    box-shadow:
+        0 34px 100px rgba(0, 0, 0, 0.68),
+        0 0 46px rgba(199, 174, 117, 0.08),
+        inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+
+/* Thin terminal glow across the top */
+
+.game-window::before {
+    content: "";
+
+    position: absolute;
+    inset: 0 0 auto;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(224, 205, 157, 0.72),
+            transparent
+        );
+
+    opacity: 0.7;
+
+    pointer-events: none;
+}
+
+
+/* Extremely subtle CRT lines */
+
+.game-window::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.012) 0,
+            rgba(255, 255, 255, 0.012) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    opacity: 0.38;
+
+    mix-blend-mode: soft-light;
+}
+
+
+/* Keep all game content above the texture */
+
+.game-window > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Refine the game header */
+
+.game-header {
+    border-bottom:
+        1px solid
+        rgba(199, 174, 117, 0.16);
+
+    background:
+        rgba(255, 255, 255, 0.018);
+}
+
+.game-header h2,
+.game-header h3 {
+    text-shadow:
+        0 0 18px
+        rgba(199, 174, 117, 0.12);
+}
+
+
+/* Cleaner close button */
+
+#close-game {
+    border:
+        1px solid
+        rgba(199, 174, 117, 0.24);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color:
+        rgba(235, 226, 204, 0.78);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+#close-game:hover {
+    transform:
+        rotate(4deg)
+        scale(1.06);
+
+    background:
+        rgba(199, 174, 117, 0.08);
+
+    border-color:
+        rgba(199, 174, 117, 0.55);
+}
+
+
+/* Inventory panel */
+
+.game-inventory,
+.inventory-panel {
+    border:
+        1px solid
+        rgba(199, 174, 117, 0.16);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    box-shadow:
+        inset 0 1px
+        rgba(255, 255, 255, 0.025);
+}
+
+
+/* Clickable game objects feel intentional */
+
+.game-object,
+[data-game-object] {
+    transition:
+        transform 0.22s ease,
+        filter 0.22s ease,
+        opacity 0.22s ease;
+}
+
+.game-object:hover,
+[data-game-object]:hover {
+    transform:
+        translateY(-3px)
+        scale(1.025);
+
+    filter:
+        brightness(1.1)
+        drop-shadow(
+            0 0 12px
+            rgba(199, 174, 117, 0.16)
+        );
+}
+
+
+/* Softer opening animation */
+
+#game-overlay.active .game-window {
+    animation:
+        gameWindowArrives
+        0.6s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        both;
+}
+
+@keyframes gameWindowArrives {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.985);
+
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .game-window {
+        border-radius: 18px;
+    }
+
+    .game-window::after {
+        opacity: 0.22;
+    }
+}
+/* ============================================================
+   FIX — RESTORE SECRET RIFT LINK
+============================================================ */
+
+#secret-rift {
+    text-decoration: none;
+}
+
+#secret-rift:visited {
+    color: var(--gold);
+}
+/* ============================================================
+   FINAL MOBILE LAYOUT
+   Homepage foundation
+============================================================ */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #hero,
+    #author,
+    #game,
+    #contact {
+        width: calc(100% - 28px);
+        max-width: 620px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+    /* HERO */
+
+    #hero {
+        display: flex;
+        flex-direction: column;
+
+        gap: 2.5rem;
+
+        padding-top: 32px !important;
+        padding-bottom: 65px !important;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        justify-self: auto;
+        align-self: auto;
+    }
+
+    .hero-left {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    #hero h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(2.7rem, 13vw, 4.2rem);
+        line-height: 0.98;
+
+        overflow-wrap: normal;
+    }
+
+    .description,
+    .hero-summary {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        min-height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* BOOK */
+
+    .hero-right,
+    .book-display {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-placeholder {
+        width: min(310px, 82vw);
+        min-height: 430px;
+
+        transform: none !important;
+    }
+
+    .book-display {
+        animation: none;
+    }
+
+
+    /* AUTHOR */
+
+    #author {
+        display: flex;
+        flex-direction: column;
+
+        gap: 2.5rem;
+
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .author-photo,
+    .author-copy {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .author-photo img {
+        width: 100%;
+        max-height: none;
+
+        transform: none !important;
+    }
+
+    .author-copy {
+        text-align: left;
+    }
+
+
+    /* GAME INVITATION */
+
+    #game {
+        display: block;
+
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .game-card {
+        width: 100%;
+
+        padding: 2.2rem 1.2rem;
+    }
+
+    .game-card h2 {
+        font-size: clamp(2.6rem, 13vw, 4rem);
+        line-height: 0.95;
+    }
+
+    #play-game {
+        width: 100%;
+    }
+
+
+    /* CONTACT */
+
+    #contact {
+        min-height: auto;
+
+        padding-top: 72px !important;
+        padding-bottom: 80px !important;
+
+        text-align: center;
+    }
+
+    .contact-email {
+        max-width: 100%;
+
+        font-size: 1.25rem;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* SECRET ITEMS */
+
+    #secret-owl {
+        top: 10px;
+        right: 8px;
+
+        width: 58px;
+        height: 58px;
+    }
+
+    #secret-note {
+        top: auto;
+        right: 8px;
+        bottom: 12px;
+
+        width: 58px;
+        height: 48px;
+    }
+
+    #secret-coffee {
+        left: auto;
+        right: 8px;
+        bottom: 12px;
+
+        width: 58px;
+        height: 58px;
+    }
+
+    #secret-rift {
+        right: 8px;
+        bottom: 16px;
+
+        width: 58px;
+        height: 58px;
+    }
+
+
+    /* HIDE DESKTOP-ONLY EFFECTS */
+
+    #flashlight,
+    .flashlight-message,
+    .constellation,
+    #surveillance-notice {
+        display: none !important;
+    }
+}
